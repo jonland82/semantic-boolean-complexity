@@ -1,30 +1,84 @@
 # Semantic lower--upper sandwich
 
-For every four-input function, this analysis places exact `K + 1` between
-a scaled Khrapchenko boundary lower curve and an affine decision-tree upper
-curve. Constants are the tightest values on this finite universe under the
-displayed parameterization; they are empirical extremal constants, not new
-asymptotic theorems.
+For every four-input function, this analysis verifies
+
+```text
+B(f) <= K_L(f) + 1 <= A_L + C_L (U(f) - 1).
+```
+
+Here `B` is the Khrapchenko product and `U` is minimum deterministic
+decision-tree leaf count. The displayed `A` and `C` are the sharp constants
+for this affine parameterization on the finite four-input universe; they are
+empirical extremal constants, not asymptotic theorems.
 
 ![Complexity sandwich](../figures/complexity_sandwich.png)
 
+![Complexity sandwich v2](../figures/complexity_sandwich_v2.png)
+
 ## Tight empirical envelopes
 
-| language   |   lower_scale |   upper_anchor |   upper_slope |   minimum_lower_slack |   minimum_upper_slack |   median_band_width |   position_q10 |   position_median |   position_q90 |   lower_contacts |   upper_contacts |
-|:-----------|--------------:|---------------:|--------------:|----------------------:|----------------------:|--------------------:|---------------:|------------------:|---------------:|-----------------:|-----------------:|
-| NAND       |             1 |              6 |        2.25   |                     0 |                     0 |             18.6    |         0.3663 |            0.48   |         0.5946 |                4 |                2 |
-| NOR        |             1 |              6 |        2.25   |                     0 |                     0 |             18.6    |         0.3663 |            0.48   |         0.5946 |                4 |                2 |
-| AND_OR_NOT |             1 |              3 |        1.4444 |                     0 |                     0 |              9.4127 |         0.5658 |            0.7308 |         0.866  |                4 |               30 |
+| language   |   lower_scale |   upper_anchor |   upper_slope |   exact_cover_contacts |   minimum_lower_slack |   minimum_upper_slack |   median_band_width |   position_q10 |   position_median |   position_q90 |   lower_contacts |   upper_contacts |   collapsed_intervals |
+|:-----------|--------------:|---------------:|--------------:|-----------------------:|----------------------:|----------------------:|--------------------:|---------------:|------------------:|---------------:|-----------------:|-----------------:|----------------------:|
+| NAND       |             1 |              6 |        2.25   |                      0 |                     0 |                     0 |             18.6    |         0.3663 |            0.48   |         0.5946 |                4 |                2 |                     0 |
+| NOR        |             1 |              6 |        2.25   |                      0 |                     0 |                     0 |             18.6    |         0.3663 |            0.48   |         0.5946 |                4 |                2 |                     0 |
+| AND_OR_NOT |             1 |              3 |        1.4444 |                    986 |                     0 |                     0 |              9.1556 |         0.631  |            0.7516 |         0.8772 |                4 |             1014 |                     4 |
 
-The affine upper curve uses `A + C(U - 1)`. Its anchor `A` accounts for
-constant functions, whose decision trees have one leaf although the gate
-languages do not provide free constants.
+Thus NAND and NOR use `B <= K + 1 <= 6 + (9/4)(U - 1)`. The
+AND/OR/NOT envelope is
+
+```text
+B <= K + 1 <= min(3 + (13/9)(U - 1), Q_min).
+```
+
+`Q_min` is the exact minimum among prime DNF/CNF cover constructions,
+including variants that retain one outer NOT. Cube weights account for
+literal polarity, internal binary gates, cover-combining gates, and the
+outer NOT when present. Constants are assigned cost `K + 1 = 3` because
+the language provides no free constants.
+
+## Mathematical status
+
+The lower inequality `B <= K + 1` holds generally in all three languages.
+Push negations to literals to obtain a De Morgan formula without changing
+its leaves. Khrapchenko gives `B <= leaves`; a tree with `b` binary gates
+has `b + 1` leaves, and `b + 1 <= K + 1` even when unary NOT gates occur.
+
+Straight Shannon compilation also gives general, constructive but looser
+upper bounds:
+
+```text
+NAND/NOR:    K + 1 <= 6 + 9(U - 1)
+AND/OR/NOT:  K + 1 <= 3 + 6(U - 1).
+```
+
+A decision-tree leaf is replaced by a constant formula (at most five gates
+for NAND/NOR and two for AND/OR/NOT), and each internal Shannon multiplexer
+adds four gates. `Q_min` is also constructive for every function. In
+contrast, the much sharper slopes `9/4` and `13/9` are fitted extremal
+constants on `n = 4`, not asymptotic theorems.
+
+## Equality cases
+
+| language   | contact   |   functions |   phase_permutation_orbits |
+|:-----------|:----------|------------:|---------------------------:|
+| AND_OR_NOT | both      |           4 |                          1 |
+| AND_OR_NOT | upper     |        1010 |                         55 |
+| NAND       | lower     |           4 |                          1 |
+| NAND       | upper     |           2 |                          2 |
+| NOR        | lower     |           4 |                          1 |
+| NOR        | upper     |           2 |                          2 |
+
+Every contact function, its phase/permutation orbit, ANF, active upper
+construction, and cover witness is recorded in
+`../artifacts/complexity_sandwich_contacts.csv`.
 
 ## Structure within the sandwich
 
 ![Sandwich position](../figures/sandwich_position_structure.png)
 
-The normalized position is `(K + 1 - lower) / (upper - lower)`. Color shows
+The normalized position is `(K + 1 - lower) / (upper - lower)`. Collapsed
+exact intervals are assigned the immaterial convention `position = 0.5`.
+Color shows
 two proposed correction variables: mean certificate size and linear ANF
 support.
 
@@ -36,12 +90,12 @@ position and the two envelope curves.
 
 | language   | model               |   features |   position_r2_mean |   position_r2_std |   gate_count_r2_mean |   gate_count_r2_std |
 |:-----------|:--------------------|-----------:|-------------------:|------------------:|---------------------:|--------------------:|
-| AND_OR_NOT | algebraic + phase   |         10 |             0.3276 |            0.0325 |               0.8794 |              0.0085 |
-| AND_OR_NOT | all corrections     |         14 |             0.6177 |            0.0161 |               0.9277 |              0.0054 |
-| AND_OR_NOT | bracket coordinates |          2 |             0.4103 |            0.029  |               0.8921 |              0.0087 |
-| AND_OR_NOT | certificates        |          4 |             0.4255 |            0.0168 |               0.8932 |              0.0076 |
-| AND_OR_NOT | compact sandwich    |         16 |             0.7255 |            0.0121 |               0.9502 |              0.0025 |
-| AND_OR_NOT | fixed midpoint      |          0 |            -3.4565 |            0.1684 |               0.1626 |              0.0466 |
+| AND_OR_NOT | algebraic + phase   |         10 |             0.2037 |            0.0338 |               0.9069 |              0.0077 |
+| AND_OR_NOT | all corrections     |         14 |             0.4729 |            0.031  |               0.9346 |              0.005  |
+| AND_OR_NOT | bracket coordinates |          2 |             0.2763 |            0.0438 |               0.91   |              0.0072 |
+| AND_OR_NOT | certificates        |          4 |             0.2191 |            0.0339 |               0.9028 |              0.0079 |
+| AND_OR_NOT | compact sandwich    |         16 |             0.6099 |            0.0284 |               0.9541 |              0.0036 |
+| AND_OR_NOT | fixed midpoint      |          0 |            -6.1289 |            0.2221 |               0.1176 |              0.0448 |
 | NAND       | algebraic + phase   |         10 |             0.5566 |            0.0379 |               0.8815 |              0.0102 |
 | NAND       | all corrections     |         14 |             0.7569 |            0.0203 |               0.9334 |              0.0037 |
 | NAND       | bracket coordinates |          2 |             0.1554 |            0.0278 |               0.7785 |              0.0204 |
@@ -55,13 +109,10 @@ position and the two envelope curves.
 | NOR        | compact sandwich    |         16 |             0.7377 |            0.0072 |               0.9297 |              0.0047 |
 | NOR        | fixed midpoint      |          0 |            -0.0467 |            0.0177 |               0.73   |              0.0167 |
 
-Certificates alone explain 51.6%, 51.2%, and 42.6% of normalized-position
-variance for NAND, NOR, and AND/OR/NOT. Algebraic support plus Fourier
-phase explains 55.7%, 39.9%, and 32.8%. Combining the two raises those
-values to 75.7%, 71.3%, and 61.8%; adding the two bracket coordinates
-reaches 79.6%, 73.8%, and 72.6%. The gain from combination is evidence
-that boundary/decomposition and algebraic structure contribute distinct
-parts of the remaining signal.
+The table is generated from the same run as the envelopes, so reported
+residual scores cannot silently remain stale after a bound changes. The
+compact model combines the two bracket coordinates, certificate summaries,
+ANF support, and signed Fourier counts.
 
 ## Interpretation
 

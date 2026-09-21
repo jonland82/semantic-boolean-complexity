@@ -20,8 +20,9 @@ descriptors. The current experiments identify a compact structural picture:
 - The expanded 66-coordinate model reaches held-out R2 values of 95.7%, 94.7%,
   and 97.3%.
 - A compact 16-coordinate lower--upper sandwich model retains 94.6%, 93.0%,
-  and 95.0% gate-count R2 and explains 79.6%, 73.8%, and 72.6% of normalized
-  position within the sandwich.
+  and 95.4% gate-count R2 and explains 79.6%, 73.8%, and 61.0% of normalized
+  position within the sandwich. The AND/OR/NOT envelope includes an exact
+  minimum-cost prime-cover construction.
 
 ## Repository layout
 
@@ -33,6 +34,7 @@ experiments/four_bit/figures/           publication figures
 experiments/four_bit/reports/           generated experiment reports
 papers/semantic-structure-predicts/     original four-page paper
 papers/semantic-construction-profile/   four-page follow-up paper
+papers/semantic-complexity-envelopes/   four-page bounds paper
 ```
 
 ## Setup

@@ -1,0 +1,1027 @@
+language,contact,truth_table,truth_table_hex,phase_permutation_orbit_hex,anf,minimum_gates,khrapchenko_product,decision_tree_leaves,lower,upper,active_upper_source,cover_cost_k_plus_1,cover_construction,tied_cover_constructions,cover_cubes_01_dash
+NAND,upper,0,0x0000,0x0000,0,5,0.0,1,0.0,6.0,empirical decision-tree envelope,,,,
+NAND,upper,1,0x0001,0x0001,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,14,1.0666666666666669,5,1.0666666666666669,15.0,empirical decision-tree envelope,,,,
+NAND,lower,43690,0xaaaa,0x00ff,x0,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NAND,lower,52428,0xcccc,0x00ff,x1,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NAND,lower,61680,0xf0f0,0x00ff,x2,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NAND,lower,65280,0xff00,0x00ff,x3,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NOR,upper,32767,0x7fff,0x7fff,1 + x0*x1*x2*x3,14,1.0666666666666669,5,1.0666666666666669,15.0,empirical decision-tree envelope,,,,
+NOR,lower,43690,0xaaaa,0x00ff,x0,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NOR,lower,52428,0xcccc,0x00ff,x1,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NOR,lower,61680,0xf0f0,0x00ff,x2,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NOR,lower,65280,0xff00,0x00ff,x3,0,1.0,2,1.0,8.25,empirical decision-tree envelope,,,,
+NOR,upper,65535,0xffff,0x0000,1,5,0.0,1,0.0,6.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,0,0x0000,0x0000,0,2,0.0,1,0.0,3.0,exact prime cover+empirical decision-tree envelope,3,constant,constant,
+AND_OR_NOT,upper,1,0x0001,0x0001,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0000
+AND_OR_NOT,upper,3,0x0003,0x0003,1 + x1 + x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-000
+AND_OR_NOT,upper,5,0x0005,0x0003,1 + x0 + x2 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-00
+AND_OR_NOT,upper,7,0x0007,0x0007,1 + x0*x1 + x2 + x0*x1*x2 + x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),11-- --1- ---1
+AND_OR_NOT,upper,11,0x000b,0x000b,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),01-- --1- ---1
+AND_OR_NOT,upper,13,0x000d,0x000b,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),10-- --1- ---1
+AND_OR_NOT,upper,15,0x000f,0x000f,1 + x2 + x3 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--00
+AND_OR_NOT,upper,17,0x0011,0x0003,1 + x0 + x1 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00-0
+AND_OR_NOT,upper,19,0x0013,0x0007,1 + x1 + x0*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-1- ---1
+AND_OR_NOT,upper,21,0x0015,0x0007,1 + x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),1--- -11- ---1
+AND_OR_NOT,upper,27,0x001b,0x001b,1 + x1 + x0*x1 + x0*x2 + x3 + x1*x3 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),01-- 1-1- ---1
+AND_OR_NOT,upper,29,0x001d,0x001b,1 + x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),10-- -11- ---1
+AND_OR_NOT,upper,35,0x0023,0x000b,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-- 0-1- ---1
+AND_OR_NOT,upper,39,0x0027,0x001b,1 + x0*x1 + x2 + x0*x2 + x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- 0-1- ---1
+AND_OR_NOT,upper,49,0x0031,0x000b,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1-0- -1-- ---1
+AND_OR_NOT,upper,51,0x0033,0x000f,1 + x1 + x3 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-0
+AND_OR_NOT,upper,53,0x0035,0x001b,1 + x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-0- -11- ---1
+AND_OR_NOT,upper,63,0x003f,0x003f,1 + x1*x2 + x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),-11- ---1
+AND_OR_NOT,upper,69,0x0045,0x000b,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -01- ---1
+AND_OR_NOT,upper,71,0x0047,0x001b,1 + x0*x1 + x2 + x1*x2 + x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- -01- ---1
+AND_OR_NOT,upper,81,0x0051,0x000b,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -10- ---1
+AND_OR_NOT,upper,83,0x0053,0x001b,1 + x1 + x0*x2 + x1*x2 + x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-10- 1-1- ---1
+AND_OR_NOT,upper,85,0x0055,0x000f,1 + x0 + x3 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0--0
+AND_OR_NOT,upper,95,0x005f,0x003f,1 + x0*x2 + x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),1-1- ---1
+AND_OR_NOT,upper,119,0x0077,0x003f,1 + x0*x1 + x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),11-- ---1
+AND_OR_NOT,upper,127,0x007f,0x007f,1 + x0*x1*x2 + x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),111- ---1
+AND_OR_NOT,upper,128,0x0080,0x0080,x0*x1*x2 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),--0- -0-- 0--- ---1
+AND_OR_NOT,upper,136,0x0088,0x0088,x0*x1 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),-0-- 0--- ---1
+AND_OR_NOT,upper,138,0x008a,0x008a,x0 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- -01- ---1
+AND_OR_NOT,upper,140,0x008c,0x008a,x1 + x1*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 0-1- ---1
+AND_OR_NOT,upper,160,0x00a0,0x0088,x0*x2 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),--0- 0--- ---1
+AND_OR_NOT,upper,162,0x00a2,0x008a,x0 + x0*x1 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- -10- ---1
+AND_OR_NOT,upper,168,0x00a8,0x00a8,x0*x1 + x0*x2 + x0*x1*x2 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-00- 0--- ---1
+AND_OR_NOT,upper,170,0x00aa,0x00aa,x0 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0--- ---1
+AND_OR_NOT,upper,172,0x00ac,0x00ac,x1 + x0*x2 + x1*x2 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-00- 0-1- ---1
+AND_OR_NOT,upper,175,0x00af,0x00af,1 + x2 + x0*x2 + x3 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),0-1- ---1
+AND_OR_NOT,upper,176,0x00b0,0x008a,x2 + x1*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 01-- ---1
+AND_OR_NOT,upper,184,0x00b8,0x00ac,x0*x1 + x2 + x1*x2 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-00- 01-- ---1
+AND_OR_NOT,upper,187,0x00bb,0x00af,1 + x1 + x0*x1 + x3 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),01-- ---1
+AND_OR_NOT,upper,191,0x00bf,0x00bf,1 + x1*x2 + x0*x1*x2 + x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),011- ---1
+AND_OR_NOT,upper,192,0x00c0,0x0088,x1*x2 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),--0- -0-- ---1
+AND_OR_NOT,upper,196,0x00c4,0x008a,x1 + x0*x1 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 1-0- ---1
+AND_OR_NOT,upper,200,0x00c8,0x00a8,x0*x1 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0-0- ---1
+AND_OR_NOT,upper,202,0x00ca,0x00ac,x0 + x0*x2 + x1*x2 + x0*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0-0- -01- ---1
+AND_OR_NOT,upper,204,0x00cc,0x00aa,x1 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-0-- ---1
+AND_OR_NOT,upper,207,0x00cf,0x00af,1 + x2 + x1*x2 + x3 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-01- ---1
+AND_OR_NOT,upper,208,0x00d0,0x008a,x2 + x0*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 10-- ---1
+AND_OR_NOT,upper,216,0x00d8,0x00ac,x0*x1 + x2 + x0*x2 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0-0- 10-- ---1
+AND_OR_NOT,upper,221,0x00dd,0x00af,1 + x0 + x0*x1 + x3 + x0*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),10-- ---1
+AND_OR_NOT,upper,223,0x00df,0x00bf,1 + x0*x2 + x0*x1*x2 + x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),101- ---1
+AND_OR_NOT,upper,224,0x00e0,0x00a8,x0*x2 + x1*x2 + x0*x1*x2 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 00-- ---1
+AND_OR_NOT,upper,226,0x00e2,0x00ac,x0 + x0*x1 + x1*x2 + x0*x3 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),00-- -10- ---1
+AND_OR_NOT,upper,228,0x00e4,0x00ac,x1 + x0*x1 + x0*x2 + x1*x3 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),00-- 1-0- ---1
+AND_OR_NOT,upper,238,0x00ee,0x00ee,x0 + x1 + x0*x1 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),00-- ---1
+AND_OR_NOT,upper,239,0x00ef,0x00ef,1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),001- ---1
+AND_OR_NOT,upper,240,0x00f0,0x00aa,x2 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--0- ---1
+AND_OR_NOT,upper,243,0x00f3,0x00af,1 + x1 + x1*x2 + x3 + x1*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-10- ---1
+AND_OR_NOT,upper,245,0x00f5,0x00af,1 + x0 + x0*x2 + x3 + x0*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1-0- ---1
+AND_OR_NOT,upper,247,0x00f7,0x00bf,1 + x0*x1 + x0*x1*x2 + x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),110- ---1
+AND_OR_NOT,upper,250,0x00fa,0x00ee,x0 + x2 + x0*x2 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0-0- ---1
+AND_OR_NOT,upper,251,0x00fb,0x00ef,1 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),010- ---1
+AND_OR_NOT,upper,252,0x00fc,0x00ee,x1 + x2 + x1*x2 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-00- ---1
+AND_OR_NOT,upper,253,0x00fd,0x00ef,1 + x0 + x0*x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),100- ---1
+AND_OR_NOT,upper,254,0x00fe,0x00fe,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),000- ---1
+AND_OR_NOT,upper,255,0x00ff,0x00ff,1 + x3,1,1.0,2,1.0,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f);NOT-CNF(not f);NOT-DNF(not f),---1
+AND_OR_NOT,upper,257,0x0101,0x0003,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),000-
+AND_OR_NOT,upper,259,0x0103,0x0007,1 + x1 + x2 + x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),-1-- --1- 1--1
+AND_OR_NOT,upper,261,0x0105,0x0007,1 + x0 + x2 + x0*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),1--- --1- -1-1
+AND_OR_NOT,upper,267,0x010b,0x001b,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),01-- --1- 1--1
+AND_OR_NOT,upper,269,0x010d,0x001b,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),10-- --1- -1-1
+AND_OR_NOT,upper,273,0x0111,0x0007,1 + x0 + x1 + x0*x1 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),1--- -1-- --11
+AND_OR_NOT,upper,291,0x0123,0x001b,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-- 0-1- 1--1
+AND_OR_NOT,upper,305,0x0131,0x001b,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-0- -1-- --11
+AND_OR_NOT,upper,325,0x0145,0x001b,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- -01- -1-1
+AND_OR_NOT,upper,337,0x0151,0x001b,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- -10- --11
+AND_OR_NOT,upper,427,0x01ab,0x01ab,1 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),000- 1--0
+AND_OR_NOT,upper,461,0x01cd,0x01ab,1 + x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),000- -1-0
+AND_OR_NOT,upper,497,0x01f1,0x01ab,1 + x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),000- --10
+AND_OR_NOT,upper,511,0x01ff,0x01ff,1 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),---0 000-
+AND_OR_NOT,upper,515,0x0203,0x000b,1 + x1 + x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-- --1- 0--1
+AND_OR_NOT,upper,519,0x0207,0x001b,1 + x0*x1 + x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- --1- 0--1
+AND_OR_NOT,upper,531,0x0213,0x001b,1 + x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-1- 0--1
+AND_OR_NOT,upper,583,0x0247,0x0247,1 + x0*x1 + x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),11-- -01- 0--1
+AND_OR_NOT,upper,595,0x0253,0x0247,1 + x1 + x0*x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),-10- 1-1- 0--1
+AND_OR_NOT,upper,599,0x0257,0x0257,1 + x0*x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0--0 100-
+AND_OR_NOT,upper,767,0x02ff,0x02ff,1 + x3 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 100-
+AND_OR_NOT,upper,769,0x0301,0x000b,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--0 -1-- --1-
+AND_OR_NOT,upper,771,0x0303,0x000f,1 + x1 + x2 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-00-
+AND_OR_NOT,upper,773,0x0305,0x001b,1 + x0 + x2 + x0*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--0 --1- -1-1
+AND_OR_NOT,upper,783,0x030f,0x003f,1 + x2 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),--1- -1-1
+AND_OR_NOT,upper,785,0x0311,0x001b,1 + x0 + x1 + x0*x1 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--0 -1-- --11
+AND_OR_NOT,upper,819,0x0333,0x003f,1 + x1 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),-1-- --11
+AND_OR_NOT,upper,837,0x0345,0x0247,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),1--0 -01- -1-1
+AND_OR_NOT,upper,839,0x0347,0x0257,1 + x0*x1 + x2 + x1*x2 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-00- 01-0
+AND_OR_NOT,upper,849,0x0351,0x0247,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),1--0 -10- --11
+AND_OR_NOT,upper,851,0x0353,0x0257,1 + x1 + x0*x2 + x1*x2 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-00- 0-10
+AND_OR_NOT,upper,853,0x0355,0x0257,1 + x0 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0--0 -001
+AND_OR_NOT,upper,855,0x0357,0x0357,1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),-00- 0--0
+AND_OR_NOT,upper,939,0x03ab,0x03ab,1 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-00- 1--0
+AND_OR_NOT,upper,975,0x03cf,0x03cf,1 + x2 + x1*x2 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-00- -1-0
+AND_OR_NOT,upper,1011,0x03f3,0x03cf,1 + x1 + x1*x2 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-00- --10
+AND_OR_NOT,upper,1023,0x03ff,0x03ff,1 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),---0 -00-
+AND_OR_NOT,upper,1029,0x0405,0x000b,1 + x0 + x2 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- --1- -0-1
+AND_OR_NOT,upper,1031,0x0407,0x001b,1 + x0*x1 + x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- --1- -0-1
+AND_OR_NOT,upper,1045,0x0415,0x001b,1 + x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- -11- -0-1
+AND_OR_NOT,upper,1063,0x0427,0x0247,1 + x0*x1 + x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),11-- 0-1- -0-1
+AND_OR_NOT,upper,1077,0x0435,0x0247,1 + x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),1-0- -11- -0-1
+AND_OR_NOT,upper,1079,0x0437,0x0257,1 + x0*x1 + x1*x2 + x0*x1*x2 + x3 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-0 010-
+AND_OR_NOT,upper,1279,0x04ff,0x02ff,1 + x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 010-
+AND_OR_NOT,upper,1281,0x0501,0x000b,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -1-0 --1-
+AND_OR_NOT,upper,1283,0x0503,0x001b,1 + x1 + x2 + x1*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-0 --1- 1--1
+AND_OR_NOT,upper,1285,0x0505,0x000f,1 + x0 + x2 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-0-
+AND_OR_NOT,upper,1295,0x050f,0x003f,1 + x2 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),--1- 1--1
+AND_OR_NOT,upper,1297,0x0511,0x001b,1 + x0 + x1 + x0*x1 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- -1-0 --11
+AND_OR_NOT,upper,1315,0x0523,0x0247,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),-1-0 0-1- 1--1
+AND_OR_NOT,upper,1319,0x0527,0x0257,1 + x0*x1 + x2 + x0*x2 + x0*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0-0- 10-0
+AND_OR_NOT,upper,1329,0x0531,0x0247,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),1-0- -1-0 --11
+AND_OR_NOT,upper,1331,0x0533,0x0257,1 + x1 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-0 0-01
+AND_OR_NOT,upper,1333,0x0535,0x0257,1 + x0 + x0*x2 + x1*x2 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0-0- -010
+AND_OR_NOT,upper,1335,0x0537,0x0357,1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),-0-0 0-0-
+AND_OR_NOT,upper,1365,0x0555,0x003f,1 + x0 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),1--- --11
+AND_OR_NOT,upper,1455,0x05af,0x03cf,1 + x2 + x0*x2 + x0*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-0- 1--0
+AND_OR_NOT,upper,1485,0x05cd,0x03ab,1 + x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0-0- -1-0
+AND_OR_NOT,upper,1525,0x05f5,0x03cf,1 + x0 + x0*x2 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-0- --10
+AND_OR_NOT,upper,1535,0x05ff,0x03ff,1 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),---0 0-0-
+AND_OR_NOT,upper,1799,0x0707,0x003f,1 + x0*x1 + x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),11-- --1-
+AND_OR_NOT,upper,1807,0x070f,0x007f,1 + x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),--1- 11-1
+AND_OR_NOT,upper,1911,0x0777,0x0777,1 + x0*x1 + x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),11-- --11
+AND_OR_NOT,upper,2039,0x07f7,0x07f7,1 + x0*x1 + x0*x1*x2 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),110- --11
+AND_OR_NOT,upper,2048,0x0800,0x0080,x0*x1*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),---0 -0-- 0--- --1-
+AND_OR_NOT,upper,2056,0x0808,0x0088,x0*x1 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),-0-- 0--- --1-
+AND_OR_NOT,upper,2058,0x080a,0x008a,x0 + x0*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- --1- -0-1
+AND_OR_NOT,upper,2060,0x080c,0x008a,x1 + x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- --1- 0--1
+AND_OR_NOT,upper,2303,0x08ff,0x08ff,1 + x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),---0 110-
+AND_OR_NOT,upper,2535,0x09e7,0x09e7,1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x3 + x1*x3 + x0*x1*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,2560,0x0a00,0x0088,x0*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 0--- --1-
+AND_OR_NOT,upper,2562,0x0a02,0x008a,x0 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- -1-0 --1-
+AND_OR_NOT,upper,2568,0x0a08,0x00a8,x0*x1 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-0-0 0--- --1-
+AND_OR_NOT,upper,2570,0x0a0a,0x00aa,x0 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0--- --1-
+AND_OR_NOT,upper,2572,0x0a0c,0x00ac,x1 + x1*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-0-0 --1- 0--1
+AND_OR_NOT,upper,2575,0x0a0f,0x00af,1 + x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),--1- 0--1
+AND_OR_NOT,upper,2587,0x0a1b,0x01ab,1 + x1 + x0*x1 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),00-0 1-0-
+AND_OR_NOT,upper,2619,0x0a3b,0x03ab,1 + x1 + x0*x1 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-0 1-0-
+AND_OR_NOT,upper,2655,0x0a5f,0x03cf,1 + x0*x2 + x3 + x0*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0--0 1-0-
+AND_OR_NOT,upper,2762,0x0aca,0x0aca,x0 + x0*x2 + x1*x2 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),1-0- -110
+AND_OR_NOT,upper,2764,0x0acc,0x0aca,x1 + x0*x3 + x1*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),-1-0 1-01
+AND_OR_NOT,upper,2766,0x0ace,0x0ace,x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),1-0- -1-0
+AND_OR_NOT,upper,2815,0x0aff,0x0aff,1 + x3 + x0*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 1-0-
+AND_OR_NOT,upper,2816,0x0b00,0x008a,x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 01-- --1-
+AND_OR_NOT,upper,2824,0x0b08,0x00ac,x0*x1 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-0-0 01-- --1-
+AND_OR_NOT,upper,2827,0x0b0b,0x00af,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),01-- --1-
+AND_OR_NOT,upper,2831,0x0b0f,0x00bf,1 + x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),--1- 01-1
+AND_OR_NOT,upper,3003,0x0bbb,0x0bbb,1 + x1 + x0*x1 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),01-- --11
+AND_OR_NOT,upper,3072,0x0c00,0x0088,x1*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 -0-- --1-
+AND_OR_NOT,upper,3076,0x0c04,0x008a,x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 1--0 --1-
+AND_OR_NOT,upper,3080,0x0c08,0x00a8,x0*x1 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0--0 --1-
+AND_OR_NOT,upper,3082,0x0c0a,0x00ac,x0 + x0*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0--0 --1- -0-1
+AND_OR_NOT,upper,3084,0x0c0c,0x00aa,x1 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-0-- --1-
+AND_OR_NOT,upper,3087,0x0c0f,0x00af,1 + x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),--1- -0-1
+AND_OR_NOT,upper,3101,0x0c1d,0x01ab,1 + x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),00-0 -10-
+AND_OR_NOT,upper,3135,0x0c3f,0x03cf,1 + x1*x2 + x3 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-0 -10-
+AND_OR_NOT,upper,3165,0x0c5d,0x03ab,1 + x0 + x0*x1 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0--0 -10-
+AND_OR_NOT,upper,3242,0x0caa,0x0aca,x0 + x0*x3 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),1--0 -101
+AND_OR_NOT,upper,3244,0x0cac,0x0aca,x1 + x0*x2 + x1*x2 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),-10- 1-10
+AND_OR_NOT,upper,3246,0x0cae,0x0ace,x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),1--0 -10-
+AND_OR_NOT,upper,3327,0x0cff,0x0aff,1 + x3 + x1*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 -10-
+AND_OR_NOT,upper,3328,0x0d00,0x008a,x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 10-- --1-
+AND_OR_NOT,upper,3336,0x0d08,0x00ac,x0*x1 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0--0 10-- --1-
+AND_OR_NOT,upper,3341,0x0d0d,0x00af,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),10-- --1-
+AND_OR_NOT,upper,3343,0x0d0f,0x00bf,1 + x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),--1- 10-1
+AND_OR_NOT,upper,3549,0x0ddd,0x0bbb,1 + x0 + x0*x1 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),10-- --11
+AND_OR_NOT,upper,3584,0x0e00,0x00a8,x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 00-- --1-
+AND_OR_NOT,upper,3586,0x0e02,0x00ac,x0 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),00-- -1-0 --1-
+AND_OR_NOT,upper,3588,0x0e04,0x00ac,x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),00-- 1--0 --1-
+AND_OR_NOT,upper,3598,0x0e0e,0x00ee,x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),00-- --1-
+AND_OR_NOT,upper,3599,0x0e0f,0x00ef,1 + x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),--1- 00-1
+AND_OR_NOT,upper,3735,0x0e97,0x09e7,1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,3840,0x0f00,0x00aa,x3 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 --1-
+AND_OR_NOT,upper,3843,0x0f03,0x00af,1 + x1 + x2 + x1*x2 + x1*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-1-0 --1-
+AND_OR_NOT,upper,3845,0x0f05,0x00af,1 + x0 + x2 + x0*x2 + x0*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--0 --1-
+AND_OR_NOT,upper,3847,0x0f07,0x00bf,1 + x0*x1 + x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),11-0 --1-
+AND_OR_NOT,upper,3850,0x0f0a,0x00ee,x0 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--0 --1-
+AND_OR_NOT,upper,3851,0x0f0b,0x00ef,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),01-0 --1-
+AND_OR_NOT,upper,3852,0x0f0c,0x00ee,x1 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-0 --1-
+AND_OR_NOT,upper,3853,0x0f0d,0x00ef,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),10-0 --1-
+AND_OR_NOT,upper,3854,0x0f0e,0x00fe,x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),00-0 --1-
+AND_OR_NOT,upper,3855,0x0f0f,0x00ff,1 + x2,1,1.0,2,1.0,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f);NOT-CNF(not f);NOT-DNF(not f),--1-
+AND_OR_NOT,upper,3857,0x0f11,0x01ab,1 + x0 + x1 + x0*x1 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),00-0 --01
+AND_OR_NOT,upper,3871,0x0f1f,0x01ff,1 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),--0- 00-0
+AND_OR_NOT,upper,3887,0x0f2f,0x02ff,1 + x2 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- 10-0
+AND_OR_NOT,upper,3891,0x0f33,0x03cf,1 + x1 + x1*x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-0 --01
+AND_OR_NOT,upper,3903,0x0f3f,0x03ff,1 + x1*x2 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),--0- -0-0
+AND_OR_NOT,upper,3919,0x0f4f,0x02ff,1 + x2 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- 01-0
+AND_OR_NOT,upper,3925,0x0f55,0x03cf,1 + x0 + x0*x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0--0 --01
+AND_OR_NOT,upper,3935,0x0f5f,0x03ff,1 + x0*x2 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),--0- 0--0
+AND_OR_NOT,upper,3959,0x0f77,0x07f7,1 + x0*x1 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-0 --11
+AND_OR_NOT,upper,3983,0x0f8f,0x08ff,1 + x2 + x0*x1*x2 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 11-0
+AND_OR_NOT,upper,4015,0x0faf,0x0aff,1 + x2 + x0*x2 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- 1--0
+AND_OR_NOT,upper,4047,0x0fcf,0x0aff,1 + x2 + x1*x2 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- -1-0
+AND_OR_NOT,upper,4095,0x0fff,0x0fff,1 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 --0-
+AND_OR_NOT,upper,4113,0x1011,0x000b,1 + x0 + x1 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -1-- --01
+AND_OR_NOT,upper,4115,0x1013,0x001b,1 + x1 + x0*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-1- --01
+AND_OR_NOT,upper,4117,0x1015,0x001b,1 + x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- -11- --01
+AND_OR_NOT,upper,4123,0x101b,0x0247,1 + x1 + x0*x1 + x0*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),01-- 1-1- --01
+AND_OR_NOT,upper,4125,0x101d,0x0247,1 + x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),10-- -11- --01
+AND_OR_NOT,upper,4127,0x101f,0x0257,1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 001-
+AND_OR_NOT,upper,4351,0x10ff,0x02ff,1 + x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 001-
+AND_OR_NOT,upper,4353,0x1101,0x000b,1 + x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -1-- --10
+AND_OR_NOT,upper,4355,0x1103,0x001b,1 + x1 + x2 + x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-- --10 1--1
+AND_OR_NOT,upper,4357,0x1105,0x001b,1 + x0 + x2 + x0*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--- --10 -1-1
+AND_OR_NOT,upper,4363,0x110b,0x0247,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x0*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),01-- --10 1--1
+AND_OR_NOT,upper,4365,0x110d,0x0247,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-DNF(not f),NOT-DNF(not f),10-- --10 -1-1
+AND_OR_NOT,upper,4367,0x110f,0x0257,1 + x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 00-1
+AND_OR_NOT,upper,4369,0x1111,0x000f,1 + x0 + x1 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00--
+AND_OR_NOT,upper,4379,0x111b,0x0257,1 + x1 + x0*x1 + x0*x2 + x0*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),00-- 1-00
+AND_OR_NOT,upper,4381,0x111d,0x0257,1 + x0 + x0*x1 + x1*x2 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),00-- -100
+AND_OR_NOT,upper,4383,0x111f,0x0357,1 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),--00 00--
+AND_OR_NOT,upper,4403,0x1133,0x003f,1 + x1 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),-1-- 1--1
+AND_OR_NOT,upper,4437,0x1155,0x003f,1 + x0 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),1--- -1-1
+AND_OR_NOT,upper,4539,0x11bb,0x03cf,1 + x1 + x0*x1 + x0*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00-- 1--0
+AND_OR_NOT,upper,4573,0x11dd,0x03cf,1 + x0 + x0*x1 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00-- -1-0
+AND_OR_NOT,upper,4593,0x11f1,0x03ab,1 + x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),00-- --10
+AND_OR_NOT,upper,4607,0x11ff,0x03ff,1 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),---0 00--
+AND_OR_NOT,upper,4883,0x1313,0x003f,1 + x1 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-1-
+AND_OR_NOT,upper,4915,0x1333,0x007f,1 + x1 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-11
+AND_OR_NOT,upper,4959,0x135f,0x0777,1 + x0*x2 + x1*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),1-1- -1-1
+AND_OR_NOT,upper,5087,0x13df,0x07f7,1 + x0*x2 + x0*x1*x2 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),101- -1-1
+AND_OR_NOT,upper,5397,0x1515,0x003f,1 + x0 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-DNF(not f),NOT-DNF(not f),1--- -11-
+AND_OR_NOT,upper,5439,0x153f,0x0777,1 + x1*x2 + x0*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),-11- 1--1
+AND_OR_NOT,upper,5461,0x1555,0x007f,1 + x0 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-DNF(not f),NOT-DNF(not f),1--- -111
+AND_OR_NOT,upper,5567,0x15bf,0x07f7,1 + x1*x2 + x0*x1*x2 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),011- 1--1
+AND_OR_NOT,upper,5775,0x168f,0x168f,1 + x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,5783,0x1697,0x1697,1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3,15,6.25,10,6.25,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,5811,0x16b3,0x168f,1 + x1 + x0*x1*x2 + x3 + x0*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,5845,0x16d5,0x168f,1 + x0 + x0*x1*x2 + x3 + x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,6255,0x186f,0x168f,1 + x2 + x0*x2 + x1*x2 + x3 + x0*x1*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,6503,0x1967,0x1697,1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3,15,6.25,10,6.25,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,6939,0x1b1b,0x03cf,1 + x1 + x0*x1 + x0*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00-- 1-0-
+AND_OR_NOT,upper,7007,0x1b5f,0x07f7,1 + x0*x2 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-1- 01-1
+AND_OR_NOT,upper,7011,0x1b63,0x168f,1 + x1 + x2 + x0*x2 + x0*x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,7099,0x1bbb,0x1bbb,1 + x1 + x0*x1 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),01-- 1-11
+AND_OR_NOT,upper,7135,0x1bdf,0x1bdf,1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),00-- 1-0- -1-0
+AND_OR_NOT,upper,7167,0x1bff,0x1bff,1 + x1*x3 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 00-- 1-0-
+AND_OR_NOT,upper,7453,0x1d1d,0x03cf,1 + x0 + x0*x1 + x1*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),00-- -10-
+AND_OR_NOT,upper,7487,0x1d3f,0x07f7,1 + x1*x2 + x0*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-11- 10-1
+AND_OR_NOT,upper,7525,0x1d65,0x168f,1 + x0 + x2 + x1*x2 + x0*x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,7615,0x1dbf,0x1bdf,1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),00-- 1--0 -10-
+AND_OR_NOT,upper,7645,0x1ddd,0x1bbb,1 + x0 + x0*x1 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),10-- -111
+AND_OR_NOT,upper,7679,0x1dff,0x1bff,1 + x0*x3 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 00-- -10-
+AND_OR_NOT,upper,7951,0x1f0f,0x02ff,1 + x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- 00-1
+AND_OR_NOT,upper,7953,0x1f11,0x03ab,1 + x0 + x1 + x0*x1 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),00-- --01
+AND_OR_NOT,upper,7967,0x1f1f,0x03ff,1 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),--0- 00--
+AND_OR_NOT,upper,8127,0x1fbf,0x1bff,1 + x1*x2 + x0*x1*x2 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- 00-- 1--0
+AND_OR_NOT,upper,8159,0x1fdf,0x1bff,1 + x0*x2 + x0*x1*x2 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- 00-- -1-0
+AND_OR_NOT,upper,8191,0x1fff,0x1fff,1 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),---0 --0- 00--
+AND_OR_NOT,upper,8192,0x2000,0x0080,x0*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),---0 --0- 0--- -1--
+AND_OR_NOT,upper,8224,0x2020,0x0088,x0*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),--0- 0--- -1--
+AND_OR_NOT,upper,8226,0x2022,0x008a,x0 + x0*x1 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- -1-- --01
+AND_OR_NOT,upper,8240,0x2030,0x008a,x2 + x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- -1-- 0--1
+AND_OR_NOT,upper,8447,0x20ff,0x08ff,1 + x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),---0 101-
+AND_OR_NOT,upper,8667,0x21db,0x09e7,1 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x3 + x2*x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,8704,0x2200,0x0088,x0*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 0--- -1--
+AND_OR_NOT,upper,8706,0x2202,0x008a,x0 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),0--- -1-- --10
+AND_OR_NOT,upper,8736,0x2220,0x00a8,x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--00 0--- -1--
+AND_OR_NOT,upper,8738,0x2222,0x00aa,x0 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0--- -1--
+AND_OR_NOT,upper,8743,0x2227,0x01ab,1 + x0*x1 + x2 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0-00 10--
+AND_OR_NOT,upper,8751,0x222f,0x03ab,1 + x2 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--00 10--
+AND_OR_NOT,upper,8752,0x2230,0x00ac,x2 + x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),--00 -1-- 0--1
+AND_OR_NOT,upper,8755,0x2233,0x00af,1 + x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-1-- 0--1
+AND_OR_NOT,upper,8823,0x2277,0x03cf,1 + x0*x1 + x3 + x0*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0--0 10--
+AND_OR_NOT,upper,8930,0x22e2,0x0aca,x0 + x0*x1 + x1*x2 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),10-- -110
+AND_OR_NOT,upper,8944,0x22f0,0x0aca,x2 + x0*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),--10 10-1
+AND_OR_NOT,upper,8946,0x22f2,0x0ace,x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),10-- --10
+AND_OR_NOT,upper,8959,0x22ff,0x0aff,1 + x3 + x0*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 10--
+AND_OR_NOT,upper,8960,0x2300,0x008a,x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 -1-- 0-1-
+AND_OR_NOT,upper,8992,0x2320,0x00ac,x0*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),--00 0-1- -1--
+AND_OR_NOT,upper,8995,0x2323,0x00af,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-1-- 0-1-
+AND_OR_NOT,upper,9011,0x2333,0x00bf,1 + x1 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-- 0-11
+AND_OR_NOT,upper,9135,0x23af,0x0bbb,1 + x2 + x0*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),0-1- -1-1
+AND_OR_NOT,upper,9339,0x247b,0x168f,1 + x1 + x0*x1 + x1*x2 + x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,9563,0x255b,0x1697,1 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3,15,6.25,10,6.25,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,10023,0x2727,0x03cf,1 + x0*x1 + x2 + x0*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-0- 10--
+AND_OR_NOT,upper,10059,0x274b,0x168f,1 + x1 + x0*x1 + x2 + x1*x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,10103,0x2777,0x07f7,1 + x0*x1 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- 0-11
+AND_OR_NOT,upper,10159,0x27af,0x1bbb,1 + x2 + x0*x2 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),0-1- 11-1
+AND_OR_NOT,upper,10231,0x27f7,0x1bdf,1 + x0*x1 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),0-0- 10-- --10
+AND_OR_NOT,upper,10239,0x27ff,0x1bff,1 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 0-0- 10--
+AND_OR_NOT,upper,10815,0x2a3f,0x0bbb,1 + x1*x2 + x3 + x0*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-11- 0--1
+AND_OR_NOT,upper,10879,0x2a7f,0x1bbb,1 + x0*x1*x2 + x3 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),111- 0--1
+AND_OR_NOT,upper,11547,0x2d1b,0x09e7,1 + x1 + x0*x1 + x0*x2 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,11810,0x2e22,0x0aca,x0 + x0*x1 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),10-- -101
+AND_OR_NOT,upper,12047,0x2f0f,0x08ff,1 + x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 10-1
+AND_OR_NOT,upper,12064,0x2f20,0x0aca,x0*x2 + x0*x1*x2 + x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),101- --01
+AND_OR_NOT,upper,12066,0x2f22,0x0ace,x0 + x0*x1 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),10-- --01
+AND_OR_NOT,upper,12079,0x2f2f,0x0aff,1 + x2 + x0*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- 10--
+AND_OR_NOT,upper,12151,0x2f77,0x1bdf,1 + x0*x1 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),0--0 10-- --01
+AND_OR_NOT,upper,12159,0x2f7f,0x1bff,1 + x0*x1*x2 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- 0--0 10--
+AND_OR_NOT,upper,12287,0x2fff,0x2fff,1 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 --0- 10--
+AND_OR_NOT,upper,12288,0x3000,0x0088,x2*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 --0- -1--
+AND_OR_NOT,upper,12304,0x3010,0x008a,x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 1--0 -1--
+AND_OR_NOT,upper,12320,0x3020,0x00a8,x0*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 0--0 -1--
+AND_OR_NOT,upper,12322,0x3022,0x00ac,x0 + x0*x1 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0--0 -1-- --01
+AND_OR_NOT,upper,12336,0x3030,0x00aa,x2 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--0- -1--
+AND_OR_NOT,upper,12339,0x3033,0x00af,1 + x1 + x3 + x1*x3 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-1-- --01
+AND_OR_NOT,upper,12341,0x3035,0x01ab,1 + x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0-00 -01-
+AND_OR_NOT,upper,12351,0x303f,0x03cf,1 + x1*x2 + x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--00 -01-
+AND_OR_NOT,upper,12405,0x3075,0x03ab,1 + x0 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0--0 -01-
+AND_OR_NOT,upper,12458,0x30aa,0x0aca,x0 + x0*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),1--0 -011
+AND_OR_NOT,upper,12472,0x30b8,0x0aca,x0*x1 + x2 + x1*x2 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),11-0 -01-
+AND_OR_NOT,upper,12474,0x30ba,0x0ace,x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),1--0 -01-
+AND_OR_NOT,upper,12543,0x30ff,0x0aff,1 + x3 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 -01-
+AND_OR_NOT,upper,12544,0x3100,0x008a,x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 1-0- -1--
+AND_OR_NOT,upper,12576,0x3120,0x00ac,x0*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0--0 1-0- -1--
+AND_OR_NOT,upper,12593,0x3131,0x00af,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1-0- -1--
+AND_OR_NOT,upper,12595,0x3133,0x00bf,1 + x1 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-01
+AND_OR_NOT,upper,12789,0x31f5,0x0bbb,1 + x0 + x0*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1-0- -1-1
+AND_OR_NOT,upper,12800,0x3200,0x00a8,x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 0-0- -1--
+AND_OR_NOT,upper,12802,0x3202,0x00ac,x0 + x0*x1 + x0*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0-0- -1-- --10
+AND_OR_NOT,upper,12816,0x3210,0x00ac,x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),0-0- 1--0 -1--
+AND_OR_NOT,upper,12850,0x3232,0x00ee,x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0-0- -1--
+AND_OR_NOT,upper,12851,0x3233,0x00ef,1 + x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),-1-- 0-01
+AND_OR_NOT,upper,12951,0x3297,0x09e7,1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,13056,0x3300,0x00aa,x3 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 -1--
+AND_OR_NOT,upper,13059,0x3303,0x00af,1 + x1 + x2 + x1*x2 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),-1-- --10
+AND_OR_NOT,upper,13061,0x3305,0x01ab,1 + x0 + x2 + x0*x2 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),0-00 -0-1
+AND_OR_NOT,upper,13071,0x330f,0x03cf,1 + x2 + x1*x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--00 -0-1
+AND_OR_NOT,upper,13073,0x3311,0x00af,1 + x0 + x1 + x0*x1 + x0*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--0 -1--
+AND_OR_NOT,upper,13075,0x3313,0x00bf,1 + x1 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-- 1-10
+AND_OR_NOT,upper,13090,0x3322,0x00ee,x0 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--0 -1--
+AND_OR_NOT,upper,13091,0x3323,0x00ef,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),-1-- 0-10
+AND_OR_NOT,upper,13104,0x3330,0x00ee,x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--00 -1--
+AND_OR_NOT,upper,13105,0x3331,0x00ef,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),1-00 -1--
+AND_OR_NOT,upper,13106,0x3332,0x00fe,x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),0-00 -1--
+AND_OR_NOT,upper,13107,0x3333,0x00ff,1 + x1,1,1.0,2,1.0,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f);NOT-CNF(not f);NOT-DNF(not f),-1--
+AND_OR_NOT,upper,13111,0x3337,0x01ff,1 + x0*x1 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-00
+AND_OR_NOT,upper,13115,0x333b,0x02ff,1 + x1 + x0*x1 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-- 1-00
+AND_OR_NOT,upper,13119,0x333f,0x03ff,1 + x1*x2 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),--00 -0--
+AND_OR_NOT,upper,13141,0x3355,0x03cf,1 + x0 + x0*x3 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0--0 -0-1
+AND_OR_NOT,upper,13151,0x335f,0x07f7,1 + x0*x2 + x1*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-10 -1-1
+AND_OR_NOT,upper,13171,0x3373,0x02ff,1 + x1 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-10
+AND_OR_NOT,upper,13175,0x3377,0x03ff,1 + x0*x1 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),-0-- 0--0
+AND_OR_NOT,upper,13235,0x33b3,0x08ff,1 + x1 + x0*x1*x2 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1-10
+AND_OR_NOT,upper,13243,0x33bb,0x0aff,1 + x1 + x0*x1 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- 1--0
+AND_OR_NOT,upper,13299,0x33f3,0x0aff,1 + x1 + x1*x2 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- --10
+AND_OR_NOT,upper,13311,0x33ff,0x0fff,1 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 -0--
+AND_OR_NOT,upper,13621,0x3535,0x03cf,1 + x0 + x0*x2 + x1*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),0-0- -01-
+AND_OR_NOT,upper,13631,0x353f,0x07f7,1 + x1*x2 + x0*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-11- 1-01
+AND_OR_NOT,upper,13657,0x3559,0x168f,1 + x0 + x1 + x1*x2 + x1*x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,13759,0x35bf,0x1bdf,1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),0-0- 1--0 -01-
+AND_OR_NOT,upper,13813,0x35f5,0x1bbb,1 + x0 + x0*x2 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-0- -111
+AND_OR_NOT,upper,13823,0x35ff,0x1bff,1 + x0*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 0-0- -01-
+AND_OR_NOT,upper,14085,0x3705,0x03ab,1 + x0 + x2 + x0*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0-0- -0-1
+AND_OR_NOT,upper,14131,0x3733,0x02ff,1 + x1 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-01
+AND_OR_NOT,upper,14135,0x3737,0x03ff,1 + x0*x1 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-0-
+AND_OR_NOT,upper,14271,0x37bf,0x1bff,1 + x1*x2 + x0*x1*x2 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-0- 1--0
+AND_OR_NOT,upper,14327,0x37f7,0x1bff,1 + x0*x1 + x0*x1*x2 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-- 0-0- --10
+AND_OR_NOT,upper,14335,0x37ff,0x1fff,1 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),---0 -0-- 0-0-
+AND_OR_NOT,upper,14631,0x3927,0x09e7,1 + x0*x1 + x2 + x0*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,14858,0x3a0a,0x0aca,x0 + x0*x2 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),1-0- -011
+AND_OR_NOT,upper,15112,0x3b08,0x0aca,x0*x1 + x0*x1*x2 + x3 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),110- -0-1
+AND_OR_NOT,upper,15114,0x3b0a,0x0ace,x0 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),1-0- -0-1
+AND_OR_NOT,upper,15155,0x3b33,0x08ff,1 + x1 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1-01
+AND_OR_NOT,upper,15163,0x3b3b,0x0aff,1 + x1 + x0*x1 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- 1-0-
+AND_OR_NOT,upper,15199,0x3b5f,0x1bdf,1 + x0*x2 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),0--0 1-0- -0-1
+AND_OR_NOT,upper,15231,0x3b7f,0x1bff,1 + x0*x1*x2 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-- 0--0 1-0-
+AND_OR_NOT,upper,15359,0x3bff,0x2fff,1 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 -0-- 1-0-
+AND_OR_NOT,upper,16143,0x3f0f,0x0aff,1 + x2 + x2*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- -0-1
+AND_OR_NOT,upper,16149,0x3f15,0x0bbb,1 + x0 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--0 -11-
+AND_OR_NOT,upper,16179,0x3f33,0x0aff,1 + x1 + x1*x3 + x1*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- --01
+AND_OR_NOT,upper,16191,0x3f3f,0x0fff,1 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--0- -0--
+AND_OR_NOT,upper,16213,0x3f55,0x1bbb,1 + x0 + x0*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1--0 -111
+AND_OR_NOT,upper,16223,0x3f5f,0x1bff,1 + x0*x2 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- 0--0 -0-1
+AND_OR_NOT,upper,16247,0x3f77,0x1bff,1 + x0*x1 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-- 0--0 --01
+AND_OR_NOT,upper,16255,0x3f7f,0x1fff,1 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),--0- -0-- 0--0
+AND_OR_NOT,upper,16319,0x3fbf,0x2fff,1 + x1*x2 + x0*x1*x2 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- -0-- 1--0
+AND_OR_NOT,upper,16383,0x3fff,0x3fff,1 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 --0- -0--
+AND_OR_NOT,upper,16384,0x4000,0x0080,x1*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),---0 --0- -0-- 1---
+AND_OR_NOT,upper,16448,0x4040,0x0088,x1*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),--0- -0-- 1---
+AND_OR_NOT,upper,16452,0x4044,0x008a,x1 + x0*x1 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 1--- --01
+AND_OR_NOT,upper,16464,0x4050,0x008a,x2 + x0*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 1--- -0-1
+AND_OR_NOT,upper,16639,0x40ff,0x08ff,1 + x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),---0 011-
+AND_OR_NOT,upper,16829,0x41bd,0x09e7,1 + x0 + x0*x1 + x0*x2 + x1*x2 + x1*x3 + x2*x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,17021,0x427d,0x168f,1 + x0 + x0*x1 + x0*x2 + x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,17213,0x433d,0x1697,1 + x0 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3,15,6.25,10,6.25,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,17408,0x4400,0x0088,x1*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 -0-- 1---
+AND_OR_NOT,upper,17412,0x4404,0x008a,x1 + x0*x1 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 1--- --10
+AND_OR_NOT,upper,17472,0x4440,0x00a8,x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--00 -0-- 1---
+AND_OR_NOT,upper,17476,0x4444,0x00aa,x1 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-0-- 1---
+AND_OR_NOT,upper,17479,0x4447,0x01ab,1 + x0*x1 + x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-000 01--
+AND_OR_NOT,upper,17487,0x444f,0x03ab,1 + x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--00 01--
+AND_OR_NOT,upper,17488,0x4450,0x00ac,x2 + x0*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),--00 1--- -0-1
+AND_OR_NOT,upper,17493,0x4455,0x00af,1 + x0 + x3 + x0*x3 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- -0-1
+AND_OR_NOT,upper,17527,0x4477,0x03cf,1 + x0*x1 + x3 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-0 01--
+AND_OR_NOT,upper,17636,0x44e4,0x0aca,x1 + x0*x1 + x0*x2 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),01-- 1-10
+AND_OR_NOT,upper,17648,0x44f0,0x0aca,x2 + x1*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),--10 01-1
+AND_OR_NOT,upper,17652,0x44f4,0x0ace,x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),01-- --10
+AND_OR_NOT,upper,17663,0x44ff,0x0aff,1 + x3 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 01--
+AND_OR_NOT,upper,17664,0x4500,0x008a,x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 1--- -01-
+AND_OR_NOT,upper,17728,0x4540,0x00ac,x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),--00 -01- 1---
+AND_OR_NOT,upper,17733,0x4545,0x00af,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- -01-
+AND_OR_NOT,upper,17749,0x4555,0x00bf,1 + x0 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -011
+AND_OR_NOT,upper,17871,0x45cf,0x0bbb,1 + x2 + x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-01- 1--1
+AND_OR_NOT,upper,18221,0x472d,0x168f,1 + x0 + x0*x1 + x2 + x0*x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,18247,0x4747,0x03cf,1 + x0*x1 + x2 + x1*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-00- 01--
+AND_OR_NOT,upper,18295,0x4777,0x07f7,1 + x0*x1 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),11-- -011
+AND_OR_NOT,upper,18383,0x47cf,0x1bbb,1 + x2 + x1*x2 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-01- 11-1
+AND_OR_NOT,upper,18423,0x47f7,0x1bdf,1 + x0*x1 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),-00- 01-- --10
+AND_OR_NOT,upper,18431,0x47ff,0x1bff,1 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 -00- 01--
+AND_OR_NOT,upper,19229,0x4b1d,0x09e7,1 + x0 + x0*x1 + x1*x2 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,19551,0x4c5f,0x0bbb,1 + x0*x2 + x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1-1- -0-1
+AND_OR_NOT,upper,19583,0x4c7f,0x1bbb,1 + x0*x1*x2 + x3 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),111- -0-1
+AND_OR_NOT,upper,20036,0x4e44,0x0aca,x1 + x0*x1 + x0*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),01-- 1-01
+AND_OR_NOT,upper,20239,0x4f0f,0x08ff,1 + x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 01-1
+AND_OR_NOT,upper,20288,0x4f40,0x0aca,x1*x2 + x0*x1*x2 + x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),011- --01
+AND_OR_NOT,upper,20292,0x4f44,0x0ace,x1 + x0*x1 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),01-- --01
+AND_OR_NOT,upper,20303,0x4f4f,0x0aff,1 + x2 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- 01--
+AND_OR_NOT,upper,20343,0x4f77,0x1bdf,1 + x0*x1 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),-0-0 01-- --01
+AND_OR_NOT,upper,20351,0x4f7f,0x1bff,1 + x0*x1*x2 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- -0-0 01--
+AND_OR_NOT,upper,20479,0x4fff,0x2fff,1 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 --0- 01--
+AND_OR_NOT,upper,20480,0x5000,0x0088,x2*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 --0- 1---
+AND_OR_NOT,upper,20496,0x5010,0x008a,x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 1--- -1-0
+AND_OR_NOT,upper,20544,0x5040,0x00a8,x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- -0-0 1---
+AND_OR_NOT,upper,20548,0x5044,0x00ac,x1 + x0*x1 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-0-0 1--- --01
+AND_OR_NOT,upper,20560,0x5050,0x00aa,x2 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--0- 1---
+AND_OR_NOT,upper,20563,0x5053,0x01ab,1 + x1 + x0*x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-000 0-1-
+AND_OR_NOT,upper,20565,0x5055,0x00af,1 + x0 + x3 + x0*x3 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- --01
+AND_OR_NOT,upper,20575,0x505f,0x03cf,1 + x0*x2 + x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--00 0-1-
+AND_OR_NOT,upper,20595,0x5073,0x03ab,1 + x1 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-0 0-1-
+AND_OR_NOT,upper,20684,0x50cc,0x0aca,x1 + x1*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),-1-0 0-11
+AND_OR_NOT,upper,20696,0x50d8,0x0aca,x0*x1 + x2 + x0*x2 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),11-0 0-1-
+AND_OR_NOT,upper,20700,0x50dc,0x0ace,x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),-1-0 0-1-
+AND_OR_NOT,upper,20735,0x50ff,0x0aff,1 + x3 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),---0 0-1-
+AND_OR_NOT,upper,20736,0x5100,0x008a,x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,CNF(f),CNF(f),---0 1--- -10-
+AND_OR_NOT,upper,20800,0x5140,0x00ac,x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-0-0 -10- 1---
+AND_OR_NOT,upper,20817,0x5151,0x00af,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- -10-
+AND_OR_NOT,upper,20821,0x5155,0x00bf,1 + x0 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -101
+AND_OR_NOT,upper,20979,0x51f3,0x0bbb,1 + x1 + x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-10- 1--1
+AND_OR_NOT,upper,21305,0x5339,0x168f,1 + x0 + x1 + x0*x2 + x0*x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,21331,0x5353,0x03cf,1 + x1 + x0*x2 + x1*x2,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-00- 0-1-
+AND_OR_NOT,upper,21343,0x535f,0x07f7,1 + x0*x2 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),1-1- -101
+AND_OR_NOT,upper,21471,0x53df,0x1bdf,1 + x0*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),-00- -1-0 0-1-
+AND_OR_NOT,upper,21491,0x53f3,0x1bbb,1 + x1 + x1*x2 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-10- 1-11
+AND_OR_NOT,upper,21503,0x53ff,0x1bff,1 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),---0 -00- 0-1-
+AND_OR_NOT,upper,21504,0x5400,0x00a8,x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 -00- 1---
+AND_OR_NOT,upper,21508,0x5404,0x00ac,x1 + x0*x1 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-00- 1--- --10
+AND_OR_NOT,upper,21520,0x5410,0x00ac,x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,CNF(f),CNF(f),-00- -1-0 1---
+AND_OR_NOT,upper,21588,0x5454,0x00ee,x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-00- 1---
+AND_OR_NOT,upper,21589,0x5455,0x00ef,1 + x0 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),1--- -001
+AND_OR_NOT,upper,21655,0x5497,0x09e7,1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,21760,0x5500,0x00aa,x3 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 1---
+AND_OR_NOT,upper,21763,0x5503,0x01ab,1 + x1 + x2 + x1*x2 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-000 0--1
+AND_OR_NOT,upper,21765,0x5505,0x00af,1 + x0 + x2 + x0*x2 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- --10
+AND_OR_NOT,upper,21775,0x550f,0x03cf,1 + x2 + x0*x3 + x2*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--00 0--1
+AND_OR_NOT,upper,21777,0x5511,0x00af,1 + x0 + x1 + x0*x1 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,CNF(f),CNF(f);NOT-DNF(not f),1--- -1-0
+AND_OR_NOT,upper,21781,0x5515,0x00bf,1 + x0 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),1--- -110
+AND_OR_NOT,upper,21811,0x5533,0x03cf,1 + x1 + x0*x3 + x1*x3,5,2.25,4,2.25,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-0 0--1
+AND_OR_NOT,upper,21823,0x553f,0x07f7,1 + x1*x2 + x0*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-110 1--1
+AND_OR_NOT,upper,21828,0x5544,0x00ee,x1 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-0 1---
+AND_OR_NOT,upper,21829,0x5545,0x00ef,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),1--- -010
+AND_OR_NOT,upper,21840,0x5550,0x00ee,x2 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--00 1---
+AND_OR_NOT,upper,21841,0x5551,0x00ef,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,CNF(f),CNF(f),1--- -100
+AND_OR_NOT,upper,21844,0x5554,0x00fe,x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),-000 1---
+AND_OR_NOT,upper,21845,0x5555,0x00ff,1 + x0,1,1.0,2,1.0,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f);NOT-CNF(not f);NOT-DNF(not f),1---
+AND_OR_NOT,upper,21847,0x5557,0x01ff,1 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),-000 0---
+AND_OR_NOT,upper,21853,0x555d,0x02ff,1 + x0 + x0*x1 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0--- -100
+AND_OR_NOT,upper,21855,0x555f,0x03ff,1 + x0*x2 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),--00 0---
+AND_OR_NOT,upper,21877,0x5575,0x02ff,1 + x0 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0--- -010
+AND_OR_NOT,upper,21879,0x5577,0x03ff,1 + x0*x1 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),-0-0 0---
+AND_OR_NOT,upper,21973,0x55d5,0x08ff,1 + x0 + x0*x1*x2 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -110
+AND_OR_NOT,upper,21981,0x55dd,0x0aff,1 + x0 + x0*x1 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- -1-0
+AND_OR_NOT,upper,22005,0x55f5,0x0aff,1 + x0 + x0*x2 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- --10
+AND_OR_NOT,upper,22015,0x55ff,0x0fff,1 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 0---
+AND_OR_NOT,upper,22275,0x5703,0x03ab,1 + x1 + x2 + x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-00- 0--1
+AND_OR_NOT,upper,22357,0x5755,0x02ff,1 + x0 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),0--- -001
+AND_OR_NOT,upper,22359,0x5757,0x03ff,1 + x0*x1 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f),-00- 0---
+AND_OR_NOT,upper,22495,0x57df,0x1bff,1 + x0*x2 + x0*x1*x2 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-00- -1-0 0---
+AND_OR_NOT,upper,22519,0x57f7,0x1bff,1 + x0*x1 + x0*x1*x2 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-00- 0--- --10
+AND_OR_NOT,upper,22527,0x57ff,0x1fff,1 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),---0 -00- 0---
+AND_OR_NOT,upper,22855,0x5947,0x09e7,1 + x0*x1 + x2 + x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,23564,0x5c0c,0x0aca,x1 + x1*x2 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),-10- 0-11
+AND_OR_NOT,upper,23816,0x5d08,0x0aca,x0*x1 + x0*x1*x2 + x3 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),110- 0--1
+AND_OR_NOT,upper,23820,0x5d0c,0x0ace,x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),-10- 0--1
+AND_OR_NOT,upper,23871,0x5d3f,0x1bdf,1 + x1*x2 + x0*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),-0-0 -10- 0--1
+AND_OR_NOT,upper,23893,0x5d55,0x08ff,1 + x0 + x0*x1*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -101
+AND_OR_NOT,upper,23901,0x5d5d,0x0aff,1 + x0 + x0*x1 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- -10-
+AND_OR_NOT,upper,23935,0x5d7f,0x1bff,1 + x0*x1*x2 + x0*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-0 -10- 0---
+AND_OR_NOT,upper,24063,0x5dff,0x2fff,1 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 0--- -10-
+AND_OR_NOT,upper,24335,0x5f0f,0x0aff,1 + x2 + x2*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),--0- 0--1
+AND_OR_NOT,upper,24339,0x5f13,0x0bbb,1 + x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),-1-0 1-1-
+AND_OR_NOT,upper,24371,0x5f33,0x1bbb,1 + x1 + x1*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),-1-0 1-11
+AND_OR_NOT,upper,24383,0x5f3f,0x1bff,1 + x1*x2 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--0- -0-0 0--1
+AND_OR_NOT,upper,24405,0x5f55,0x0aff,1 + x0 + x0*x3 + x0*x2*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- --01
+AND_OR_NOT,upper,24415,0x5f5f,0x0fff,1 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--0- 0---
+AND_OR_NOT,upper,24439,0x5f77,0x1bff,1 + x0*x1 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),-0-0 0--- --01
+AND_OR_NOT,upper,24447,0x5f7f,0x1fff,1 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),--0- -0-0 0---
+AND_OR_NOT,upper,24543,0x5fdf,0x2fff,1 + x0*x2 + x0*x1*x2 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- 0--- -1-0
+AND_OR_NOT,upper,24575,0x5fff,0x3fff,1 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 --0- 0---
+AND_OR_NOT,upper,25397,0x6335,0x09e7,1 + x0 + x0*x2 + x1*x2 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,25939,0x6553,0x09e7,1 + x1 + x0*x2 + x1*x2 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,15,5.0625,10,5.0625,16.0,empirical decision-tree envelope,,,,
+AND_OR_NOT,upper,28791,0x7077,0x0bbb,1 + x0*x1 + x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),11-- --01
+AND_OR_NOT,upper,28799,0x707f,0x1bbb,1 + x0*x1*x2 + x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),111- --01
+AND_OR_NOT,upper,29264,0x7250,0x0aca,x2 + x0*x2 + x0*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),0-1- 10-1
+AND_OR_NOT,upper,29491,0x7333,0x08ff,1 + x1 + x1*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 0-11
+AND_OR_NOT,upper,29504,0x7340,0x0aca,x1*x2 + x0*x1*x2 + x3 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),011- -0-1
+AND_OR_NOT,upper,29520,0x7350,0x0ace,x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),0-1- -0-1
+AND_OR_NOT,upper,29535,0x735f,0x1bdf,1 + x0*x2 + x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),--00 0-1- -0-1
+AND_OR_NOT,upper,29555,0x7373,0x0aff,1 + x1 + x1*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- 0-1-
+AND_OR_NOT,upper,29567,0x737f,0x1bff,1 + x0*x1*x2 + x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 -0-- 0-1-
+AND_OR_NOT,upper,29695,0x73ff,0x2fff,1 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 -0-- 0-1-
+AND_OR_NOT,upper,29744,0x7430,0x0aca,x2 + x1*x2 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),-01- 01-1
+AND_OR_NOT,upper,29984,0x7520,0x0aca,x0*x2 + x0*x1*x2 + x3 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,DNF(f),DNF(f),101- 0--1
+AND_OR_NOT,upper,30000,0x7530,0x0ace,x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,DNF(f),DNF(f),-01- 0--1
+AND_OR_NOT,upper,30015,0x753f,0x1bdf,1 + x1*x2 + x0*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,8,2.6181818181818177,7,2.6181818181818177,9.0,exact prime cover,9,NOT-CNF(not f),NOT-CNF(not f),--00 -01- 0--1
+AND_OR_NOT,upper,30037,0x7555,0x08ff,1 + x0 + x0*x2*x3 + x0*x1*x2*x3,5,1.5873015873015874,5,1.5873015873015874,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -011
+AND_OR_NOT,upper,30069,0x7575,0x0aff,1 + x0 + x0*x2 + x0*x1*x2,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- -01-
+AND_OR_NOT,upper,30079,0x757f,0x1bff,1 + x0*x1*x2 + x0*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 -01- 0---
+AND_OR_NOT,upper,30207,0x75ff,0x2fff,1 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),---0 0--- -01-
+AND_OR_NOT,upper,30471,0x7707,0x0bbb,1 + x0*x1 + x2 + x0*x1*x2 + x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,NOT-DNF(not f),NOT-DNF(not f),11-- --10
+AND_OR_NOT,upper,30479,0x770f,0x1bbb,1 + x2 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,NOT-DNF(not f),NOT-DNF(not f),--10 11-1
+AND_OR_NOT,upper,30515,0x7733,0x0aff,1 + x1 + x1*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),-0-- 0--1
+AND_OR_NOT,upper,30527,0x773f,0x1bff,1 + x1*x2 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 -0-- 0--1
+AND_OR_NOT,upper,30549,0x7755,0x0aff,1 + x0 + x0*x3 + x0*x1*x3,4,1.6666666666666667,4,1.6666666666666667,5.0,exact prime cover,5,DNF(f),DNF(f);NOT-CNF(not f),0--- -0-1
+AND_OR_NOT,upper,30559,0x775f,0x1bff,1 + x0*x2 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,NOT-CNF(not f),NOT-CNF(not f),--00 0--- -0-1
+AND_OR_NOT,upper,30583,0x7777,0x0fff,1 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),-0-- 0---
+AND_OR_NOT,upper,30591,0x777f,0x1fff,1 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f),--00 -0-- 0---
+AND_OR_NOT,upper,30711,0x77f7,0x2fff,1 + x0*x1 + x0*x1*x2 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-- 0--- --10
+AND_OR_NOT,upper,30719,0x77ff,0x3fff,1 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 -0-- 0---
+AND_OR_NOT,upper,32575,0x7f3f,0x2fff,1 + x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- -0-- 0--1
+AND_OR_NOT,upper,32607,0x7f5f,0x2fff,1 + x0*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),--0- 0--- -0-1
+AND_OR_NOT,upper,32631,0x7f77,0x2fff,1 + x0*x1 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,NOT-CNF(not f),NOT-CNF(not f),-0-- 0--- --01
+AND_OR_NOT,upper,32639,0x7f7f,0x3fff,1 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),--0- -0-- 0---
+AND_OR_NOT,upper,32767,0x7fff,0x7fff,1 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,NOT-CNF(not f),NOT-CNF(not f);NOT-DNF(not f),---0 --0- -0-- 0---
+AND_OR_NOT,upper,32768,0x8000,0x7fff,x0*x1*x2*x3,3,1.0666666666666669,5,1.0666666666666669,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),---0 --0- -0-- 0---
+AND_OR_NOT,upper,32896,0x8080,0x3fff,x0*x1*x2,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--0- -0-- 0---
+AND_OR_NOT,upper,32904,0x8088,0x2fff,x0*x1 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0--- --01
+AND_OR_NOT,upper,32928,0x80a0,0x2fff,x0*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 0--- -0-1
+AND_OR_NOT,upper,32960,0x80c0,0x2fff,x1*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- -0-- 0--1
+AND_OR_NOT,upper,33023,0x80ff,0x2aaa,1 + x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),---0 111-
+AND_OR_NOT,upper,34816,0x8800,0x3fff,x0*x1*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 -0-- 0---
+AND_OR_NOT,upper,34824,0x8808,0x2fff,x0*x1 + x0*x1*x2 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0--- --10
+AND_OR_NOT,upper,34944,0x8880,0x1fff,x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),--00 -0-- 0---
+AND_OR_NOT,upper,34952,0x8888,0x0fff,x0*x1,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),-0-- 0---
+AND_OR_NOT,upper,34976,0x88a0,0x1bff,x0*x2 + x0*x1*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--00 0--- -0-1
+AND_OR_NOT,upper,34986,0x88aa,0x0aff,x0 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- -0-1
+AND_OR_NOT,upper,35008,0x88c0,0x1bff,x1*x2 + x0*x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--00 -0-- 0--1
+AND_OR_NOT,upper,35020,0x88cc,0x0aff,x1 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- 0--1
+AND_OR_NOT,upper,35056,0x88f0,0x1bbb,x2 + x0*x1*x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),--10 11-1
+AND_OR_NOT,upper,35064,0x88f8,0x0bbb,x0*x1 + x2 + x0*x1*x2 + x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),11-- --10
+AND_OR_NOT,upper,35071,0x88ff,0x0aaa,1 + x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),---0 11--
+AND_OR_NOT,upper,35328,0x8a00,0x2fff,x0*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 0--- -01-
+AND_OR_NOT,upper,35456,0x8a80,0x1bff,x0*x1*x2 + x0*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--00 -01- 0---
+AND_OR_NOT,upper,35466,0x8a8a,0x0aff,x0 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- -01-
+AND_OR_NOT,upper,35520,0x8ac0,0x1bdf,x1*x2 + x0*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),--00 -01- 0--1
+AND_OR_NOT,upper,35535,0x8acf,0x0ace,1 + x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),-01- 0--1
+AND_OR_NOT,upper,35840,0x8c00,0x2fff,x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 -0-- 0-1-
+AND_OR_NOT,upper,35968,0x8c80,0x1bff,x0*x1*x2 + x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--00 -0-- 0-1-
+AND_OR_NOT,upper,35980,0x8c8c,0x0aff,x1 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- 0-1-
+AND_OR_NOT,upper,36000,0x8ca0,0x1bdf,x0*x2 + x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),--00 0-1- -0-1
+AND_OR_NOT,upper,36015,0x8caf,0x0ace,1 + x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),0-1- -0-1
+AND_OR_NOT,upper,36623,0x8f0f,0x2aaa,1 + x2 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),--0- 11-1
+AND_OR_NOT,upper,36736,0x8f80,0x1bbb,x0*x1*x2 + x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),111- --01
+AND_OR_NOT,upper,36744,0x8f88,0x0bbb,x0*x1 + x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),11-- --01
+AND_OR_NOT,upper,36751,0x8f8f,0x0aaa,1 + x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),--0- 11--
+AND_OR_NOT,upper,40960,0xa000,0x3fff,x0*x2*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 --0- 0---
+AND_OR_NOT,upper,40992,0xa020,0x2fff,x0*x2 + x0*x1*x2 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 0--- -1-0
+AND_OR_NOT,upper,41088,0xa080,0x1fff,x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),--0- -0-0 0---
+AND_OR_NOT,upper,41096,0xa088,0x1bff,x0*x1 + x0*x1*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-0 0--- --01
+AND_OR_NOT,upper,41120,0xa0a0,0x0fff,x0*x2,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),--0- 0---
+AND_OR_NOT,upper,41130,0xa0aa,0x0aff,x0 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- --01
+AND_OR_NOT,upper,41152,0xa0c0,0x1bff,x1*x2 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- -0-0 0--1
+AND_OR_NOT,upper,41164,0xa0cc,0x1bbb,x1 + x1*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-1-0 1-11
+AND_OR_NOT,upper,41196,0xa0ec,0x0bbb,x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),-1-0 1-1-
+AND_OR_NOT,upper,41200,0xa0f0,0x0aff,x2 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- 0--1
+AND_OR_NOT,upper,41215,0xa0ff,0x0aaa,1 + x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),---0 1-1-
+AND_OR_NOT,upper,41472,0xa200,0x2fff,x0*x3 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 0--- -10-
+AND_OR_NOT,upper,41600,0xa280,0x1bff,x0*x1*x2 + x0*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-0 -10- 0---
+AND_OR_NOT,upper,41634,0xa2a2,0x0aff,x0 + x0*x1 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- -10-
+AND_OR_NOT,upper,41664,0xa2c0,0x1bdf,x1*x2 + x0*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),-0-0 -10- 0--1
+AND_OR_NOT,upper,41715,0xa2f3,0x0ace,1 + x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),-10- 0--1
+AND_OR_NOT,upper,43008,0xa800,0x1fff,x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),---0 -00- 0---
+AND_OR_NOT,upper,43016,0xa808,0x1bff,x0*x1 + x0*x1*x2 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-00- 0--- --10
+AND_OR_NOT,upper,43040,0xa820,0x1bff,x0*x2 + x0*x1*x2 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-00- -1-0 0---
+AND_OR_NOT,upper,43176,0xa8a8,0x03ff,x0*x1 + x0*x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),-00- 0---
+AND_OR_NOT,upper,43178,0xa8aa,0x02ff,x0 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),0--- -001
+AND_OR_NOT,upper,43260,0xa8fc,0x03ab,x1 + x2 + x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),-00- 0--1
+AND_OR_NOT,upper,43520,0xaa00,0x0fff,x0*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),---0 0---
+AND_OR_NOT,upper,43530,0xaa0a,0x0aff,x0 + x0*x2 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- --10
+AND_OR_NOT,upper,43554,0xaa22,0x0aff,x0 + x0*x1 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),0--- -1-0
+AND_OR_NOT,upper,43656,0xaa88,0x03ff,x0*x1 + x0*x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),-0-0 0---
+AND_OR_NOT,upper,43658,0xaa8a,0x02ff,x0 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),0--- -010
+AND_OR_NOT,upper,43680,0xaaa0,0x03ff,x0*x2 + x0*x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),--00 0---
+AND_OR_NOT,upper,43682,0xaaa2,0x02ff,x0 + x0*x1 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),0--- -100
+AND_OR_NOT,upper,43688,0xaaa8,0x01ff,x0*x1 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,CNF(f),CNF(f),-000 0---
+AND_OR_NOT,both,43690,0xaaaa,0x00ff,x0,0,1.0,2,1.0,1.0,exact prime cover,1,CNF(f),DNF(f);CNF(f),0---
+AND_OR_NOT,upper,43712,0xaac0,0x07f7,x1*x2 + x0*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-110 1--1
+AND_OR_NOT,upper,43724,0xaacc,0x03cf,x1 + x0*x3 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-0-0 0--1
+AND_OR_NOT,upper,43727,0xaacf,0x02ce,1 + x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-010 0--1
+AND_OR_NOT,upper,43754,0xaaea,0x00bf,x0 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -110
+AND_OR_NOT,upper,43758,0xaaee,0x00af,x0 + x1 + x0*x1 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -1-0
+AND_OR_NOT,upper,43760,0xaaf0,0x03cf,x2 + x0*x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),--00 0--1
+AND_OR_NOT,upper,43763,0xaaf3,0x02ce,1 + x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-100 0--1
+AND_OR_NOT,upper,43770,0xaafa,0x00af,x0 + x2 + x0*x2 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- --10
+AND_OR_NOT,upper,43772,0xaafc,0x01ab,x1 + x2 + x1*x2 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-000 0--1
+AND_OR_NOT,upper,43775,0xaaff,0x00aa,1 + x3 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0--1
+AND_OR_NOT,upper,44032,0xac00,0x1bff,x1*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 -00- 0-1-
+AND_OR_NOT,upper,44044,0xac0c,0x1bbb,x1 + x1*x2 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-10- 1-11
+AND_OR_NOT,upper,44064,0xac20,0x1bdf,x0*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),-00- -1-0 0-1-
+AND_OR_NOT,upper,44192,0xaca0,0x07f7,x0*x2 + x1*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),1-1- -101
+AND_OR_NOT,upper,44204,0xacac,0x03cf,x1 + x0*x2 + x1*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-00- 0-1-
+AND_OR_NOT,upper,44207,0xacaf,0x02ce,1 + x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),0-1- -001
+AND_OR_NOT,upper,44287,0xacff,0x028a,1 + x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 -10- 1-1-
+AND_OR_NOT,upper,44556,0xae0c,0x0bbb,x1 + x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),-10- 1--1
+AND_OR_NOT,upper,44714,0xaeaa,0x00bf,x0 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -101
+AND_OR_NOT,upper,44718,0xaeae,0x00af,x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -10-
+AND_OR_NOT,upper,44799,0xaeff,0x008a,1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 1--- -10-
+AND_OR_NOT,upper,44800,0xaf00,0x0aff,x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 0-1-
+AND_OR_NOT,upper,44815,0xaf0f,0x0aaa,1 + x2 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),--0- 1--1
+AND_OR_NOT,upper,44835,0xaf23,0x0ace,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),-1-0 0-1-
+AND_OR_NOT,upper,44940,0xaf8c,0x03ab,x1 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),-0-0 0-1-
+AND_OR_NOT,upper,44960,0xafa0,0x03cf,x0*x2 + x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),--00 0-1-
+AND_OR_NOT,upper,44963,0xafa3,0x02ce,1 + x1 + x2 + x0*x2 + x1*x2 + x1*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-100 0-1-
+AND_OR_NOT,upper,44970,0xafaa,0x00af,x0 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- --01
+AND_OR_NOT,upper,44972,0xafac,0x01ab,x1 + x0*x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-000 0-1-
+AND_OR_NOT,upper,44975,0xafaf,0x00aa,1 + x2 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0-1-
+AND_OR_NOT,upper,45007,0xafcf,0x028a,1 + x2 + x1*x2 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- -1-0 1--1
+AND_OR_NOT,upper,45039,0xafef,0x008a,1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 1--- -1-0
+AND_OR_NOT,upper,45056,0xb000,0x2fff,x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 --0- 01--
+AND_OR_NOT,upper,45184,0xb080,0x1bff,x0*x1*x2 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- -0-0 01--
+AND_OR_NOT,upper,45192,0xb088,0x1bdf,x0*x1 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),-0-0 01-- --01
+AND_OR_NOT,upper,45232,0xb0b0,0x0aff,x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- 01--
+AND_OR_NOT,upper,45243,0xb0bb,0x0ace,1 + x1 + x0*x1 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),01-- --01
+AND_OR_NOT,upper,45875,0xb333,0x2aaa,1 + x1 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),-0-- 1-11
+AND_OR_NOT,upper,45952,0xb380,0x1bbb,x0*x1*x2 + x3 + x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),111- -0-1
+AND_OR_NOT,upper,45984,0xb3a0,0x0bbb,x0*x2 + x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),1-1- -0-1
+AND_OR_NOT,upper,46003,0xb3b3,0x0aaa,1 + x1 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-0-- 1-1-
+AND_OR_NOT,upper,47104,0xb800,0x1bff,x0*x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 -00- 01--
+AND_OR_NOT,upper,47112,0xb808,0x1bdf,x0*x1 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),-00- 01-- --10
+AND_OR_NOT,upper,47152,0xb830,0x1bbb,x2 + x1*x2 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-01- 11-1
+AND_OR_NOT,upper,47240,0xb888,0x07f7,x0*x1 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),11-- -011
+AND_OR_NOT,upper,47288,0xb8b8,0x03cf,x0*x1 + x2 + x1*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-00- 01--
+AND_OR_NOT,upper,47291,0xb8bb,0x02ce,1 + x1 + x0*x1 + x3 + x1*x3 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),01-- -001
+AND_OR_NOT,upper,47359,0xb8ff,0x028a,1 + x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 11-- -01-
+AND_OR_NOT,upper,47664,0xba30,0x0bbb,x2 + x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),-01- 1--1
+AND_OR_NOT,upper,47786,0xbaaa,0x00bf,x0 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -011
+AND_OR_NOT,upper,47802,0xbaba,0x00af,x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -01-
+AND_OR_NOT,upper,47871,0xbaff,0x008a,1 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 1--- -01-
+AND_OR_NOT,upper,47872,0xbb00,0x0aff,x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 01--
+AND_OR_NOT,upper,47883,0xbb0b,0x0ace,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),01-- --10
+AND_OR_NOT,upper,47923,0xbb33,0x0aaa,1 + x1 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-0-- 1--1
+AND_OR_NOT,upper,48008,0xbb88,0x03cf,x0*x1 + x3 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-0-0 01--
+AND_OR_NOT,upper,48011,0xbb8b,0x02ce,1 + x1 + x0*x1 + x2 + x1*x2 + x2*x3 + x1*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),01-- -010
+AND_OR_NOT,upper,48042,0xbbaa,0x00af,x0 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -0-1
+AND_OR_NOT,upper,48048,0xbbb0,0x03ab,x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),--00 01--
+AND_OR_NOT,upper,48056,0xbbb8,0x01ab,x0*x1 + x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-000 01--
+AND_OR_NOT,upper,48059,0xbbbb,0x00aa,1 + x1 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),01--
+AND_OR_NOT,upper,48115,0xbbf3,0x028a,1 + x1 + x1*x2 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- --10 1--1
+AND_OR_NOT,upper,48123,0xbbfb,0x008a,1 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1--- --10
+AND_OR_NOT,upper,49039,0xbf8f,0x028a,1 + x2 + x0*x1*x2 + x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- 11-- -0-1
+AND_OR_NOT,upper,49071,0xbfaf,0x008a,1 + x2 + x0*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 1--- -0-1
+AND_OR_NOT,upper,49075,0xbfb3,0x028a,1 + x1 + x0*x1*x2 + x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- 1-1- --01
+AND_OR_NOT,upper,49083,0xbfbb,0x008a,1 + x1 + x0*x1 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1--- --01
+AND_OR_NOT,upper,49152,0xc000,0x3fff,x1*x2*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),---0 --0- -0--
+AND_OR_NOT,upper,49216,0xc040,0x2fff,x1*x2 + x0*x1*x2 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),--0- -0-- 1--0
+AND_OR_NOT,upper,49280,0xc080,0x1fff,x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),--0- -0-- 0--0
+AND_OR_NOT,upper,49288,0xc088,0x1bff,x0*x1 + x0*x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 0--0 --01
+AND_OR_NOT,upper,49312,0xc0a0,0x1bff,x0*x2 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 0--0 -0-1
+AND_OR_NOT,upper,49322,0xc0aa,0x1bbb,x0 + x0*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),1--0 -111
+AND_OR_NOT,upper,49344,0xc0c0,0x0fff,x1*x2,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),--0- -0--
+AND_OR_NOT,upper,49356,0xc0cc,0x0aff,x1 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- --01
+AND_OR_NOT,upper,49386,0xc0ea,0x0bbb,x0 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),1--0 -11-
+AND_OR_NOT,upper,49392,0xc0f0,0x0aff,x2 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- -0-1
+AND_OR_NOT,upper,49407,0xc0ff,0x0aaa,1 + x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),---0 -11-
+AND_OR_NOT,upper,50176,0xc400,0x2fff,x1*x3 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 -0-- 1-0-
+AND_OR_NOT,upper,50304,0xc480,0x1bff,x0*x1*x2 + x1*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 0--0 1-0-
+AND_OR_NOT,upper,50336,0xc4a0,0x1bdf,x0*x2 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),0--0 1-0- -0-1
+AND_OR_NOT,upper,50372,0xc4c4,0x0aff,x1 + x0*x1 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- 1-0-
+AND_OR_NOT,upper,50421,0xc4f5,0x0ace,1 + x0 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),1-0- -0-1
+AND_OR_NOT,upper,51200,0xc800,0x1fff,x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),---0 -0-- 0-0-
+AND_OR_NOT,upper,51208,0xc808,0x1bff,x0*x1 + x0*x1*x2 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 0-0- --10
+AND_OR_NOT,upper,51264,0xc840,0x1bff,x1*x2 + x0*x1*x2 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),-0-- 0-0- 1--0
+AND_OR_NOT,upper,51400,0xc8c8,0x03ff,x0*x1 + x1*x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),-0-- 0-0-
+AND_OR_NOT,upper,51404,0xc8cc,0x02ff,x1 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0-01
+AND_OR_NOT,upper,51450,0xc8fa,0x03ab,x0 + x2 + x0*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),0-0- -0-1
+AND_OR_NOT,upper,51712,0xca00,0x1bff,x0*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 0-0- -01-
+AND_OR_NOT,upper,51722,0xca0a,0x1bbb,x0 + x0*x2 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),1-0- -111
+AND_OR_NOT,upper,51776,0xca40,0x1bdf,x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),0-0- 1--0 -01-
+AND_OR_NOT,upper,51904,0xcac0,0x07f7,x1*x2 + x0*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-11- 1-01
+AND_OR_NOT,upper,51914,0xcaca,0x03cf,x0 + x0*x2 + x1*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0-0- -01-
+AND_OR_NOT,upper,51919,0xcacf,0x02ce,1 + x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-01- 0-01
+AND_OR_NOT,upper,51967,0xcaff,0x028a,1 + x3 + x0*x3 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 1-0- -11-
+AND_OR_NOT,upper,52224,0xcc00,0x0fff,x1*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),---0 -0--
+AND_OR_NOT,upper,52236,0xcc0c,0x0aff,x1 + x1*x2 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- --10
+AND_OR_NOT,upper,52292,0xcc44,0x0aff,x1 + x0*x1 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- 1--0
+AND_OR_NOT,upper,52360,0xcc88,0x03ff,x0*x1 + x1*x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),-0-- 0--0
+AND_OR_NOT,upper,52364,0xcc8c,0x02ff,x1 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 0-10
+AND_OR_NOT,upper,52384,0xcca0,0x07f7,x0*x2 + x1*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),1-10 -1-1
+AND_OR_NOT,upper,52394,0xccaa,0x03cf,x0 + x0*x3 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0--0 -0-1
+AND_OR_NOT,upper,52399,0xccaf,0x02ce,1 + x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),0-10 -0-1
+AND_OR_NOT,upper,52416,0xccc0,0x03ff,x1*x2 + x1*x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),--00 -0--
+AND_OR_NOT,upper,52420,0xccc4,0x02ff,x1 + x0*x1 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),-0-- 1-00
+AND_OR_NOT,upper,52424,0xccc8,0x01ff,x0*x1 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,CNF(f),CNF(f),-0-- 0-00
+AND_OR_NOT,both,52428,0xcccc,0x00ff,x1,0,1.0,2,1.0,1.0,exact prime cover,1,CNF(f),DNF(f);CNF(f),-0--
+AND_OR_NOT,upper,52460,0xccec,0x00bf,x1 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),-1-- 1-10
+AND_OR_NOT,upper,52462,0xccee,0x00af,x0 + x1 + x0*x1 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--0 -1--
+AND_OR_NOT,upper,52464,0xccf0,0x03cf,x2 + x1*x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),--00 -0-1
+AND_OR_NOT,upper,52469,0xccf5,0x02ce,1 + x0 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1-00 -0-1
+AND_OR_NOT,upper,52474,0xccfa,0x01ab,x0 + x2 + x0*x2 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0-00 -0-1
+AND_OR_NOT,upper,52476,0xccfc,0x00af,x1 + x2 + x1*x2 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- --10
+AND_OR_NOT,upper,52479,0xccff,0x00aa,1 + x3 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-0-1
+AND_OR_NOT,upper,52746,0xce0a,0x0bbb,x0 + x0*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),1-0- -1-1
+AND_OR_NOT,upper,52940,0xcecc,0x00bf,x1 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),-1-- 1-01
+AND_OR_NOT,upper,52942,0xcece,0x00af,x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1-0- -1--
+AND_OR_NOT,upper,52991,0xceff,0x008a,1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 1-0- -1--
+AND_OR_NOT,upper,52992,0xcf00,0x0aff,x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 -01-
+AND_OR_NOT,upper,53007,0xcf0f,0x0aaa,1 + x2 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),--0- -1-1
+AND_OR_NOT,upper,53061,0xcf45,0x0ace,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),1--0 -01-
+AND_OR_NOT,upper,53130,0xcf8a,0x03ab,x0 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),0--0 -01-
+AND_OR_NOT,upper,53167,0xcfaf,0x028a,1 + x2 + x0*x2 + x0*x2*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- 1--0 -1-1
+AND_OR_NOT,upper,53184,0xcfc0,0x03cf,x1*x2 + x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),--00 -01-
+AND_OR_NOT,upper,53189,0xcfc5,0x02ce,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1-00 -01-
+AND_OR_NOT,upper,53194,0xcfca,0x01ab,x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0-00 -01-
+AND_OR_NOT,upper,53196,0xcfcc,0x00af,x1 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- --01
+AND_OR_NOT,upper,53199,0xcfcf,0x00aa,1 + x2 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-01-
+AND_OR_NOT,upper,53231,0xcfef,0x008a,1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 1--0 -1--
+AND_OR_NOT,upper,53248,0xd000,0x2fff,x2*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,CNF(f),CNF(f),---0 --0- 10--
+AND_OR_NOT,upper,53376,0xd080,0x1bff,x0*x1*x2 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 0--0 10--
+AND_OR_NOT,upper,53384,0xd088,0x1bdf,x0*x1 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),0--0 10-- --01
+AND_OR_NOT,upper,53456,0xd0d0,0x0aff,x2 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- 10--
+AND_OR_NOT,upper,53469,0xd0dd,0x0ace,1 + x0 + x0*x1 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),10-- --01
+AND_OR_NOT,upper,54613,0xd555,0x2aaa,1 + x0 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),0--- -111
+AND_OR_NOT,upper,54656,0xd580,0x1bbb,x0*x1*x2 + x3 + x0*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),111- 0--1
+AND_OR_NOT,upper,54720,0xd5c0,0x0bbb,x1*x2 + x3 + x0*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),-11- 0--1
+AND_OR_NOT,upper,54741,0xd5d5,0x0aaa,1 + x0 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),0--- -11-
+AND_OR_NOT,upper,55296,0xd800,0x1bff,x0*x1*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 0-0- 10--
+AND_OR_NOT,upper,55304,0xd808,0x1bdf,x0*x1 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),0-0- 10-- --10
+AND_OR_NOT,upper,55376,0xd850,0x1bbb,x2 + x0*x2 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),0-1- 11-1
+AND_OR_NOT,upper,55432,0xd888,0x07f7,x0*x1 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),11-- 0-11
+AND_OR_NOT,upper,55512,0xd8d8,0x03cf,x0*x1 + x2 + x0*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0-0- 10--
+AND_OR_NOT,upper,55517,0xd8dd,0x02ce,1 + x0 + x0*x1 + x3 + x0*x3 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),10-- 0-01
+AND_OR_NOT,upper,55551,0xd8ff,0x028a,1 + x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 11-- 0-1-
+AND_OR_NOT,upper,56400,0xdc50,0x0bbb,x2 + x0*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),0-1- -1-1
+AND_OR_NOT,upper,56524,0xdccc,0x00bf,x1 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),-1-- 0-11
+AND_OR_NOT,upper,56540,0xdcdc,0x00af,x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- 0-1-
+AND_OR_NOT,upper,56575,0xdcff,0x008a,1 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 -1-- 0-1-
+AND_OR_NOT,upper,56576,0xdd00,0x0aff,x3 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 10--
+AND_OR_NOT,upper,56589,0xdd0d,0x0ace,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),10-- --10
+AND_OR_NOT,upper,56661,0xdd55,0x0aaa,1 + x0 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),0--- -1-1
+AND_OR_NOT,upper,56712,0xdd88,0x03cf,x0*x1 + x3 + x0*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0--0 10--
+AND_OR_NOT,upper,56717,0xdd8d,0x02ce,1 + x0 + x0*x1 + x2 + x0*x2 + x2*x3 + x0*x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),10-- 0-10
+AND_OR_NOT,upper,56780,0xddcc,0x00af,x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- 0--1
+AND_OR_NOT,upper,56784,0xddd0,0x03ab,x2 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),--00 10--
+AND_OR_NOT,upper,56792,0xddd8,0x01ab,x0*x1 + x2 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0-00 10--
+AND_OR_NOT,upper,56797,0xdddd,0x00aa,1 + x0 + x0*x1,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),10--
+AND_OR_NOT,upper,56821,0xddf5,0x028a,1 + x0 + x0*x2 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- --10 -1-1
+AND_OR_NOT,upper,56829,0xddfd,0x008a,1 + x0 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -1-- --10
+AND_OR_NOT,upper,57231,0xdf8f,0x028a,1 + x2 + x0*x1*x2 + x2*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- 11-- 0--1
+AND_OR_NOT,upper,57295,0xdfcf,0x008a,1 + x2 + x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- -1-- 0--1
+AND_OR_NOT,upper,57301,0xdfd5,0x028a,1 + x0 + x0*x1*x2 + x0*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- -11- --01
+AND_OR_NOT,upper,57309,0xdfdd,0x008a,1 + x0 + x0*x1 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -1-- --01
+AND_OR_NOT,upper,57344,0xe000,0x1fff,x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,CNF(f),CNF(f),---0 --0- 00--
+AND_OR_NOT,upper,57376,0xe020,0x1bff,x0*x2 + x0*x1*x2 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 00-- -1-0
+AND_OR_NOT,upper,57408,0xe040,0x1bff,x1*x2 + x0*x1*x2 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),--0- 00-- 1--0
+AND_OR_NOT,upper,57568,0xe0e0,0x03ff,x0*x2 + x1*x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),--0- 00--
+AND_OR_NOT,upper,57582,0xe0ee,0x03ab,x0 + x1 + x0*x1 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),00-- --01
+AND_OR_NOT,upper,57584,0xe0f0,0x02ff,x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 00-1
+AND_OR_NOT,upper,57856,0xe200,0x1bff,x0*x3 + x0*x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 00-- -10-
+AND_OR_NOT,upper,57890,0xe222,0x1bbb,x0 + x0*x1 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),10-- -111
+AND_OR_NOT,upper,57920,0xe240,0x1bdf,x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),00-- 1--0 -10-
+AND_OR_NOT,upper,58048,0xe2c0,0x07f7,x1*x2 + x0*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),-11- 10-1
+AND_OR_NOT,upper,58082,0xe2e2,0x03cf,x0 + x0*x1 + x1*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),00-- -10-
+AND_OR_NOT,upper,58099,0xe2f3,0x02ce,1 + x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-10- 00-1
+AND_OR_NOT,upper,58111,0xe2ff,0x028a,1 + x3 + x0*x3 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 10-- -11-
+AND_OR_NOT,upper,58368,0xe400,0x1bff,x1*x3 + x0*x1*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,CNF(f),CNF(f),---0 00-- 1-0-
+AND_OR_NOT,upper,58400,0xe420,0x1bdf,x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,CNF(f),CNF(f),00-- 1-0- -1-0
+AND_OR_NOT,upper,58436,0xe444,0x1bbb,x1 + x0*x1 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),01-- 1-11
+AND_OR_NOT,upper,58528,0xe4a0,0x07f7,x0*x2 + x1*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),1-1- 01-1
+AND_OR_NOT,upper,58596,0xe4e4,0x03cf,x1 + x0*x1 + x0*x2,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),00-- 1-0-
+AND_OR_NOT,upper,58613,0xe4f5,0x02ce,1 + x0 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1-0- 00-1
+AND_OR_NOT,upper,58623,0xe4ff,0x028a,1 + x3 + x1*x3 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),---0 01-- 1-1-
+AND_OR_NOT,upper,59968,0xea40,0x07f7,x1*x2 + x0*x1*x2 + x0*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),011- 1--1
+AND_OR_NOT,upper,60074,0xeaaa,0x007f,x0 + x1*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -111
+AND_OR_NOT,upper,60096,0xeac0,0x0777,x1*x2 + x0*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,DNF(f),DNF(f),-11- 1--1
+AND_OR_NOT,upper,60138,0xeaea,0x003f,x0 + x1*x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),1--- -11-
+AND_OR_NOT,upper,60159,0xeaff,0x002a,1 + x3 + x0*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),---0 1--- -11-
+AND_OR_NOT,upper,60448,0xec20,0x07f7,x0*x2 + x0*x1*x2 + x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),101- -1-1
+AND_OR_NOT,upper,60576,0xeca0,0x0777,x0*x2 + x1*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,DNF(f),DNF(f),1-1- -1-1
+AND_OR_NOT,upper,60620,0xeccc,0x007f,x1 + x0*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- 1-11
+AND_OR_NOT,upper,60652,0xecec,0x003f,x1 + x0*x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),-1-- 1-1-
+AND_OR_NOT,upper,60671,0xecff,0x002a,1 + x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),---0 -1-- 1-1-
+AND_OR_NOT,upper,60928,0xee00,0x03ff,x0*x3 + x1*x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),---0 00--
+AND_OR_NOT,upper,60942,0xee0e,0x03ab,x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),00-- --10
+AND_OR_NOT,upper,60962,0xee22,0x03cf,x0 + x0*x1 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),00-- -1-0
+AND_OR_NOT,upper,60996,0xee44,0x03cf,x1 + x0*x1 + x0*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),00-- 1--0
+AND_OR_NOT,upper,61098,0xeeaa,0x003f,x0 + x1*x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),1--- -1-1
+AND_OR_NOT,upper,61132,0xeecc,0x003f,x1 + x0*x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),-1-- 1--1
+AND_OR_NOT,upper,61152,0xeee0,0x0357,x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,CNF(f),CNF(f),--00 00--
+AND_OR_NOT,upper,61154,0xeee2,0x0257,x0 + x0*x1 + x1*x2 + x1*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),00-- -100
+AND_OR_NOT,upper,61156,0xeee4,0x0257,x1 + x0*x1 + x0*x2 + x0*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),00-- 1-00
+AND_OR_NOT,upper,61166,0xeeee,0x000f,x0 + x1 + x0*x1,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),00--
+AND_OR_NOT,upper,61168,0xeef0,0x0257,x2 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),--00 00-1
+AND_OR_NOT,upper,61170,0xeef2,0x0247,x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),10-- --10 -1-1
+AND_OR_NOT,upper,61172,0xeef4,0x0247,x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x0*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),01-- --10 1--1
+AND_OR_NOT,upper,61178,0xeefa,0x001b,x0 + x2 + x0*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- --10 -1-1
+AND_OR_NOT,upper,61180,0xeefc,0x001b,x1 + x2 + x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-1-- --10 1--1
+AND_OR_NOT,upper,61182,0xeefe,0x000b,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -1-- --10
+AND_OR_NOT,upper,61183,0xeeff,0x000a,1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),00-1
+AND_OR_NOT,upper,61184,0xef00,0x02ff,x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),---0 001-
+AND_OR_NOT,upper,61219,0xef23,0x02ce,1 + x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),-1-0 001-
+AND_OR_NOT,upper,61231,0xef2f,0x028a,1 + x2 + x0*x2 + x0*x1*x2 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- 10-- -1-1
+AND_OR_NOT,upper,61253,0xef45,0x02ce,1 + x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1--0 001-
+AND_OR_NOT,upper,61263,0xef4f,0x028a,1 + x2 + x1*x2 + x0*x1*x2 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),--0- 01-- 1--1
+AND_OR_NOT,upper,61359,0xefaf,0x002a,1 + x2 + x0*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),--0- 1--- -1-1
+AND_OR_NOT,upper,61391,0xefcf,0x002a,1 + x2 + x1*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),--0- -1-- 1--1
+AND_OR_NOT,upper,61408,0xefe0,0x0257,x0*x2 + x1*x2 + x0*x1*x2 + x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),--00 001-
+AND_OR_NOT,upper,61410,0xefe2,0x0247,x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),10-- -11- --01
+AND_OR_NOT,upper,61412,0xefe4,0x0247,x1 + x0*x1 + x0*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),01-- 1-1- --01
+AND_OR_NOT,upper,61418,0xefea,0x001b,x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- -11- --01
+AND_OR_NOT,upper,61420,0xefec,0x001b,x1 + x0*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-1-- 1-1- --01
+AND_OR_NOT,upper,61422,0xefee,0x000b,x0 + x1 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -1-- --01
+AND_OR_NOT,upper,61423,0xefef,0x000a,1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),001-
+AND_OR_NOT,upper,61440,0xf000,0x0fff,x2*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),---0 --0-
+AND_OR_NOT,upper,61488,0xf030,0x0aff,x2 + x1*x2 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- -1-0
+AND_OR_NOT,upper,61520,0xf050,0x0aff,x2 + x0*x2 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),--0- 1--0
+AND_OR_NOT,upper,61576,0xf088,0x07f7,x0*x1 + x0*x1*x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),11-0 --11
+AND_OR_NOT,upper,61600,0xf0a0,0x03ff,x0*x2 + x2*x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),--0- 0--0
+AND_OR_NOT,upper,61610,0xf0aa,0x03cf,x0 + x0*x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0--0 --01
+AND_OR_NOT,upper,61616,0xf0b0,0x02ff,x2 + x1*x2 + x0*x1*x2 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 01-0
+AND_OR_NOT,upper,61627,0xf0bb,0x02ce,1 + x1 + x0*x1 + x3 + x1*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),01-0 --01
+AND_OR_NOT,upper,61632,0xf0c0,0x03ff,x1*x2 + x2*x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),--0- -0-0
+AND_OR_NOT,upper,61644,0xf0cc,0x03cf,x1 + x1*x3 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-0-0 --01
+AND_OR_NOT,upper,61648,0xf0d0,0x02ff,x2 + x0*x2 + x0*x1*x2 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),--0- 10-0
+AND_OR_NOT,upper,61661,0xf0dd,0x02ce,1 + x0 + x0*x1 + x3 + x0*x3 + x0*x1*x3 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),10-0 --01
+AND_OR_NOT,upper,61664,0xf0e0,0x01ff,x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,CNF(f),CNF(f),--0- 00-0
+AND_OR_NOT,upper,61678,0xf0ee,0x01ab,x0 + x1 + x0*x1 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),00-0 --01
+AND_OR_NOT,both,61680,0xf0f0,0x00ff,x2,0,1.0,2,1.0,1.0,exact prime cover,1,CNF(f),DNF(f);CNF(f),--0-
+AND_OR_NOT,upper,61688,0xf0f8,0x00bf,x0*x1 + x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),11-0 --1-
+AND_OR_NOT,upper,61690,0xf0fa,0x00af,x0 + x2 + x0*x2 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1--0 --1-
+AND_OR_NOT,upper,61692,0xf0fc,0x00af,x1 + x2 + x1*x2 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-1-0 --1-
+AND_OR_NOT,upper,61695,0xf0ff,0x00aa,1 + x3 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--01
+AND_OR_NOT,upper,61986,0xf222,0x0bbb,x0 + x0*x1 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),10-- --11
+AND_OR_NOT,upper,62192,0xf2f0,0x00bf,x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),--1- 10-1
+AND_OR_NOT,upper,62194,0xf2f2,0x00af,x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),10-- --1-
+AND_OR_NOT,upper,62207,0xf2ff,0x008a,1 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 10-- --1-
+AND_OR_NOT,upper,62208,0xf300,0x0aff,x3 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 -10-
+AND_OR_NOT,upper,62259,0xf333,0x0aaa,1 + x1 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-0-- --11
+AND_OR_NOT,upper,62289,0xf351,0x0ace,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),1--0 -10-
+AND_OR_NOT,upper,62370,0xf3a2,0x03ab,x0 + x0*x1 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),0--0 -10-
+AND_OR_NOT,upper,62395,0xf3bb,0x028a,1 + x1 + x0*x1 + x0*x1*x3 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- 1--0 --11
+AND_OR_NOT,upper,62400,0xf3c0,0x03cf,x1*x2 + x3 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-0-0 -10-
+AND_OR_NOT,upper,62417,0xf3d1,0x02ce,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),10-0 -10-
+AND_OR_NOT,upper,62434,0xf3e2,0x01ab,x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),00-0 -10-
+AND_OR_NOT,upper,62448,0xf3f0,0x00af,x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),--1- -0-1
+AND_OR_NOT,upper,62451,0xf3f3,0x00aa,1 + x1 + x1*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-10-
+AND_OR_NOT,upper,62459,0xf3fb,0x008a,1 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1--0 --1-
+AND_OR_NOT,upper,62532,0xf444,0x0bbb,x1 + x0*x1 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,DNF(f),DNF(f),01-- --11
+AND_OR_NOT,upper,62704,0xf4f0,0x00bf,x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),--1- 01-1
+AND_OR_NOT,upper,62708,0xf4f4,0x00af,x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),01-- --1-
+AND_OR_NOT,upper,62719,0xf4ff,0x008a,1 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),---0 01-- --1-
+AND_OR_NOT,upper,62720,0xf500,0x0aff,x3 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,CNF(f),CNF(f),---0 1-0-
+AND_OR_NOT,upper,62769,0xf531,0x0ace,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,2.2857142857142856,7,2.2857142857142856,6.0,exact prime cover,6,CNF(f),CNF(f),1-0- -1-0
+AND_OR_NOT,upper,62805,0xf555,0x0aaa,1 + x0 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),0--- --11
+AND_OR_NOT,upper,62880,0xf5a0,0x03cf,x0*x2 + x3 + x0*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0--0 1-0-
+AND_OR_NOT,upper,62897,0xf5b1,0x02ce,1 + x0 + x1 + x0*x1 + x0*x2 + x1*x3 + x0*x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1-0- 01-0
+AND_OR_NOT,upper,62916,0xf5c4,0x03ab,x1 + x0*x1 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),-0-0 1-0-
+AND_OR_NOT,upper,62941,0xf5dd,0x028a,1 + x0 + x0*x1 + x0*x1*x3 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- -1-0 --11
+AND_OR_NOT,upper,62948,0xf5e4,0x01ab,x1 + x0*x1 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),00-0 1-0-
+AND_OR_NOT,upper,62960,0xf5f0,0x00af,x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),--1- 0--1
+AND_OR_NOT,upper,62965,0xf5f5,0x00aa,1 + x0 + x0*x2,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),1-0-
+AND_OR_NOT,upper,62973,0xf5fd,0x008a,1 + x0 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -1-0 --1-
+AND_OR_NOT,upper,63411,0xf7b3,0x028a,1 + x1 + x0*x1*x2 + x1*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- 1-1- 0--1
+AND_OR_NOT,upper,63445,0xf7d5,0x028a,1 + x0 + x0*x1*x2 + x0*x3 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- -11- -0-1
+AND_OR_NOT,upper,63475,0xf7f3,0x008a,1 + x1 + x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- --1- 0--1
+AND_OR_NOT,upper,63477,0xf7f5,0x008a,1 + x0 + x0*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- --1- -0-1
+AND_OR_NOT,upper,63496,0xf808,0x07f7,x0*x1 + x0*x1*x2 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,DNF(f),DNF(f),110- --11
+AND_OR_NOT,upper,63624,0xf888,0x0777,x0*x1 + x2*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,DNF(f),DNF(f),11-- --11
+AND_OR_NOT,upper,63728,0xf8f0,0x007f,x2 + x0*x1*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,DNF(f),DNF(f),--1- 11-1
+AND_OR_NOT,upper,63736,0xf8f8,0x003f,x0*x1 + x2 + x0*x1*x2,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),11-- --1-
+AND_OR_NOT,upper,63743,0xf8ff,0x002a,1 + x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),---0 11-- --1-
+AND_OR_NOT,upper,64000,0xfa00,0x03ff,x0*x3 + x2*x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),---0 0-0-
+AND_OR_NOT,upper,64010,0xfa0a,0x03cf,x0 + x0*x2 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0-0- --10
+AND_OR_NOT,upper,64050,0xfa32,0x03ab,x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),0-0- -1-0
+AND_OR_NOT,upper,64080,0xfa50,0x03cf,x2 + x0*x2 + x0*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0-0- 1--0
+AND_OR_NOT,upper,64170,0xfaaa,0x003f,x0 + x2*x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),1--- --11
+AND_OR_NOT,upper,64200,0xfac8,0x0357,x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,CNF(f),CNF(f),-0-0 0-0-
+AND_OR_NOT,upper,64202,0xfaca,0x0257,x0 + x0*x2 + x1*x2 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0-0- -010
+AND_OR_NOT,upper,64204,0xfacc,0x0257,x1 + x0*x3 + x1*x3 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-0-0 0-01
+AND_OR_NOT,upper,64206,0xface,0x0247,x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),1-0- -1-0 --11
+AND_OR_NOT,upper,64216,0xfad8,0x0257,x0*x1 + x2 + x0*x2 + x0*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0-0- 10-0
+AND_OR_NOT,upper,64220,0xfadc,0x0247,x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),-1-0 0-1- 1--1
+AND_OR_NOT,upper,64238,0xfaee,0x001b,x0 + x1 + x0*x1 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- -1-0 --11
+AND_OR_NOT,upper,64240,0xfaf0,0x003f,x2 + x0*x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),--1- 1--1
+AND_OR_NOT,upper,64250,0xfafa,0x000f,x0 + x2 + x0*x2,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),0-0-
+AND_OR_NOT,upper,64252,0xfafc,0x001b,x1 + x2 + x1*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-1-0 --1- 1--1
+AND_OR_NOT,upper,64254,0xfafe,0x000b,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -1-0 --1-
+AND_OR_NOT,upper,64255,0xfaff,0x000a,1 + x3 + x0*x3 + x2*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),0-01
+AND_OR_NOT,upper,64256,0xfb00,0x02ff,x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),---0 010-
+AND_OR_NOT,upper,64267,0xfb0b,0x02ce,1 + x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),010- --10
+AND_OR_NOT,upper,64315,0xfb3b,0x028a,1 + x1 + x0*x1 + x0*x1*x2 + x1*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- 1-0- --11
+AND_OR_NOT,upper,64337,0xfb51,0x02ce,1 + x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),1--0 010-
+AND_OR_NOT,upper,64371,0xfb73,0x028a,1 + x1 + x1*x2 + x0*x1*x2 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),-0-- 0-1- 1--1
+AND_OR_NOT,upper,64443,0xfbbb,0x002a,1 + x1 + x0*x1 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),-0-- 1--- --11
+AND_OR_NOT,upper,64456,0xfbc8,0x0257,x0*x1 + x1*x2 + x0*x1*x2 + x3 + x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-0-0 010-
+AND_OR_NOT,upper,64458,0xfbca,0x0247,x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),1-0- -11- -0-1
+AND_OR_NOT,upper,64472,0xfbd8,0x0247,x0*x1 + x2 + x0*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),11-- 0-1- -0-1
+AND_OR_NOT,upper,64490,0xfbea,0x001b,x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- -11- -0-1
+AND_OR_NOT,upper,64499,0xfbf3,0x002a,1 + x1 + x1*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),-0-- --1- 1--1
+AND_OR_NOT,upper,64504,0xfbf8,0x001b,x0*x1 + x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),11-- --1- -0-1
+AND_OR_NOT,upper,64506,0xfbfa,0x000b,x0 + x2 + x0*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- --1- -0-1
+AND_OR_NOT,upper,64507,0xfbfb,0x000a,1 + x1 + x0*x1 + x1*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),010-
+AND_OR_NOT,upper,64512,0xfc00,0x03ff,x1*x3 + x2*x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,CNF(f),CNF(f),---0 -00-
+AND_OR_NOT,upper,64524,0xfc0c,0x03cf,x1 + x1*x2 + x2*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-00- --10
+AND_OR_NOT,upper,64560,0xfc30,0x03cf,x2 + x1*x2 + x1*x3,4,2.25,4,2.25,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),-00- -1-0
+AND_OR_NOT,upper,64596,0xfc54,0x03ab,x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,2.2857142857142856,7,2.2857142857142856,5.0,exact prime cover,5,CNF(f),CNF(f),-00- 1--0
+AND_OR_NOT,upper,64680,0xfca8,0x0357,x0*x1 + x0*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,2.2857142857142856,7,2.2857142857142856,4.0,exact prime cover,4,CNF(f),CNF(f),-00- 0--0
+AND_OR_NOT,upper,64682,0xfcaa,0x0257,x0 + x0*x3 + x1*x3 + x2*x3 + x1*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0--0 -001
+AND_OR_NOT,upper,64684,0xfcac,0x0257,x1 + x0*x2 + x1*x2 + x2*x3 + x0*x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-00- 0-10
+AND_OR_NOT,upper,64686,0xfcae,0x0247,x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),1--0 -10- --11
+AND_OR_NOT,upper,64696,0xfcb8,0x0257,x0*x1 + x2 + x1*x2 + x1*x3 + x0*x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),-00- 01-0
+AND_OR_NOT,upper,64698,0xfcba,0x0247,x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),1--0 -01- -1-1
+AND_OR_NOT,upper,64716,0xfccc,0x003f,x1 + x2*x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),-1-- --11
+AND_OR_NOT,upper,64750,0xfcee,0x001b,x0 + x1 + x0*x1 + x0*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--0 -1-- --11
+AND_OR_NOT,upper,64752,0xfcf0,0x003f,x2 + x1*x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),--1- -1-1
+AND_OR_NOT,upper,64762,0xfcfa,0x001b,x0 + x2 + x0*x2 + x0*x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--0 --1- -1-1
+AND_OR_NOT,upper,64764,0xfcfc,0x000f,x1 + x2 + x1*x2,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),-00-
+AND_OR_NOT,upper,64766,0xfcfe,0x000b,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--0 -1-- --1-
+AND_OR_NOT,upper,64767,0xfcff,0x000a,1 + x3 + x1*x3 + x2*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),-001
+AND_OR_NOT,upper,64768,0xfd00,0x02ff,x3 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,CNF(f),CNF(f),---0 100-
+AND_OR_NOT,upper,64781,0xfd0d,0x02ce,1 + x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x2*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),100- --10
+AND_OR_NOT,upper,64817,0xfd31,0x02ce,1 + x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x1*x3,6,2.4,5,2.4,7.0,exact prime cover,7,CNF(f),CNF(f),100- -1-0
+AND_OR_NOT,upper,64861,0xfd5d,0x028a,1 + x0 + x0*x1 + x0*x1*x2 + x0*x2*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- -10- --11
+AND_OR_NOT,upper,64885,0xfd75,0x028a,1 + x0 + x0*x2 + x0*x1*x2 + x0*x1*x3,6,2.083333333333333,5,2.083333333333333,7.0,exact prime cover,7,DNF(f),DNF(f),0--- -01- -1-1
+AND_OR_NOT,upper,64936,0xfda8,0x0257,x0*x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),0--0 100-
+AND_OR_NOT,upper,64940,0xfdac,0x0247,x1 + x0*x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),-10- 1-1- 0--1
+AND_OR_NOT,upper,64952,0xfdb8,0x0247,x0*x1 + x2 + x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,7,2.6181818181818177,7,2.6181818181818177,8.0,exact prime cover,8,DNF(f),DNF(f),11-- -01- 0--1
+AND_OR_NOT,upper,64989,0xfddd,0x002a,1 + x0 + x0*x1 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),0--- -1-- --11
+AND_OR_NOT,upper,65004,0xfdec,0x001b,x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-1-- 1-1- 0--1
+AND_OR_NOT,upper,65013,0xfdf5,0x002a,1 + x0 + x0*x2 + x0*x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),0--- --1- -1-1
+AND_OR_NOT,upper,65016,0xfdf8,0x001b,x0*x1 + x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),11-- --1- 0--1
+AND_OR_NOT,upper,65020,0xfdfc,0x000b,x1 + x2 + x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),-1-- --1- 0--1
+AND_OR_NOT,upper,65021,0xfdfd,0x000a,1 + x0 + x0*x1 + x0*x2 + x0*x1*x2,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),100-
+AND_OR_NOT,upper,65024,0xfe00,0x01ff,x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,CNF(f),CNF(f),---0 000-
+AND_OR_NOT,upper,65038,0xfe0e,0x01ab,x0 + x1 + x0*x1 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),000- --10
+AND_OR_NOT,upper,65074,0xfe32,0x01ab,x0 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),000- -1-0
+AND_OR_NOT,upper,65108,0xfe54,0x01ab,x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3,5,2.4,5,2.4,6.0,exact prime cover,6,CNF(f),CNF(f),000- 1--0
+AND_OR_NOT,upper,65198,0xfeae,0x001b,x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- -10- --11
+AND_OR_NOT,upper,65210,0xfeba,0x001b,x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1--- -01- -1-1
+AND_OR_NOT,upper,65230,0xfece,0x001b,x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1-0- -1-- --11
+AND_OR_NOT,upper,65244,0xfedc,0x001b,x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-1-- 0-1- 1--1
+AND_OR_NOT,upper,65262,0xfeee,0x0007,x0 + x1 + x0*x1 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -1-- --11
+AND_OR_NOT,upper,65266,0xfef2,0x001b,x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),10-- --1- -1-1
+AND_OR_NOT,upper,65268,0xfef4,0x001b,x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),01-- --1- 1--1
+AND_OR_NOT,upper,65274,0xfefa,0x0007,x0 + x2 + x0*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),1--- --1- -1-1
+AND_OR_NOT,upper,65276,0xfefc,0x0007,x1 + x2 + x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- --1- 1--1
+AND_OR_NOT,upper,65278,0xfefe,0x0003,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),000-
+AND_OR_NOT,upper,65279,0xfeff,0x0002,1 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0001
+AND_OR_NOT,both,65280,0xff00,0x00ff,x3,0,1.0,2,1.0,1.0,exact prime cover,1,CNF(f),DNF(f);CNF(f),---0
+AND_OR_NOT,upper,65288,0xff08,0x00bf,x0*x1 + x0*x1*x2 + x3 + x0*x1*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),110- ---1
+AND_OR_NOT,upper,65290,0xff0a,0x00af,x0 + x0*x2 + x3 + x0*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),1-0- ---1
+AND_OR_NOT,upper,65292,0xff0c,0x00af,x1 + x1*x2 + x3 + x1*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-10- ---1
+AND_OR_NOT,upper,65295,0xff0f,0x00aa,1 + x2 + x2*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),--10
+AND_OR_NOT,upper,65312,0xff20,0x00bf,x0*x2 + x0*x1*x2 + x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),101- ---1
+AND_OR_NOT,upper,65314,0xff22,0x00af,x0 + x0*x1 + x3 + x0*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),10-- ---1
+AND_OR_NOT,upper,65327,0xff2f,0x008a,1 + x2 + x0*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 10-- ---1
+AND_OR_NOT,upper,65328,0xff30,0x00af,x2 + x1*x2 + x3 + x2*x3 + x1*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),-01- ---1
+AND_OR_NOT,upper,65331,0xff33,0x00aa,1 + x1 + x1*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-1-0
+AND_OR_NOT,upper,65339,0xff3b,0x008a,1 + x1 + x0*x1 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 1-0- ---1
+AND_OR_NOT,upper,65344,0xff40,0x00bf,x1*x2 + x0*x1*x2 + x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.5873015873015874,5,1.5873015873015874,5.0,exact prime cover,5,DNF(f),DNF(f),011- ---1
+AND_OR_NOT,upper,65348,0xff44,0x00af,x1 + x0*x1 + x3 + x1*x3 + x0*x1*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),01-- ---1
+AND_OR_NOT,upper,65359,0xff4f,0x008a,1 + x2 + x1*x2 + x0*x1*x2 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),--0- 01-- ---1
+AND_OR_NOT,upper,65360,0xff50,0x00af,x2 + x0*x2 + x3 + x2*x3 + x0*x2*x3,3,1.6666666666666667,4,1.6666666666666667,4.0,exact prime cover,4,DNF(f),DNF(f),0-1- ---1
+AND_OR_NOT,upper,65365,0xff55,0x00aa,1 + x0 + x0*x3,2,1.3333333333333333,3,1.3333333333333333,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),1--0
+AND_OR_NOT,upper,65373,0xff5d,0x008a,1 + x0 + x0*x1 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -10- ---1
+AND_OR_NOT,upper,65395,0xff73,0x008a,1 + x1 + x1*x2 + x0*x1*x2 + x1*x3 + x1*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),-0-- 0-1- ---1
+AND_OR_NOT,upper,65397,0xff75,0x008a,1 + x0 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x2*x3 + x0*x1*x2*x3,5,1.641025641025641,5,1.641025641025641,6.0,exact prime cover,6,DNF(f),DNF(f),0--- -01- ---1
+AND_OR_NOT,upper,65408,0xff80,0x007f,x0*x1*x2 + x3 + x0*x1*x2*x3,3,1.5873015873015874,5,1.5873015873015874,4.0,exact prime cover,4,DNF(f),DNF(f),111- ---1
+AND_OR_NOT,upper,65416,0xff88,0x003f,x0*x1 + x3 + x0*x1*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),11-- ---1
+AND_OR_NOT,upper,65423,0xff8f,0x002a,1 + x2 + x0*x1*x2 + x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),--0- 11-- ---1
+AND_OR_NOT,upper,65440,0xffa0,0x003f,x0*x2 + x3 + x0*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),1-1- ---1
+AND_OR_NOT,upper,65450,0xffaa,0x000f,x0 + x3 + x0*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),0--0
+AND_OR_NOT,upper,65452,0xffac,0x001b,x1 + x0*x2 + x1*x2 + x3 + x1*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),-10- 1-1- ---1
+AND_OR_NOT,upper,65454,0xffae,0x000b,x0 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -10- ---1
+AND_OR_NOT,upper,65455,0xffaf,0x000a,1 + x2 + x0*x2 + x2*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),0-10
+AND_OR_NOT,upper,65459,0xffb3,0x002a,1 + x1 + x0*x1*x2 + x1*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),-0-- 1-1- ---1
+AND_OR_NOT,upper,65464,0xffb8,0x001b,x0*x1 + x2 + x1*x2 + x3 + x0*x1*x3 + x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),11-- -01- ---1
+AND_OR_NOT,upper,65466,0xffba,0x000b,x0 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1--- -01- ---1
+AND_OR_NOT,upper,65467,0xffbb,0x000a,1 + x1 + x0*x1 + x1*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),01-0
+AND_OR_NOT,upper,65472,0xffc0,0x003f,x1*x2 + x3 + x1*x2*x3,2,1.6666666666666667,4,1.6666666666666667,3.0,exact prime cover,3,DNF(f),DNF(f),-11- ---1
+AND_OR_NOT,upper,65482,0xffca,0x001b,x0 + x0*x2 + x1*x2 + x3 + x0*x3 + x0*x2*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),1-0- -11- ---1
+AND_OR_NOT,upper,65484,0xffcc,0x000f,x1 + x3 + x1*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),-0-0
+AND_OR_NOT,upper,65486,0xffce,0x000b,x0 + x1 + x0*x1 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),1-0- -1-- ---1
+AND_OR_NOT,upper,65487,0xffcf,0x000a,1 + x2 + x1*x2 + x2*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),-010
+AND_OR_NOT,upper,65493,0xffd5,0x002a,1 + x0 + x0*x1*x2 + x0*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),0--- -11- ---1
+AND_OR_NOT,upper,65496,0xffd8,0x001b,x0*x1 + x2 + x0*x2 + x3 + x0*x1*x3 + x2*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),11-- 0-1- ---1
+AND_OR_NOT,upper,65500,0xffdc,0x000b,x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),-1-- 0-1- ---1
+AND_OR_NOT,upper,65501,0xffdd,0x000a,1 + x0 + x0*x1 + x0*x3 + x0*x1*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),10-0
+AND_OR_NOT,upper,65506,0xffe2,0x001b,x0 + x0*x1 + x1*x2 + x3 + x0*x3 + x0*x1*x3 + x1*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),10-- -11- ---1
+AND_OR_NOT,upper,65508,0xffe4,0x001b,x1 + x0*x1 + x0*x2 + x3 + x1*x3 + x0*x1*x3 + x0*x2*x3,5,2.083333333333333,5,2.083333333333333,6.0,exact prime cover,6,DNF(f),DNF(f),01-- 1-1- ---1
+AND_OR_NOT,upper,65514,0xffea,0x0007,x0 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),1--- -11- ---1
+AND_OR_NOT,upper,65516,0xffec,0x0007,x1 + x0*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),-1-- 1-1- ---1
+AND_OR_NOT,upper,65518,0xffee,0x0003,x0 + x1 + x0*x1 + x3 + x0*x3 + x1*x3 + x0*x1*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),00-0
+AND_OR_NOT,upper,65519,0xffef,0x0002,1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0010
+AND_OR_NOT,upper,65520,0xfff0,0x000f,x2 + x3 + x2*x3,1,1.3333333333333333,3,1.3333333333333333,2.0,exact prime cover,2,CNF(f),DNF(f);CNF(f),--00
+AND_OR_NOT,upper,65522,0xfff2,0x000b,x0 + x0*x1 + x2 + x0*x2 + x0*x1*x2 + x3 + x0*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),10-- --1- ---1
+AND_OR_NOT,upper,65523,0xfff3,0x000a,1 + x1 + x1*x2 + x1*x3 + x1*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),-100
+AND_OR_NOT,upper,65524,0xfff4,0x000b,x1 + x0*x1 + x2 + x1*x2 + x0*x1*x2 + x3 + x1*x3 + x0*x1*x3 + x2*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.641025641025641,5,1.641025641025641,5.0,exact prime cover,5,DNF(f),DNF(f),01-- --1- ---1
+AND_OR_NOT,upper,65525,0xfff5,0x000a,1 + x0 + x0*x2 + x0*x3 + x0*x2*x3,3,1.2857142857142856,4,1.2857142857142856,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),1-00
+AND_OR_NOT,upper,65528,0xfff8,0x0007,x0*x1 + x2 + x0*x1*x2 + x3 + x0*x1*x3 + x2*x3 + x0*x1*x2*x3,3,1.641025641025641,5,1.641025641025641,4.0,exact prime cover,4,DNF(f),DNF(f),11-- --1- ---1
+AND_OR_NOT,upper,65530,0xfffa,0x0003,x0 + x2 + x0*x2 + x3 + x0*x3 + x2*x3 + x0*x2*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),0-00
+AND_OR_NOT,upper,65531,0xfffb,0x0002,1 + x1 + x0*x1 + x1*x2 + x0*x1*x2 + x1*x3 + x0*x1*x3 + x1*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),0100
+AND_OR_NOT,upper,65532,0xfffc,0x0003,x1 + x2 + x1*x2 + x3 + x1*x3 + x2*x3 + x1*x2*x3,2,1.2857142857142856,4,1.2857142857142856,3.0,exact prime cover,3,CNF(f),DNF(f);CNF(f),-000
+AND_OR_NOT,upper,65533,0xfffd,0x0002,1 + x0 + x0*x1 + x0*x2 + x0*x1*x2 + x0*x3 + x0*x1*x3 + x0*x2*x3 + x0*x1*x2*x3,4,1.0666666666666669,5,1.0666666666666669,5.0,exact prime cover,5,CNF(f),DNF(f);CNF(f),1000
+AND_OR_NOT,upper,65534,0xfffe,0x0001,x0 + x1 + x0*x1 + x2 + x0*x2 + x1*x2 + x0*x1*x2 + x3 + x0*x3 + x1*x3 + x0*x1*x3 + x2*x3 + x0*x2*x3 + x1*x2*x3 + x0*x1*x2*x3,3,1.0666666666666669,5,1.0666666666666669,4.0,exact prime cover,4,CNF(f),DNF(f);CNF(f),0000
+AND_OR_NOT,upper,65535,0xffff,0x0000,1,2,0.0,1,0.0,3.0,exact prime cover+empirical decision-tree envelope,3,constant,constant,
