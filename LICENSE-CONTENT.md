@@ -8,8 +8,8 @@ figures, LaTeX source, and rendered PDFs.
 
 When reusing licensed content, provide attribution substantially in this form:
 
-> “LeanDojo Proof Geometry Experiments” by Jonathan R. Landers, licensed under
-> CC BY 4.0. Source: https://github.com/jonland82/leandojo-experiments
+> “Semantic Boolean Complexity” by Jonathan R. Landers, licensed under
+> CC BY 4.0. Source: https://github.com/jonland82/semantic-boolean-complexity
 
 You must also indicate if you made changes. The canonical license terms and
 legal code are available from Creative Commons:
@@ -19,7 +19,6 @@ legal code are available from Creative Commons:
 
 This license applies only to material for which Jonathan R. Landers holds the
 necessary rights. It does not apply to source code, which is covered by the
-repository's [MIT License](LICENSE), or to excluded third-party material and
-retained service outputs described in [THIRD_PARTY.md](THIRD_PARTY.md).
+repository's [MIT License](LICENSE).
 
 [cc-by-4]: https://creativecommons.org/licenses/by/4.0/
