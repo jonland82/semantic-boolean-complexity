@@ -41,8 +41,8 @@ The prediction-calibrated envelope is their intersection:
 $$
 I_*(x)=I_0(x)\cap C(x)
 =\left[
-\max\{L(x),\widehat Y(x)-E^-(x)\},
-\min\{H(x),\widehat Y(x)+E^+(x)\}
+\max\left(L(x),\widehat Y(x)-E^-(x)\right),
+\min\left(H(x),\widehat Y(x)+E^+(x)\right)
 \right].
 $$
 
@@ -68,38 +68,39 @@ S^-(x)=\frac{(\widehat Y(x)-Y(x))_+}{W(x)},
 S^+(x)=\frac{(Y(x)-\widehat Y(x))_+}{W(x)},
 $$
 
-where $(z)_+=\max\{z,0\}$. Let $q^-$ and $q^+$ be bounds or calibrated
+where $(z)_+=\max(z,0)$. Let $q^-$ and $q^+$ be bounds or calibrated
 quantiles for these scores. The refined envelope becomes
 
 $$
 I_q(x)=\left[
-\max\{L(x),\widehat Y(x)-q^-W(x)\},
-\min\{H(x),\widehat Y(x)+q^+W(x)\}
+\max\left(L(x),\widehat Y(x)-q^-W(x)\right),
+\min\left(H(x),\widehat Y(x)+q^+W(x)\right)
 \right].
 $$
 
 For every nondegenerate analytic envelope,
 
 $$
-\frac{\operatorname{width}(I_q(x))}{W(x)}
-=\min\{p(x),q^-\}+\min\{1-p(x),q^+\}
-\leq \min\{1,q^-+q^+\}.
+\frac{\mathrm{width}(I_q(x))}{W(x)}
+=\min\left(p(x),q^-\right)+\min\left(1-p(x),q^+\right)
+\leq \min\left(1,q^-+q^+\right).
 $$
 
 Consequently, every instance loses at least
-$\max\{0,1-q^--q^+\}$ of its original analytic width. If $q^-$ and $q^+$ are
+$\max(0,1-q^--q^+)$ of its original analytic width. If $q^-$ and $q^+$ are
 split-conformal quantiles with tail errors $\alpha^-$ and $\alpha^+$, then
 $I_q$ covers $Y$ with probability at least $1-\alpha^--\alpha^+$. Exhaustive
 or universal score bounds give the corresponding deterministic guarantee.
 
 ### Application to Boolean formula complexity
 
-For a Boolean function $f:\{0,1\}^n\to\{0,1\}$ and gate library $\mathcal L$,
+For a Boolean function
+$f:\lbrace 0,1\rbrace^n\to\lbrace 0,1\rbrace$ and gate library $\mathcal L$,
 the target is the minimum tree-formula gate count
 
 $$
 K_{\mathcal L}(f)=
-\min\{|e|:\operatorname{eval}_{\mathcal L}(e)=f\}.
+\min_{e:\,\mathrm{eval}_{\mathcal L}(e)=f}|e|.
 $$
 
 The framework uses $Y_{\mathcal L}(f)=K_{\mathcal L}(f)+1$ to align the target
@@ -130,7 +131,7 @@ and
 
 $$
 B(f)\leq K_{\mathrm{AON}}(f)+1
-\leq \min\left\{3+\frac{13}{9}(U(f)-1),Q_{\min}(f)\right\},
+\leq \min\left(3+\frac{13}{9}(U(f)-1),Q_{\min}(f)\right),
 $$
 
 where $Q_{\min}(f)$ is the upper-bound value from the best explicit
