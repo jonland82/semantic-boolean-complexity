@@ -14,6 +14,6 @@ python experiments/five_bit_pilot/scripts/analyze_dimension_calibration.py
 python experiments/five_bit_pilot/scripts/analyze_conditional_calibration.py
 ```
 
-The sampled functions are deliberately limited to exact cost at most eleven.
+The sampled functions are limited to exact cost at most eleven.
 They establish local feasibility and expose dimension shift; they are not a
 representative five-input benchmark.

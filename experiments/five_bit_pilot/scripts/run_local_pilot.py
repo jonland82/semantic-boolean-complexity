@@ -1,6 +1,6 @@
 """Local exact five-input feasibility pilot for a frozen learned envelope.
 
-This deliberately enumerates only formula functions reachable through eleven
+This enumerates only formula functions reachable through eleven
 gates. It is a compute pilot and an out-of-dimension stress test on easy
 functions, not a representative five-input benchmark.
 """

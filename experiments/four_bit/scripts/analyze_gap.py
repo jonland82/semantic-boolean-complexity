@@ -1,6 +1,6 @@
 """Diagnose information missing from the four-bit semantic descriptor.
 
-This analysis deliberately studies descriptor ceilings before fitting a more
+This analysis studies descriptor ceilings before fitting a more
 powerful predictor.  A ceiling gain means that a candidate invariant separates
 functions that the current descriptor aliases despite different exact costs.
 """

@@ -84,7 +84,7 @@ def main() -> None:
         # A minimal target-dimension adaptation: fit an affine correction of
         # K-hat on costs 0--7, reserve cost 8 solely for residual calibration,
         # and retain cost 10 as the prospective evaluation layer. Cost 9 is
-        # deliberately unused by the frozen affine method.
+        # unused by the frozen affine method.
         adaptation = language_table[language_table.exact_minimum_gates <= 7]
         affine_calibration = language_table[
             language_table.exact_minimum_gates == 8]
