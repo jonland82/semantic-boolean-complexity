@@ -1,0 +1,3 @@
+cohort,functions,coverage,misses,mean_construction_upper,mean_selective_upper,mean_reduction_beyond_construction,functions_improved,maximum_violation
+targeted,80,0.925,6,17.7625,16.588070753391627,1.1744292466083706,80,0.4006555504013498
+random_reference,40,1.0,0,17.15,16.86049104091893,0.28950895908107144,19,0.0

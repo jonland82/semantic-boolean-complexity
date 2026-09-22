@@ -1,0 +1,85 @@
+|--- canalizing_variable_count <= 0.500
+|   |--- classical_width <= 10.292
+|   |   |--- khrapchenko_product <= 4.859
+|   |   |   |--- restriction_gain <= 1.056
+|   |   |   |   |--- decision_tree_leaf_count <= 7.500
+|   |   |   |   |   |--- value: [1.169]
+|   |   |   |   |--- decision_tree_leaf_count >  7.500
+|   |   |   |   |   |--- value: [1.666]
+|   |   |   |--- restriction_gain >  1.056
+|   |   |   |   |--- classical_width <= 9.147
+|   |   |   |   |   |--- value: [0.929]
+|   |   |   |   |--- classical_width >  9.147
+|   |   |   |   |   |--- value: [1.198]
+|   |   |--- khrapchenko_product >  4.859
+|   |   |   |--- fourier_negative_degree_3 <= 1.500
+|   |   |   |   |--- anf_terms_degree_0 <= 0.500
+|   |   |   |   |   |--- value: [0.984]
+|   |   |   |   |--- anf_terms_degree_0 >  0.500
+|   |   |   |   |   |--- value: [0.584]
+|   |   |   |--- fourier_negative_degree_3 >  1.500
+|   |   |   |   |--- classical_width <= 9.373
+|   |   |   |   |   |--- value: [0.923]
+|   |   |   |   |--- classical_width >  9.373
+|   |   |   |   |   |--- value: [1.267]
+|   |--- classical_width >  10.292
+|   |   |--- classical_width <= 11.429
+|   |   |   |--- khrapchenko_product <= 8.605
+|   |   |   |   |--- anf_terms_degree_1 <= 0.500
+|   |   |   |   |   |--- value: [2.093]
+|   |   |   |   |--- anf_terms_degree_1 >  0.500
+|   |   |   |   |   |--- value: [1.372]
+|   |   |   |--- khrapchenko_product >  8.605
+|   |   |   |   |--- classical_width <= 10.984
+|   |   |   |   |   |--- value: [3.500]
+|   |   |   |   |--- classical_width >  10.984
+|   |   |   |   |   |--- value: [2.322]
+|   |   |--- classical_width >  11.429
+|   |   |   |--- restriction_gain <= 1.167
+|   |   |   |   |--- restriction_gain <= 0.222
+|   |   |   |   |   |--- value: [3.338]
+|   |   |   |   |--- restriction_gain >  0.222
+|   |   |   |   |   |--- value: [2.476]
+|   |   |   |--- restriction_gain >  1.167
+|   |   |   |   |--- anf_terms_degree_1 <= 0.500
+|   |   |   |   |   |--- value: [2.577]
+|   |   |   |   |--- anf_terms_degree_1 >  0.500
+|   |   |   |   |   |--- value: [1.693]
+|--- canalizing_variable_count >  0.500
+|   |--- fourier_negative_degree_1 <= 0.500
+|   |   |--- maximum_certificate_size <= 3.500
+|   |   |   |--- mean_certificate_size <= 1.656
+|   |   |   |   |--- value: [0.148]
+|   |   |   |--- mean_certificate_size >  1.656
+|   |   |   |   |--- classical_width <= 6.149
+|   |   |   |   |   |--- value: [0.316]
+|   |   |   |   |--- classical_width >  6.149
+|   |   |   |   |   |--- value: [0.394]
+|   |   |--- maximum_certificate_size >  3.500
+|   |   |   |--- anf_terms_degree_2 <= 2.500
+|   |   |   |   |--- value: [0.738]
+|   |   |   |--- anf_terms_degree_2 >  2.500
+|   |   |   |   |--- value: [0.506]
+|   |--- fourier_negative_degree_1 >  0.500
+|   |   |--- classical_width <= 4.925
+|   |   |   |--- classical_width <= 3.815
+|   |   |   |   |--- and_factorable_partitions <= 2.500
+|   |   |   |   |   |--- value: [0.024]
+|   |   |   |   |--- and_factorable_partitions >  2.500
+|   |   |   |   |   |--- value: [0.005]
+|   |   |   |--- classical_width >  3.815
+|   |   |   |   |--- fourier_negative_degree_3 <= 0.500
+|   |   |   |   |   |--- value: [0.012]
+|   |   |   |   |--- fourier_negative_degree_3 >  0.500
+|   |   |   |   |   |--- value: [0.086]
+|   |   |--- classical_width >  4.925
+|   |   |   |--- anf_terms_degree_1 <= 0.500
+|   |   |   |   |--- mean_certificate_size_output_0 <= 1.933
+|   |   |   |   |   |--- value: [0.088]
+|   |   |   |   |--- mean_certificate_size_output_0 >  1.933
+|   |   |   |   |   |--- value: [0.623]
+|   |   |   |--- anf_terms_degree_1 >  0.500
+|   |   |   |   |--- mean_certificate_size_output_1 <= 1.469
+|   |   |   |   |   |--- value: [0.069]
+|   |   |   |   |--- mean_certificate_size_output_1 >  1.469
+|   |   |   |   |   |--- value: [0.225]

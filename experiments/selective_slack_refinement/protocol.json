@@ -1,0 +1,31 @@
+{
+  "name": "Selective residual-slack refinement for prospective cost 14",
+  "status": "frozen before fitting",
+  "target": "certified construction upper K+1 minus exact K+1",
+  "training": "complete four-input universe plus known five-input exact targets through cost 12",
+  "calibration": "cost-13 frozen prospective sample, stratified by predicted residual slack",
+  "strata": {
+    "low": "prediction <= 2",
+    "medium": "2 < prediction <= 3",
+    "high": "prediction > 3"
+  },
+  "cross_layer_buffer": "the prior frozen cost-13 maximum violation (cost-12 to cost-13 max-residual drift)",
+  "minimum_applied_reduction": 0.25,
+  "teacher": "squared-error histogram gradient boosting",
+  "student": "depth-5 regression tree distilled from teacher predictions",
+  "model_seed": 31417,
+  "cost14_selection_seed": 20260926,
+  "cost14": {
+    "candidate_pool_size": 1000,
+    "targeted_size": 80,
+    "reference_size": 40,
+    "selection": "largest positive selective reductions plus seeded random reference from the remainder"
+  },
+  "success_criteria": {
+    "coverage": 0.99,
+    "maximum_violation": 1.0,
+    "positive_mean_reduction_beyond_construction": true,
+    "minimum_improved_fraction": 0.1
+  },
+  "notes": "Cost 13 is calibration only. Cost 14 must remain untouched until serialized model and frozen-protocol hashes exist."
+}

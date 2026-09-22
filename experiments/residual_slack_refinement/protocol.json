@@ -1,0 +1,23 @@
+{
+  "name": "Residual-slack refinement below certified AON constructions",
+  "status": "frozen before fitting",
+  "target": "certified construction upper K+1 minus exact K+1",
+  "training": "four-input discovery split plus five-input exact costs 0 through 11",
+  "model_selection": "largest 100%-calibrated mean reduction on the seeded four-input selection split",
+  "candidate_models": [
+    "squared-error histogram gradient boosting",
+    "10th-quantile histogram gradient boosting"
+  ],
+  "student": "depth-5 regression tree fit to the selected teacher predictions",
+  "cost12_calibration": "maximum nonnegative predicted-slack overestimate across both existing cost-12 cohorts",
+  "cost13_evaluation": "80 largest predicted calibrated reductions in a seeded 1000-function pool plus 40 random functions from the remainder",
+  "split_seed": 20260924,
+  "model_seed": 24017,
+  "cost13_selection_seed": 20260925,
+  "success_criteria": {
+    "coverage": 0.95,
+    "maximum_violation": 1.0,
+    "positive_mean_reduction_beyond_construction": true
+  },
+  "notes": "Cost 12 chooses only the safety correction, not the model family. Cost 13 must not be inspected until the frozen model and protocol artifact hashes exist."
+}

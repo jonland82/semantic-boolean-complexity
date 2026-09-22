@@ -1,0 +1,5 @@
+model,cohort,functions,calibration_offset,coverage,mean_construction_upper,mean_refined_upper,mean_reduction_beyond_construction,functions_improved
+teacher,cost_12_upper_tail,80,1.900001760713045,1.0,15.7375,15.484909453053183,0.2525905469468176,57
+teacher,cost_12_random_reference,40,1.900001760713045,1.0,15.0,14.707862875820513,0.2921371241794875,21
+student,cost_12_upper_tail,80,1.7045865256933213,1.0,15.7375,15.645660842151164,0.09183915784883506,12
+student,cost_12_random_reference,40,1.7045865256933213,1.0,15.0,14.894819034087352,0.10518096591264772,9

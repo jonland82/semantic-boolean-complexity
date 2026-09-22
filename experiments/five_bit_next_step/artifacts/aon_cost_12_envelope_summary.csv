@@ -1,0 +1,5 @@
+cohort,method,functions,coverage,misses_below,misses_above,mean_learned_width,mean_relative_shrinkage
+upper_tail,baseline,80,0.9125,7,0,4.17454217622289,0.7932078687529021
+upper_tail,structure_augmented,80,0.8875,9,0,4.002990706265801,0.8016847626810414
+random_reference,baseline,40,0.775,0,9,4.073440260521239,0.7433856049486959
+random_reference,structure_augmented,40,0.775,0,9,3.918399409860237,0.7529636038178701

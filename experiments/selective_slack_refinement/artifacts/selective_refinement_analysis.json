@@ -1,0 +1,135 @@
+{
+  "base_protocol_sha256": "0d96038e33a6c7a7a4a5051688df62e924fee96fb823167cd59cfc8d7823e750",
+  "frozen_cost14_protocol_sha256": "6e1b8cbe4cc9bc72c8768de756595aadcd82874aaec6600c071da2542aba3087",
+  "training_functions": 66086,
+  "transition_buffer": 0.2608186755221631,
+  "teacher_offsets": {
+    "low": 1.566815931093834,
+    "medium": 2.112947127922334,
+    "high": 2.3607058695413654
+  },
+  "calibration_summary": [
+    {
+      "model": "teacher",
+      "cohort": "targeted",
+      "risk_stratum": "high",
+      "functions": 46,
+      "offset": 2.3607058695413654,
+      "coverage": 1.0,
+      "mean_reduction": 1.0981505170779664,
+      "functions_improved": 46
+    },
+    {
+      "model": "teacher",
+      "cohort": "targeted",
+      "risk_stratum": "medium",
+      "functions": 34,
+      "offset": 2.112947127922334,
+      "coverage": 1.0,
+      "mean_reduction": 0.6562478605143828,
+      "functions_improved": 34
+    },
+    {
+      "model": "teacher",
+      "cohort": "random_reference",
+      "risk_stratum": "low",
+      "functions": 18,
+      "offset": 1.566815931093834,
+      "coverage": 1.0,
+      "mean_reduction": 0.06487040518337332,
+      "functions_improved": 4
+    },
+    {
+      "model": "teacher",
+      "cohort": "random_reference",
+      "risk_stratum": "medium",
+      "functions": 20,
+      "offset": 2.112947127922334,
+      "coverage": 1.0,
+      "mean_reduction": 0.22163558091185687,
+      "functions_improved": 8
+    },
+    {
+      "model": "teacher",
+      "cohort": "random_reference",
+      "risk_stratum": "high",
+      "functions": 2,
+      "offset": 2.3607058695413654,
+      "coverage": 1.0,
+      "mean_reduction": 0.8632024820200819,
+      "functions_improved": 2
+    },
+    {
+      "model": "student",
+      "cohort": "targeted",
+      "risk_stratum": "high",
+      "functions": 2,
+      "offset": 0.5985648664761669,
+      "coverage": 1.0,
+      "mean_reduction": 2.739181324477837,
+      "functions_improved": 2
+    },
+    {
+      "model": "student",
+      "cohort": "targeted",
+      "risk_stratum": "medium",
+      "functions": 47,
+      "offset": 1.8378787569390478,
+      "coverage": 1.0,
+      "mean_reduction": 0.7197486186578345,
+      "functions_improved": 47
+    },
+    {
+      "model": "student",
+      "cohort": "targeted",
+      "risk_stratum": "low",
+      "functions": 31,
+      "offset": 1.9534155574548604,
+      "coverage": 1.0,
+      "mean_reduction": 0.0,
+      "functions_improved": 0
+    },
+    {
+      "model": "student",
+      "cohort": "random_reference",
+      "risk_stratum": "low",
+      "functions": 37,
+      "offset": 1.9534155574548604,
+      "coverage": 1.0,
+      "mean_reduction": 0.0,
+      "functions_improved": 0
+    },
+    {
+      "model": "student",
+      "cohort": "random_reference",
+      "risk_stratum": "medium",
+      "functions": 3,
+      "offset": 1.8378787569390478,
+      "coverage": 1.0,
+      "mean_reduction": 0.7053540217541289,
+      "functions_improved": 3
+    }
+  ],
+  "four_bit_audit": [
+    {
+      "model": "teacher",
+      "functions": 65536,
+      "coverage": 1.0,
+      "mean_reduction": 0.21241823820802166,
+      "functions_improved": 17391,
+      "low_offset": 1.1831897384088137,
+      "medium_offset": 1.1294865552388424,
+      "high_offset": 0.6647490381449463
+    },
+    {
+      "model": "student",
+      "functions": 65536,
+      "coverage": 1.0,
+      "mean_reduction": 0.024470543005753066,
+      "functions_improved": 2078,
+      "low_offset": 1.6925968819326973,
+      "medium_offset": 1.5770600814168847,
+      "high_offset": 2.4488573020651145
+    }
+  ]
+}

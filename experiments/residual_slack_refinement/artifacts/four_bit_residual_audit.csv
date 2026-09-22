@@ -1,0 +1,3 @@
+model,functions,audit_offset,coverage,mean_reduction_beyond_construction,functions_improved,maximum_reduction
+teacher,65536,1.3298769171890301,1.0,0.16262605076588355,20540,4.51147728346201
+student,65536,2.451281540752402,1.0,0.005810273755059834,764,0.8888888888888893

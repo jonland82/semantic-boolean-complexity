@@ -1,0 +1,56 @@
+{
+  "frozen_protocol_sha256": "6e1b8cbe4cc9bc72c8768de756595aadcd82874aaec6600c071da2542aba3087",
+  "enumeration": {
+    "exact_layer_functions": 89637411,
+    "cumulative_functions": 173980568,
+    "seconds": 14258.660880461,
+    "per_layer_seconds": [
+      0.0,
+      1.715899999510384e-05,
+      3.9211999997235125e-05,
+      0.00029033799999922394,
+      0.0014146480000007955,
+      0.010162889000000064,
+      0.046647344999996676,
+      0.32661558699999915,
+      1.5160647630000028,
+      9.119443899000004,
+      38.367560596000004,
+      196.07641680499998,
+      734.686898218,
+      3140.20304012,
+      10134.169980833
+    ]
+  },
+  "overall": {
+    "coverage": 0.95,
+    "maximum_violation": 0.4006555504013498,
+    "mean_reduction_beyond_construction": 0.8794558174326041,
+    "improved_fraction": 0.825,
+    "passed_frozen_success_criteria": false
+  },
+  "summary": [
+    {
+      "cohort": "targeted",
+      "functions": 80,
+      "coverage": 0.925,
+      "misses": 6,
+      "mean_construction_upper": 17.7625,
+      "mean_selective_upper": 16.588070753391627,
+      "mean_reduction_beyond_construction": 1.1744292466083706,
+      "functions_improved": 80,
+      "maximum_violation": 0.4006555504013498
+    },
+    {
+      "cohort": "random_reference",
+      "functions": 40,
+      "coverage": 1.0,
+      "misses": 0,
+      "mean_construction_upper": 17.15,
+      "mean_selective_upper": 16.86049104091893,
+      "mean_reduction_beyond_construction": 0.28950895908107144,
+      "functions_improved": 19,
+      "maximum_violation": 0.0
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+|--- restriction_gain <= 1.278
+|   |--- restriction_gain <= 0.722
+|   |   |--- classical_width <= 5.662
+|   |   |   |--- classical_width <= 3.657
+|   |   |   |   |--- classical_width <= 3.091
+|   |   |   |   |   |--- value: [0.032]
+|   |   |   |   |--- classical_width >  3.091
+|   |   |   |   |   |--- value: [0.250]
+|   |   |   |--- classical_width >  3.657
+|   |   |   |   |--- factor_gain <= 0.500
+|   |   |   |   |   |--- value: [0.647]
+|   |   |   |   |--- factor_gain >  0.500
+|   |   |   |   |   |--- value: [1.102]
+|   |   |--- classical_width >  5.662
+|   |   |   |--- classical_width <= 9.416
+|   |   |   |   |--- khrapchenko_product <= 4.859
+|   |   |   |   |   |--- value: [1.743]
+|   |   |   |   |--- khrapchenko_product >  4.859
+|   |   |   |   |   |--- value: [1.160]
+|   |   |   |--- classical_width >  9.416
+|   |   |   |   |--- classical_width <= 11.385
+|   |   |   |   |   |--- value: [1.961]
+|   |   |   |   |--- classical_width >  11.385
+|   |   |   |   |   |--- value: [3.295]
+|   |--- restriction_gain >  0.722
+|   |   |--- classical_width <= 11.481
+|   |   |   |--- mean_certificate_size <= 2.719
+|   |   |   |   |--- classical_width <= 9.126
+|   |   |   |   |   |--- value: [2.191]
+|   |   |   |   |--- classical_width >  9.126
+|   |   |   |   |   |--- value: [2.790]
+|   |   |   |--- mean_certificate_size >  2.719
+|   |   |   |   |--- fourier_negative_degree_3 <= 1.500
+|   |   |   |   |   |--- value: [1.621]
+|   |   |   |   |--- fourier_negative_degree_3 >  1.500
+|   |   |   |   |   |--- value: [2.156]
+|   |   |--- classical_width >  11.481
+|   |   |   |--- mean_certificate_size <= 3.000
+|   |   |   |   |--- value: [3.855]
+|   |   |   |--- mean_certificate_size >  3.000
+|   |   |   |   |--- value: [2.913]
+|--- restriction_gain >  1.278
+|   |--- restriction_gain <= 2.278
+|   |   |--- restriction_gain <= 1.722
+|   |   |   |--- classical_width <= 10.095
+|   |   |   |   |--- fourier_negative_degree_3 <= 0.500
+|   |   |   |   |   |--- value: [2.114]
+|   |   |   |   |--- fourier_negative_degree_3 >  0.500
+|   |   |   |   |   |--- value: [2.580]
+|   |   |   |--- classical_width >  10.095
+|   |   |   |   |--- fourier_negative_degree_3 <= 2.500
+|   |   |   |   |   |--- value: [2.778]
+|   |   |   |   |--- fourier_negative_degree_3 >  2.500
+|   |   |   |   |   |--- value: [3.181]
+|   |   |--- restriction_gain >  1.722
+|   |   |   |--- classical_width <= 9.598
+|   |   |   |   |--- fourier_negative_degree_1 <= 1.500
+|   |   |   |   |   |--- value: [3.174]
+|   |   |   |   |--- fourier_negative_degree_1 >  1.500
+|   |   |   |   |   |--- value: [2.850]
+|   |   |   |--- classical_width >  9.598
+|   |   |   |   |--- fourier_negative_degree_3 <= 1.500
+|   |   |   |   |   |--- value: [3.085]
+|   |   |   |   |--- fourier_negative_degree_3 >  1.500
+|   |   |   |   |   |--- value: [3.642]
+|   |--- restriction_gain >  2.278
+|   |   |--- restriction_gain <= 3.222
+|   |   |   |--- classical_width <= 10.817
+|   |   |   |   |--- mean_certificate_size <= 2.531
+|   |   |   |   |   |--- value: [3.880]
+|   |   |   |   |--- mean_certificate_size >  2.531
+|   |   |   |   |   |--- value: [3.491]
+|   |   |   |--- classical_width >  10.817
+|   |   |   |   |--- anf_terms_degree_1 <= 2.500
+|   |   |   |   |   |--- value: [4.426]
+|   |   |   |   |--- anf_terms_degree_1 >  2.500
+|   |   |   |   |   |--- value: [3.956]
+|   |   |--- restriction_gain >  3.222
+|   |   |   |--- maximum_certificate_size <= 3.500
+|   |   |   |   |--- value: [4.833]
+|   |   |   |--- maximum_certificate_size >  3.500
+|   |   |   |   |--- value: [5.402]

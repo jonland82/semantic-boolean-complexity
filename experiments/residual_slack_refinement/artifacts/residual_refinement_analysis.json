@@ -1,0 +1,90 @@
+{
+  "base_protocol_sha256": "59c560728a2e7914ac666ad27dfc5a4cd058e17d2a0084e2684ed9f295a52efd",
+  "frozen_cost13_protocol_sha256": "7114b96ad029d86a28a8fe5dd0e27a4bbc2b3c0d5fc14ce117106205b1135127",
+  "selected_model": "squared_boosting",
+  "training_functions": 65966,
+  "selection_summary": [
+    {
+      "model": "squared_boosting",
+      "selection_functions": 13203,
+      "selection_offset": 1.4051214568704946,
+      "selection_coverage": 1.0,
+      "selection_mean_reduction": 0.14001379774198963,
+      "selection_functions_improved": 3668
+    },
+    {
+      "model": "lower_quantile_boosting",
+      "selection_functions": 13203,
+      "selection_offset": 0.0,
+      "selection_coverage": 1.0,
+      "selection_mean_reduction": 0.0,
+      "selection_functions_improved": 0
+    }
+  ],
+  "cost12_summary": [
+    {
+      "model": "teacher",
+      "cohort": "cost_12_upper_tail",
+      "functions": 80,
+      "calibration_offset": 1.900001760713045,
+      "coverage": 1.0,
+      "mean_construction_upper": 15.7375,
+      "mean_refined_upper": 15.484909453053183,
+      "mean_reduction_beyond_construction": 0.2525905469468176,
+      "functions_improved": 57
+    },
+    {
+      "model": "teacher",
+      "cohort": "cost_12_random_reference",
+      "functions": 40,
+      "calibration_offset": 1.900001760713045,
+      "coverage": 1.0,
+      "mean_construction_upper": 15.0,
+      "mean_refined_upper": 14.707862875820513,
+      "mean_reduction_beyond_construction": 0.2921371241794875,
+      "functions_improved": 21
+    },
+    {
+      "model": "student",
+      "cohort": "cost_12_upper_tail",
+      "functions": 80,
+      "calibration_offset": 1.7045865256933213,
+      "coverage": 1.0,
+      "mean_construction_upper": 15.7375,
+      "mean_refined_upper": 15.645660842151164,
+      "mean_reduction_beyond_construction": 0.09183915784883506,
+      "functions_improved": 12
+    },
+    {
+      "model": "student",
+      "cohort": "cost_12_random_reference",
+      "functions": 40,
+      "calibration_offset": 1.7045865256933213,
+      "coverage": 1.0,
+      "mean_construction_upper": 15.0,
+      "mean_refined_upper": 14.894819034087352,
+      "mean_reduction_beyond_construction": 0.10518096591264772,
+      "functions_improved": 9
+    }
+  ],
+  "four_bit_audit": [
+    {
+      "model": "teacher",
+      "functions": 65536,
+      "audit_offset": 1.3298769171890301,
+      "coverage": 1.0,
+      "mean_reduction_beyond_construction": 0.16262605076588355,
+      "functions_improved": 20540,
+      "maximum_reduction": 4.51147728346201
+    },
+    {
+      "model": "student",
+      "functions": 65536,
+      "audit_offset": 2.451281540752402,
+      "coverage": 1.0,
+      "mean_reduction_beyond_construction": 0.005810273755059834,
+      "functions_improved": 764,
+      "maximum_reduction": 0.8888888888888893
+    }
+  ]
+}

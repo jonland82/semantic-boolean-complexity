@@ -1,0 +1,91 @@
+|--- canalizing_variable_count <= 0.500
+|   |--- classical_width <= 10.292
+|   |   |--- khrapchenko_product <= 4.859
+|   |   |   |--- restriction_gain <= 1.056
+|   |   |   |   |--- decision_tree_leaf_count <= 7.500
+|   |   |   |   |   |--- value: [1.173]
+|   |   |   |   |--- decision_tree_leaf_count >  7.500
+|   |   |   |   |   |--- value: [1.664]
+|   |   |   |--- restriction_gain >  1.056
+|   |   |   |   |--- classical_width <= 9.147
+|   |   |   |   |   |--- value: [0.929]
+|   |   |   |   |--- classical_width >  9.147
+|   |   |   |   |   |--- value: [1.198]
+|   |   |--- khrapchenko_product >  4.859
+|   |   |   |--- fourier_negative_degree_3 <= 1.500
+|   |   |   |   |--- anf_terms_degree_0 <= 0.500
+|   |   |   |   |   |--- value: [0.981]
+|   |   |   |   |--- anf_terms_degree_0 >  0.500
+|   |   |   |   |   |--- value: [0.583]
+|   |   |   |--- fourier_negative_degree_3 >  1.500
+|   |   |   |   |--- classical_width <= 9.373
+|   |   |   |   |   |--- value: [0.925]
+|   |   |   |   |--- classical_width >  9.373
+|   |   |   |   |   |--- value: [1.258]
+|   |--- classical_width >  10.292
+|   |   |--- restriction_gain <= 0.944
+|   |   |   |--- classical_width <= 11.385
+|   |   |   |   |--- khrapchenko_product <= 8.605
+|   |   |   |   |   |--- value: [1.669]
+|   |   |   |   |--- khrapchenko_product >  8.605
+|   |   |   |   |   |--- value: [2.854]
+|   |   |   |--- classical_width >  11.385
+|   |   |   |   |--- restriction_gain <= 0.222
+|   |   |   |   |   |--- value: [3.340]
+|   |   |   |   |--- restriction_gain >  0.222
+|   |   |   |   |   |--- value: [2.405]
+|   |   |--- restriction_gain >  0.944
+|   |   |   |--- anf_terms_degree_1 <= 0.500
+|   |   |   |   |--- anf_terms_degree_2 <= 4.500
+|   |   |   |   |   |--- value: [1.929]
+|   |   |   |   |--- anf_terms_degree_2 >  4.500
+|   |   |   |   |   |--- value: [2.705]
+|   |   |   |--- anf_terms_degree_1 >  0.500
+|   |   |   |   |--- classical_width <= 11.429
+|   |   |   |   |   |--- value: [1.291]
+|   |   |   |   |--- classical_width >  11.429
+|   |   |   |   |   |--- value: [1.696]
+|--- canalizing_variable_count >  0.500
+|   |--- fourier_negative_degree_1 <= 1.500
+|   |   |--- anf_terms_degree_1 <= 0.500
+|   |   |   |--- classical_width <= 4.967
+|   |   |   |   |--- value: [0.149]
+|   |   |   |--- classical_width >  4.967
+|   |   |   |   |--- fourier_negative_degree_3 <= 1.500
+|   |   |   |   |   |--- value: [0.443]
+|   |   |   |   |--- fourier_negative_degree_3 >  1.500
+|   |   |   |   |   |--- value: [0.703]
+|   |   |--- anf_terms_degree_1 >  0.500
+|   |   |   |--- mean_certificate_size_output_1 <= 2.100
+|   |   |   |   |--- fourier_negative_degree_3 <= 0.500
+|   |   |   |   |   |--- value: [0.055]
+|   |   |   |   |--- fourier_negative_degree_3 >  0.500
+|   |   |   |   |   |--- value: [0.125]
+|   |   |   |--- mean_certificate_size_output_1 >  2.100
+|   |   |   |   |--- fourier_negative_degree_1 <= 0.500
+|   |   |   |   |   |--- value: [0.404]
+|   |   |   |   |--- fourier_negative_degree_1 >  0.500
+|   |   |   |   |   |--- value: [0.254]
+|   |--- fourier_negative_degree_1 >  1.500
+|   |   |--- classical_width <= 4.705
+|   |   |   |--- classical_width <= 3.665
+|   |   |   |   |--- decision_tree_leaf_count <= 4.500
+|   |   |   |   |   |--- value: [0.015]
+|   |   |   |   |--- decision_tree_leaf_count >  4.500
+|   |   |   |   |   |--- value: [0.027]
+|   |   |   |--- classical_width >  3.665
+|   |   |   |   |--- fourier_negative_degree_4 <= 0.500
+|   |   |   |   |   |--- value: [0.067]
+|   |   |   |   |--- fourier_negative_degree_4 >  0.500
+|   |   |   |   |   |--- value: [0.028]
+|   |   |--- classical_width >  4.705
+|   |   |   |--- fourier_negative_degree_3 <= 2.500
+|   |   |   |   |--- restriction_gain <= 0.056
+|   |   |   |   |   |--- value: [0.114]
+|   |   |   |   |--- restriction_gain >  0.056
+|   |   |   |   |   |--- value: [0.045]
+|   |   |   |--- fourier_negative_degree_3 >  2.500
+|   |   |   |   |--- classical_width <= 5.496
+|   |   |   |   |   |--- value: [0.077]
+|   |   |   |   |--- classical_width >  5.496
+|   |   |   |   |   |--- value: [0.251]

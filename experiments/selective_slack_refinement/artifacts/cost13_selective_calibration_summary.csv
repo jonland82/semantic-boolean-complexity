@@ -1,0 +1,11 @@
+model,cohort,risk_stratum,functions,offset,coverage,mean_reduction,functions_improved
+teacher,targeted,high,46,2.3607058695413654,1.0,1.0981505170779664,46
+teacher,targeted,medium,34,2.112947127922334,1.0,0.6562478605143828,34
+teacher,random_reference,low,18,1.566815931093834,1.0,0.06487040518337332,4
+teacher,random_reference,medium,20,2.112947127922334,1.0,0.22163558091185687,8
+teacher,random_reference,high,2,2.3607058695413654,1.0,0.8632024820200819,2
+student,targeted,high,2,0.5985648664761669,1.0,2.739181324477837,2
+student,targeted,medium,47,1.8378787569390478,1.0,0.7197486186578345,47
+student,targeted,low,31,1.9534155574548604,1.0,0.0,0
+student,random_reference,low,37,1.9534155574548604,1.0,0.0,0
+student,random_reference,medium,3,1.8378787569390478,1.0,0.7053540217541289,3

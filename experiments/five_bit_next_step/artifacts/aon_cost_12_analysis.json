@@ -1,0 +1,110 @@
+{
+  "protocol_sha256": "939a1bd6d60da5adf3aebe24fe2d3ee215c78bfd1867248db8fa818535a84bf0",
+  "protocol": {
+    "name": "five-input AON upper-tail challenge",
+    "status": "frozen before cost-12 enumeration",
+    "language": "AND_OR_NOT",
+    "inputs": 5,
+    "test_cost": 12,
+    "candidate_pool_size": 1000,
+    "upper_tail_size": 80,
+    "reference_size": 40,
+    "selection": "largest prime-cover slack (exact prime-cover K+1 minus frozen point prediction), plus a seeded random reference sample from the remainder",
+    "selection_seed": 20260922,
+    "training_max_cost": 9,
+    "calibration_cost": 10,
+    "conditional_model_seed": 9173,
+    "conditional_quantile": 0.9,
+    "conformal_correction": "maximum cost-10 residual, separately by side",
+    "comparisons": [
+      "frozen compact conditional envelope",
+      "structure-augmented conditional envelope",
+      "prime-cover construction versus restriction/factorization construction"
+    ],
+    "notes": "Cost-11 data are neither training nor calibration data. Selection never uses a cost-12 prediction error."
+  },
+  "enumeration": {
+    "layer_size": 22092002,
+    "cumulative_functions": 37723540,
+    "seconds": 1068.9418385999998,
+    "per_layer_seconds": [
+      0.0,
+      2.0199999198666774e-05,
+      5.0299999202252366e-05,
+      0.0005884999991394579,
+      0.0021934999986115145,
+      0.016214500001296983,
+      0.0719078999991325,
+      0.48113809999995283,
+      2.0899229000006017,
+      11.696080300000176,
+      45.373873399999866,
+      223.5288703999995,
+      784.6789429
+    ]
+  },
+  "envelope_summary": [
+    {
+      "cohort": "upper_tail",
+      "method": "baseline",
+      "functions": 80,
+      "coverage": 0.9125,
+      "misses_below": 7,
+      "misses_above": 0,
+      "mean_learned_width": 4.17454217622289,
+      "mean_relative_shrinkage": 0.7932078687529021
+    },
+    {
+      "cohort": "upper_tail",
+      "method": "structure_augmented",
+      "functions": 80,
+      "coverage": 0.8875,
+      "misses_below": 9,
+      "misses_above": 0,
+      "mean_learned_width": 4.002990706265801,
+      "mean_relative_shrinkage": 0.8016847626810414
+    },
+    {
+      "cohort": "random_reference",
+      "method": "baseline",
+      "functions": 40,
+      "coverage": 0.775,
+      "misses_below": 0,
+      "misses_above": 9,
+      "mean_learned_width": 4.073440260521239,
+      "mean_relative_shrinkage": 0.7433856049486959
+    },
+    {
+      "cohort": "random_reference",
+      "method": "structure_augmented",
+      "functions": 40,
+      "coverage": 0.775,
+      "misses_below": 0,
+      "misses_above": 9,
+      "mean_learned_width": 3.918399409860237,
+      "mean_relative_shrinkage": 0.7529636038178701
+    }
+  ],
+  "construction_summary": [
+    {
+      "cohort": "upper_tail",
+      "functions": 80,
+      "functions_improved": 80,
+      "restriction_improved": 80,
+      "factor_improved": 0,
+      "mean_existing_upper": 24.6625,
+      "mean_construction_upper": 15.7375,
+      "mean_certified_improvement": 8.925
+    },
+    {
+      "cohort": "random_reference",
+      "functions": 40,
+      "functions_improved": 39,
+      "restriction_improved": 39,
+      "factor_improved": 0,
+      "mean_existing_upper": 19.95,
+      "mean_construction_upper": 15.0,
+      "mean_certified_improvement": 4.95
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "five-input AON upper-tail challenge",
+  "status": "frozen before cost-12 enumeration",
+  "language": "AND_OR_NOT",
+  "inputs": 5,
+  "test_cost": 12,
+  "candidate_pool_size": 1000,
+  "upper_tail_size": 80,
+  "reference_size": 40,
+  "selection": "largest prime-cover slack (exact prime-cover K+1 minus frozen point prediction), plus a seeded random reference sample from the remainder",
+  "selection_seed": 20260922,
+  "training_max_cost": 9,
+  "calibration_cost": 10,
+  "conditional_model_seed": 9173,
+  "conditional_quantile": 0.9,
+  "conformal_correction": "maximum cost-10 residual, separately by side",
+  "comparisons": [
+    "frozen compact conditional envelope",
+    "structure-augmented conditional envelope",
+    "prime-cover construction versus restriction/factorization construction"
+  ],
+  "notes": "Cost-11 data are neither training nor calibration data. Selection never uses a cost-12 prediction error."
+}

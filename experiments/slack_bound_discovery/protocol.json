@@ -1,0 +1,21 @@
+{
+  "name": "ML-assisted AON upper-bound slack discovery",
+  "status": "frozen before model fitting",
+  "target": "existing analytic upper K+1 minus exact K+1",
+  "language": "AND_OR_NOT",
+  "training": "seeded 80% of the exhaustive four-input universe plus sampled five-input costs 0 through 9",
+  "calibration": "five-input cost 10; maximum dangerous residual (predicted slack minus true slack)",
+  "validation": [
+    "five-input cost 11 prospective sample",
+    "five-input cost 12 upper-tail and random-reference challenge cohorts"
+  ],
+  "models": [
+    "histogram gradient boosting",
+    "depth-5 regression tree",
+    "ridge regression"
+  ],
+  "four_input_audit": "maximum dangerous residual over all 65536 functions",
+  "split_seed": 20260923,
+  "model_seed": 14011,
+  "notes": "No cost-11 or cost-12 exact target is used for fitting or calibration. The learned correction is statistical on prospective five-input tests and finite-domain certified only where exhaustively audited."
+}
