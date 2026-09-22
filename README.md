@@ -7,7 +7,7 @@
 [Reproduce the analysis](experiments/four_bit/README.md)
 
 Can exact Boolean formula complexity be predicted from the function itself,
-rather than from a formula that computes it—and can that prediction tighten a
+rather than from a formula that computes it, and can that prediction tighten a
 proved analytic bound without weakening its guarantee?
 
 This repository studies that question exhaustively for all 65,536 four-input

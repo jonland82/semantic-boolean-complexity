@@ -215,9 +215,9 @@ largest member residual.  With $m$ calibration classes and total error rate
 $\alpha$, $E^-$ and $E^+$ are the
 $\lceil(m+1)(1-\alpha/2)\rceil$-th ordered class scores, using an unbounded
 allowance if that rank exceeds $m$.  If calibration and test classes are
-exchangeable---their ordering carries no information about their errors---a
-union bound over the two tails gives coverage at least $1-\alpha$ for every
-member of the test class \cite{vovk2005,lei2018}.
+exchangeable, meaning their ordering carries no information about their
+errors, a union bound over the two tails gives coverage at least $1-\alpha$
+for every member of the test class \cite{vovk2005,lei2018}.
 
 \section{Boolean formula complexity instantiation}
 
@@ -512,8 +512,8 @@ maximum-error interval is verified over the entire finite universe.  The 95\%
 interval is narrower but makes the exchangeability assumption stated in
 Section 2.  In neither case does $\widehat K$ become a theorem by itself.
 
-The five-input experiment tests a harder proposition---whether the center and
-its error geometry transfer across dimension.  Its layer-balanced sampling is
+The five-input experiment tests a harder question: whether the center and its
+error geometry transfer across dimension.  Its layer-balanced sampling is
 useful for controlled extrapolation but differs sharply from a random Boolean
 function, a random semantic profile, or a benchmark distribution.  Larger
 tests must freeze both the sampling measure and the conditional calibration
