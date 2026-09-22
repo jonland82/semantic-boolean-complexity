@@ -366,6 +366,80 @@ def make_figure(predictions: pd.DataFrame) -> None:
     plt.close(fig)
 
 
+def make_sandwich_figure(predictions: pd.DataFrame) -> None:
+    """Plot the analytic and calibrated envelopes around exact complexity."""
+    columns = {
+        "classical_lower_k_plus_1": "classical_lower",
+        "classical_upper_k_plus_1": "classical_upper",
+        "gap_normalized_95_lower_k_plus_1": "learned_lower",
+        "gap_normalized_95_upper_k_plus_1": "learned_upper",
+        "exact_k_plus_1": "exact",
+    }
+    guarantees = {"NAND": 81.4, "NOR": 79.0, "AND_OR_NOT": 70.8}
+    curves = {}
+    bins = 100
+    for language in LANGUAGES:
+        subset = predictions[predictions.language == language]
+        exact = subset.exact_k_plus_1.to_numpy(float)
+        order = np.argsort(exact, kind="stable")
+        chunks = np.array_split(order, bins)
+        curves[language] = {
+            output: np.array([
+                np.median(subset[source].to_numpy(float)[chunk])
+                for chunk in chunks
+            ])
+            for source, output in columns.items()
+        }
+
+    figure, axes = plt.subplots(1, 3, figsize=(11.2, 3.5))
+    percentile = 100 * (np.arange(bins) + 0.5) / bins
+    for axis, language in zip(axes, LANGUAGES):
+        curve = curves[language]
+        axis.fill_between(
+            percentile, curve["classical_lower"], curve["classical_upper"],
+            color="#C4C9CC", alpha=0.42, linewidth=0,
+            label="Analytic envelope")
+        axis.plot(percentile, curve["classical_lower"], color="#89949A",
+                  linewidth=1.25)
+        axis.plot(percentile, curve["classical_upper"], color="#89949A",
+                  linewidth=1.25)
+        axis.fill_between(
+            percentile, curve["learned_lower"], curve["learned_upper"],
+            color="#C3A461", alpha=0.62, linewidth=0,
+            label="95% calibrated envelope")
+        axis.plot(percentile, curve["learned_lower"], color="#A88745",
+                  linewidth=1.05)
+        axis.plot(percentile, curve["learned_upper"], color="#A88745",
+                  linewidth=1.05)
+        axis.plot(percentile, curve["exact"], color="#202529", linewidth=2.0,
+                  label=r"Exact $K_{\mathcal{L}}+1$")
+        axis.set_title(LABELS[language], loc="left", fontsize=11,
+                       fontweight="bold", pad=8)
+        axis.text(
+            0.04, 0.93,
+            f"at least {guarantees[language]:.1f}% guaranteed tightening",
+            transform=axis.transAxes, ha="left", va="top", fontsize=7.5,
+            color="#705A2F",
+            bbox={"boxstyle": "square,pad=0.35", "facecolor": "#F4EFE4",
+                  "edgecolor": "#D5C59F", "linewidth": 0.7})
+        axis.set_xlim(0, 100)
+        axis.set_xlabel("functions sorted by exact complexity (percentile)",
+                        fontsize=8)
+        axis.grid(axis="y", color="#D8DCDE", linewidth=0.7, alpha=0.7)
+        axis.spines[["top", "right"]].set_visible(False)
+        axis.tick_params(labelsize=8)
+    axes[0].set_ylabel(r"cost in $K_{\mathcal{L}}+1$ units", fontsize=9)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    figure.legend(handles, labels, loc="upper center", ncol=3, frameon=False,
+                  bbox_to_anchor=(0.5, 1.02), fontsize=8)
+    figure.tight_layout(rect=(0, 0, 1, 0.91), w_pad=2.1)
+    for extension in ("png", "pdf", "svg"):
+        figure.savefig(FIGURES / f"learned_envelope_sandwich.{extension}",
+                       dpi=240, bbox_inches="tight", facecolor="white")
+    plt.close(figure)
+
+
 def write_report(summary: pd.DataFrame, predictions: pd.DataFrame) -> None:
     display = summary.copy()
     numeric = [column for column in display.columns
@@ -412,6 +486,7 @@ def write_report(summary: pd.DataFrame, predictions: pd.DataFrame) -> None:
         "whether its target is covered.", "",
         "Intervals are always intersected with the classical semantic envelope.",
         "Coverage therefore cannot be worse than an un-intersected learned interval.",
+        "", "![Prediction-calibrated complexity sandwich](../figures/learned_envelope_sandwich.png)",
         "", "![Learned envelope shrinkage](../figures/learned_envelope_shrinkage.png)",
         "", "## Largest cross-fitted point errors", "",
         largest.to_markdown(index=False), "", "## Interpretation", "",
@@ -480,6 +555,7 @@ def main() -> None:
     (ARTIFACTS / "learned_envelope_analysis.json").write_text(
         json.dumps(analysis, indent=2), encoding="utf-8")
     make_figure(predictions)
+    make_sandwich_figure(predictions)
     write_report(summary, predictions)
     print(summary.to_string(index=False))
 

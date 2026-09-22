@@ -227,6 +227,29 @@
     .result-stat { display: flex; justify-content: space-between; gap: 16px; margin-top: 10px; color: #8f979b; font-size: 11px; }
     .result-stat b { color: var(--silver-light); font-weight: 600; }
 
+    .figure-showcase {
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      background: #f7f6f2;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .20);
+    }
+    .figure-copy {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 26px 30px 20px;
+      color: #596166;
+      border-bottom: 1px solid #d9dcdd;
+    }
+    .figure-copy h3 {
+      margin: 4px 0 0;
+      color: #171a1c;
+      font: 400 25px/1.1 Georgia, serif;
+    }
+    .figure-copy p { max-width: 540px; margin: 0; font-size: 11px; }
+    .figure-showcase img { display: block; width: 100%; height: auto; }
+
     .paper-card {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -282,6 +305,7 @@
       .section-head { grid-template-columns: 1fr; gap: 13px; }
       .results { grid-template-columns: 1fr; }
       .paper-side { min-height: 240px; }
+      .figure-copy { align-items: start; flex-direction: column; gap: 10px; }
     }
 
     @media (max-width: 560px) {
@@ -407,6 +431,13 @@
             <div class="result-stat"><span>Guaranteed shrinkage</span><b>70.8%</b></div>
           </article>
         </div>
+        <figure class="figure-showcase">
+          <figcaption class="figure-copy">
+            <div><div class="paper-label">Latest result</div><h3>The calibrated sandwich</h3></div>
+            <p>Gray marks the full analytic range; gold shows the gap-normalized 95% envelope; black is exact complexity. Curves summarize equally populated complexity percentiles.</p>
+          </figcaption>
+          <img src="experiments/four_bit/figures/learned_envelope_sandwich.png" loading="lazy" alt="Three-panel chart for NAND, NOR, and AND/OR/NOT showing the analytic envelope, the much narrower calibrated envelope, and exact Boolean formula complexity.">
+        </figure>
       </div>
     </section>
 

@@ -374,6 +374,25 @@ and AON, respectively.  The realized mean improvements are only slightly
 larger, so the useful tightening is not carried by a small subset of easy
 functions.
 
+Figure~\ref{fig:learned-sandwich} shows where that tightening occurs.  After
+sorting functions by exact complexity, the broad analytic sandwich remains
+visible in gray while the calibrated band in gold tracks the exact black
+curve.  The reduction persists across the complexity distribution rather than
+coming only from its easiest region.  AON begins with the tightest analytic
+upper construction, which also explains its smaller fractional improvement.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../../experiments/four_bit/figures/learned_envelope_sandwich.pdf}
+\caption{The prediction-calibrated complexity sandwich.  Curves are medians
+within 100 equally populated bins after sorting by exact $K_{\mathcal L}+1$.
+Gray is the classical analytic envelope, gold is the gap-normalized 95\%
+held-out envelope, and black is exact complexity.  Annotations give the
+pointwise tightening certified by Theorem~\ref{thm:fractional}; they are not
+average reductions.}
+\label{fig:learned-sandwich}
+\end{figure}
+
 \paragraph{Does learning matter?}
 A calibrated interval around any center can shrink a loose outer bound.  We
 therefore repeat the complete protocol with a fixed midpoint and with feature
@@ -406,6 +425,10 @@ with 6.96, 6.97, and 4.03 for the midpoint.  Thus the improvement is not merely
 a consequence of calibrating any center inside a broad interval.  Explicit
 construction features and the ANF/Fourier features provide information beyond
 the two theoretical endpoints $(B,U)$.
+
+Figure~\ref{fig:shrink} summarizes the same gain in the discrete units used by
+the synthesis problem.  Calibration reduces the mean number of feasible
+integer values of $K+1$ from roughly 9--18 to 2--4 across the three bases.
 
 \begin{figure}[H]
 \centering

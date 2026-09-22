@@ -54,6 +54,8 @@ whether its target is covered.
 Intervals are always intersected with the classical semantic envelope.
 Coverage therefore cannot be worse than an un-intersected learned interval.
 
+![Prediction-calibrated complexity sandwich](../figures/learned_envelope_sandwich.png)
+
 ![Learned envelope shrinkage](../figures/learned_envelope_shrinkage.png)
 
 ## Largest cross-fitted point errors
