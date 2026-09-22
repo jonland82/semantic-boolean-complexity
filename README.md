@@ -29,6 +29,11 @@ descriptors. The current experiments identify a compact structural picture:
   intervals cover 96.3%, 96.6%, and 96.4% of functions while removing 82.0%,
   79.2%, and 71.5% of classical width on average. Maximum-residual intervals
   cover the full four-input universe while removing 54.7%, 57.1%, and 47.9%.
+- Gap-normalized calibration turns that empirical tightening into a general
+  theorem: if the calibrated one-sided error fractions are `q_minus` and
+  `q_plus`, every noncollapsed analytic envelope shrinks by at least
+  `1 - q_minus - q_plus`, while retaining the corresponding statistical,
+  finite-domain, or universal coverage guarantee.
 - In a frozen local five-input cost-11 test, semantic conditional error margins
   cover 100%, 100%, and 92.5% of sampled NAND, NOR, and AND/OR/NOT functions
   while removing 94.7%, 93.8%, and 71.9% of the applicable general envelope.

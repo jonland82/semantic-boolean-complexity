@@ -30,6 +30,9 @@ intersect it with $[L(x),H(x)]$.  The refined interval is never wider than the
 analytic envelope and preserves the calibration guarantee.  Depending on how
 prediction error is controlled, this yields a statistical interval, an
 exhaustively verified finite-domain bound, or a universal bound.  We apply
+gap-normalized calibration and prove that, in addition to coverage, it gives
+a deterministic per-instance lower bound on the fraction of analytic width
+removed.  This turns interval efficiency itself into a certificate.  We apply
 the framework to Boolean formula complexity.  If $K_{\mathcal L}(f)$ is the
 fewest gates needed to compute $f$ over gate library $\mathcal L$, then
 $\Khat(f)$ predicts that number from semantic features.  For NAND, NOR, and
@@ -90,7 +93,10 @@ route from statistical refinement to certified mathematical improvement.
 operator for refining any valid analytic envelope and show that intersection
 preserves the available error guarantee while never increasing width.  We
 distinguish statistical, exhaustive finite-domain, and universal versions of
-that guarantee.  Second, we instantiate the framework for exact Boolean
+that guarantee.  Second, feeding the Boolean normalization back into the
+general framework, we prove a gap-normalized refinement theorem: calibrated
+coverage is accompanied by a pointwise fractional-shrinkage certificate.
+Third, we instantiate the framework for exact Boolean
 formula size using semantic lower bounds, constructive upper bounds, and a
 learned center.  Over every four-input function the learned interval is much
 narrower than both the analytic envelope and a calibrated midpoint baseline;
@@ -106,6 +112,12 @@ finite-sample marginal coverage under exchangeability
 \cite{vovk2005,lei2018}.  The present work connects these strands through a
 reusable abstraction: theory supplies an outer envelope, prediction proposes
 a center, and calibration supplies an explicitly qualified refinement.
+Normalized nonconformity scores are standard tools for locally adaptive
+conformal regression \cite{bostrom2020,seedat2023}, and conformal-set size has
+recently received direct finite-sample analysis \cite{dhillon2024}.  To our
+knowledge, the analytic gap has not previously been used as the normalization
+to obtain both conformal coverage and a deterministic, pointwise certificate
+on the fraction of a proved bound removed.
 
 \section{Calibrated refinement of analytic envelopes}
 
@@ -140,6 +152,55 @@ finite domain or validity for every instance.
 \emph{Proof.}  The width statement follows from intersection.  Because
 $Y(x)\in I_0(x)$, the events $Y(x)\in I_*(x)$ and $Y(x)\in C(x)$ coincide.
 The probabilistic and deterministic claims follow immediately. \qed
+
+The Boolean application predicts normalized position inside the analytic
+gap.  Applying that normalization to calibration as well yields a stronger
+general statement.  Write $W(x)=H(x)-L(x)$.  For $W(x)>0$, assume without loss
+of generality that $\widehat Y(x)\in[L(x),H(x)]$ (clipping can only improve
+absolute error) and define
+\[
+ p(x)=\frac{\widehat Y(x)-L(x)}{W(x)},\qquad
+ S^-(x)=\frac{(\widehat Y(x)-Y(x))_+}{W(x)},\qquad
+ S^+(x)=\frac{(Y(x)-\widehat Y(x))_+}{W(x)}.
+\]
+
+\begin{theorem}[Certified fractional tightening]
+\label{thm:fractional}
+Let $q^-,q^+\ge0$ be any bounds or calibrated quantiles for the normalized
+one-sided scores, and set
+\begin{equation}
+ I_q(x)=\left[\max\{L,\widehat Y-q^-W\},
+                   \min\{H,\widehat Y+q^+W\}\right].
+ \label{eq:gap-normalized}
+\end{equation}
+For every nondegenerate analytic envelope,
+\begin{equation}
+ \frac{\operatorname{width}(I_q(x))}{W(x)}
+ =\min\{p(x),q^-\}+\min\{1-p(x),q^+\}
+ \le \min\{1,q^-+q^+\}.
+ \label{eq:width-identity}
+\end{equation}
+Consequently every instance is tightened by at least
+$\max\{0,1-q^--q^+\}$ of its original analytic width.  If $q^-$ and $q^+$
+are split-conformal quantiles at tail errors $\alpha^-$ and $\alpha^+$, then
+$I_q$ also covers $Y$ with probability at least
+$1-\alpha^--\alpha^+$.  Exhaustive or universal score bounds give the
+corresponding deterministic coverage statement.
+\end{theorem}
+\emph{Proof.}  The distance from $\widehat Y$ to the left endpoint of $I_q$
+is $\min\{pW,q^-W\}$; the distance to its right endpoint is
+$\min\{(1-p)W,q^+W\}$.  Their sum proves \eqref{eq:width-identity}, and each
+minimum is at most its second argument.  Coverage follows by applying the two
+one-sided score guarantees and a union bound, then Proposition~\ref{prop:refinement}.
+\qed
+
+The theorem supplies a property absent from a generic conformal interval:
+efficiency is certified before seeing the test label.  Whenever
+$q^-+q^+<1$, no nondegenerate test envelope can remain unchanged, even on a
+miss.  The score normalization is also dimensionless, so it states the
+calibration tax in units of the proved uncertainty already present in each
+instance.  It does not remove the exchangeability requirement for statistical
+coverage.
 
 The proposition separates tightness from validity.  A more accurate predictor
 usually needs smaller allowances and hence produces a narrower refinement.
@@ -290,6 +351,37 @@ use the largest cross-fitted error anywhere in the complete data set, all
 65,536 functions are covered and the intervals still lose roughly half their
 original width.
 
+We then rerun the identical held-out protocol with the normalized scores in
+Theorem~\ref{thm:fractional}.  Table~\ref{tab:normalized} reports the result.
+The guarantee column is not an average: it is the smallest fractional
+tightening certified for every noncollapsed test envelope across all five
+rotations, computed before observing its held-out target.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+basis & function cov. & profile cov. & mean shrink & guaranteed shrink\\
+\midrule
+NAND & .961 & .950 & .824 & .814\\
+NOR  & .962 & .951 & .798 & .790\\
+AON  & .962 & .954 & .729 & .708\\
+\bottomrule
+\end{tabular}
+\caption{Gap-normalized 95\% calibration.  The final column is the pointwise
+lower bound $1-\max_{\rm folds}(q^-+q^+)$ from
+Theorem~\ref{thm:fractional}; coverage remains held-out and statistical.}
+\label{tab:normalized}
+\end{table}
+
+Thus the Boolean experiment feeds back a general lesson stronger than its
+mean shrinkage numbers.  At nominal 95\% coverage, the calibrated quantiles
+certify in advance that every nontrivial analytic envelope in these held-out
+folds loses at least 81.4\%, 79.0\%, and 70.8\% of its width for NAND, NOR,
+and AON, respectively.  The realized mean improvements are only slightly
+larger, so the useful tightening is not carried by a small subset of easy
+functions.
+
 \paragraph{Does learning matter?}
 A calibrated interval around any center can shrink a loose outer bound.  We
 therefore repeat the complete protocol with a fixed midpoint and with feature
@@ -390,7 +482,9 @@ recursive or factorized AON constructions.
 \section{Scope and next tests}
 
 Proposition~\ref{prop:refinement} is an elementary intersection principle,
-not a new complexity lower bound.  Its general value is organizational: it
+not a new complexity lower bound.  Theorem~\ref{thm:fractional} adds a
+nontrivial efficiency certificate, but likewise does not strengthen either
+analytic endpoint.  Their general value is organizational: they
 identifies exactly which component supplies outer validity, localization, and
 error control.  The framework can be used whenever a target has a valid
 analytic envelope and representative exact or certified calibration labels.
@@ -427,7 +521,9 @@ proof.  Intersecting it with a calibrated interval around $\widehat Y$ never
 widens the envelope and inherits whatever statistical, finite-domain, or
 universal error guarantee supports the calibrated interval.  Predictor
 quality determines tightness; calibration determines the strength of the
-claim.
+claim.  Normalizing residuals by the analytic gap adds a simultaneous
+pointwise certificate: every nontrivial interval loses at least
+$\max\{0,1-q^--q^+\}$ of its proved outer width.
 
 Boolean formula complexity demonstrates the distinction.  $\widehat K$
 locates exact size inside a theory-supplied range.  Over all four-input
@@ -474,6 +570,17 @@ V. Vovk, A. Gammerman, and G. Shafer,
 J. Lei, M. G'Sell, A. Rinaldo, R. Tibshirani, and L. Wasserman,
 ``Distribution-free predictive inference for regression,''
 \emph{J. Amer. Statist. Assoc.}, 113(523):1094--1111, 2018.
+\bibitem{bostrom2020}
+H. Boström and U. Johansson, ``Mondrian conformal regressors,'' in
+\emph{Proc. COPA}, PMLR 128:114--133, 2020.
+\bibitem{seedat2023}
+N. Seedat, A. Jeffares, F. Imrie, and M. van der Schaar,
+``Improving adaptive conformal prediction using self-supervised learning,''
+in \emph{Proc. AISTATS}, PMLR 206:10160--10177, 2023.
+\bibitem{dhillon2024}
+G. S. Dhillon, G. Deligiannidis, and T. Rainforth,
+``On the expected size of conformal prediction sets,'' in
+\emph{Proc. AISTATS}, PMLR 238:1549--1557, 2024.
 \end{thebibliography}
 \endgroup
 

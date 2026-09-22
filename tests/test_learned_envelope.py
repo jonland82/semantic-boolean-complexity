@@ -61,11 +61,39 @@ class LearnedEnvelopeTests(unittest.TestCase):
     def test_summary_is_complete_and_synchronized(self) -> None:
         self.assertEqual(
             len(self.summary),
-            len(LEARNED.LANGUAGES) * (1 + len(LEARNED.COVERAGES)))
+            len(LEARNED.LANGUAGES) * (1 + 2 * len(LEARNED.COVERAGES)))
         exhaustive = self.summary[
             self.summary.method == "cross_fitted_exhaustive_max_residual"]
         self.assertTrue(np.allclose(exhaustive.function_coverage, 1.0))
         self.assertTrue(np.allclose(exhaustive.class_coverage, 1.0))
+
+    def test_gap_normalized_intervals_obey_shrinkage_theorem(self) -> None:
+        normalized = self.summary[
+            self.summary.method == "split_conformal_gap_normalized"]
+        self.assertTrue(np.all(
+            normalized.mean_relative_shrinkage + 1e-10
+            >= normalized.minimum_shrinkage_guarantee))
+        self.assertTrue(np.all(
+            normalized.minimum_shrinkage_guarantee >= -1e-10))
+        lower = self.predictions.gap_normalized_95_lower_k_plus_1
+        upper = self.predictions.gap_normalized_95_upper_k_plus_1
+        self.assertTrue(np.all(
+            lower >= self.predictions.classical_lower_k_plus_1 - 1e-10))
+        self.assertTrue(np.all(
+            upper <= self.predictions.classical_upper_k_plus_1 + 1e-10))
+        for language in LEARNED.LANGUAGES:
+            rows = self.predictions[self.predictions.language == language]
+            widths = (rows.classical_upper_k_plus_1
+                      - rows.classical_lower_k_plus_1)
+            learned_widths = (rows.gap_normalized_95_upper_k_plus_1
+                              - rows.gap_normalized_95_lower_k_plus_1)
+            positive = widths > 1e-10
+            pointwise_shrinkage = 1 - learned_widths[positive] / widths[positive]
+            guarantee = normalized[
+                (normalized.language == language)
+                & np.isclose(normalized.nominal_coverage, 0.95)
+            ].minimum_shrinkage_guarantee.iloc[0]
+            self.assertTrue(np.all(pointwise_shrinkage + 1e-10 >= guarantee))
 
     def test_conformal_quantile_uses_finite_sample_correction(self) -> None:
         scores = np.arange(1, 101, dtype=float)

@@ -30,7 +30,7 @@ LABELS = {"NAND": "NAND", "NOR": "NOR", "AND_OR_NOT": "AND/OR/NOT"}
 FOLDS = 5
 SEED = 0
 COVERAGES = (0.90, 0.95, 0.99)
-PROTOCOL_VERSION = "learned-envelope-v1"
+PROTOCOL_VERSION = "learned-envelope-v2-gap-normalized"
 MODEL_SPEC = {
     "learning_rate": 0.06,
     "max_iter": 250,
@@ -87,16 +87,23 @@ def class_means(values: np.ndarray, groups: np.ndarray, classes: int):
 
 
 def class_worst_scores(prediction: np.ndarray, exact: np.ndarray,
-                       groups: np.ndarray, class_indices: np.ndarray):
+                       groups: np.ndarray, class_indices: np.ndarray,
+                       scale: np.ndarray | None = None):
     """Return worst lower/upper miss for each requested semantic class."""
+    lower_error = np.maximum(0.0, prediction - exact)
+    upper_error = np.maximum(0.0, exact - prediction)
+    if scale is not None:
+        positive = scale > 1e-12
+        lower_error = np.divide(
+            lower_error, scale, out=np.zeros_like(lower_error), where=positive)
+        upper_error = np.divide(
+            upper_error, scale, out=np.zeros_like(upper_error), where=positive)
     lower_scores = np.zeros(len(class_indices), dtype=float)
     upper_scores = np.zeros(len(class_indices), dtype=float)
     for output_index, class_index in enumerate(class_indices):
         members = groups == class_index
-        lower_scores[output_index] = max(
-            0.0, float(np.max(prediction[members] - exact[members])))
-        upper_scores[output_index] = max(
-            0.0, float(np.max(exact[members] - prediction[members])))
+        lower_scores[output_index] = float(np.max(lower_error[members]))
+        upper_scores[output_index] = float(np.max(upper_error[members]))
     return lower_scores, upper_scores
 
 
@@ -184,8 +191,12 @@ def analyze_language(table: pd.DataFrame, language: str, language_index: int,
     for coverage in COVERAGES:
         learned_lower = np.empty(len(table), dtype=float)
         learned_upper = np.empty(len(table), dtype=float)
+        normalized_lower = np.empty(len(table), dtype=float)
+        normalized_upper = np.empty(len(table), dtype=float)
         allowances_minus = []
         allowances_plus = []
+        normalized_minus = []
+        normalized_plus = []
         alpha = 1 - coverage
         side_probability = 1 - alpha / 2
         for test_fold in range(FOLDS):
@@ -202,24 +213,41 @@ def analyze_language(table: pd.DataFrame, language: str, language_index: int,
             nested_prediction = lower + class_position[groups] * width
             calibration_minus, calibration_plus = class_worst_scores(
                 nested_prediction, exact, groups, calibration_classes)
+            calibration_normalized_minus, calibration_normalized_plus = (
+                class_worst_scores(
+                    nested_prediction, exact, groups, calibration_classes,
+                    scale=width))
             allowance_minus = conformal_higher_quantile(
                 calibration_minus, side_probability)
             allowance_plus = conformal_higher_quantile(
                 calibration_plus, side_probability)
+            q_minus = conformal_higher_quantile(
+                calibration_normalized_minus, side_probability)
+            q_plus = conformal_higher_quantile(
+                calibration_normalized_plus, side_probability)
             allowances_minus.append(allowance_minus)
             allowances_plus.append(allowance_plus)
+            normalized_minus.append(q_minus)
+            normalized_plus.append(q_plus)
 
             test_members = np.isin(groups, test_classes)
             learned_lower[test_members] = np.maximum(
                 lower[test_members], nested_prediction[test_members] - allowance_minus)
             learned_upper[test_members] = np.minimum(
                 upper[test_members], nested_prediction[test_members] + allowance_plus)
+            normalized_lower[test_members] = np.maximum(
+                lower[test_members],
+                nested_prediction[test_members] - q_minus * width[test_members])
+            normalized_upper[test_members] = np.minimum(
+                upper[test_members],
+                nested_prediction[test_members] + q_plus * width[test_members])
 
         metrics = interval_metrics(
             exact, lower, upper, learned_lower, learned_upper, groups)
         metrics.update({
             "language": language,
             "method": "split_conformal_class_worst",
+            "allowance_units": "target_units",
             "nominal_coverage": coverage,
             "mean_lower_allowance": float(np.mean(allowances_minus)),
             "mean_upper_allowance": float(np.mean(allowances_plus)),
@@ -234,6 +262,27 @@ def analyze_language(table: pd.DataFrame, language: str, language_index: int,
             learned_lower - 1e-10)
         calibrated_columns[f"calibrated_{suffix}_integer_upper_k_plus_1"] = np.floor(
             learned_upper + 1e-10)
+
+        normalized_metrics = interval_metrics(
+            exact, lower, upper, normalized_lower, normalized_upper, groups)
+        normalized_metrics.update({
+            "language": language,
+            "method": "split_conformal_gap_normalized",
+            "allowance_units": "fraction_of_analytic_width",
+            "nominal_coverage": coverage,
+            "mean_lower_allowance": float(np.mean(normalized_minus)),
+            "mean_upper_allowance": float(np.mean(normalized_plus)),
+            "maximum_lower_allowance": float(np.max(normalized_minus)),
+            "maximum_upper_allowance": float(np.max(normalized_plus)),
+            "minimum_shrinkage_guarantee": float(max(
+                0.0, 1 - max(
+                    minus + plus
+                    for minus, plus in zip(normalized_minus, normalized_plus)))),
+        })
+        rows.append(normalized_metrics)
+        if coverage == 0.95:
+            calibrated_columns["gap_normalized_95_lower_k_plus_1"] = normalized_lower
+            calibrated_columns["gap_normalized_95_upper_k_plus_1"] = normalized_upper
 
     prediction_table = pd.DataFrame({
         "truth_table": table["truth_table"].to_numpy(int),
@@ -255,6 +304,7 @@ def analyze_language(table: pd.DataFrame, language: str, language_index: int,
     exhaustive_row = {
         "language": language,
         "method": "cross_fitted_exhaustive_max_residual",
+        "allowance_units": "target_units",
         "nominal_coverage": 1.0,
         "mean_lower_allowance": exhaustive_minus,
         "mean_upper_allowance": exhaustive_plus,
@@ -319,7 +369,7 @@ def make_figure(predictions: pd.DataFrame) -> None:
 def write_report(summary: pd.DataFrame, predictions: pd.DataFrame) -> None:
     display = summary.copy()
     numeric = [column for column in display.columns
-               if column not in ("language", "method")]
+               if column not in ("language", "method", "allowance_units")]
     display[numeric] = display[numeric].astype(float).round(4)
     largest = (
         predictions.assign(
@@ -354,6 +404,12 @@ def write_report(summary: pd.DataFrame, predictions: pd.DataFrame) -> None:
         "the nominal simultaneous class-uniform coverage by the union bound. The",
         "five rotating splits reported here are an empirical aggregation of that",
         "grouped split-conformal construction.", "",
+        "The gap-normalized rows divide each residual by the width of its analytic",
+        "envelope before calibration. Their allowances are therefore fractions,",
+        "not gate-count units. If the two fold-specific fractions sum to less than",
+        "one, the analytic-gap theorem guarantees that every noncollapsed interval",
+        "in that fold shrinks by at least one minus their sum, independently of",
+        "whether its target is covered.", "",
         "Intervals are always intersected with the classical semantic envelope.",
         "Coverage therefore cannot be worse than an un-intersected learned interval.",
         "", "![Learned envelope shrinkage](../figures/learned_envelope_shrinkage.png)",
@@ -407,7 +463,10 @@ def main() -> None:
         "seed": SEED,
         "coverages": list(COVERAGES),
         "grouping": "exact compact semantic profile",
-        "calibration_score": "worst one-sided residual within profile class",
+        "calibration_scores": [
+            "worst one-sided residual within profile class",
+            "worst one-sided residual divided by analytic width within profile class",
+        ],
     }
     protocol_hash = hashlib.sha256(
         json.dumps(protocol, sort_keys=True).encode("utf-8")).hexdigest()

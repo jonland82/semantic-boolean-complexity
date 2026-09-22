@@ -1,8 +1,10 @@
 # Prediction-Calibrated Refinement of Analytic Bounds
 
-The current draft is five pages of main text plus one page of references. It
-develops the general envelope-refinement principle, then applies it to the
-complete four-input result and frozen prospective five-input cost-11 test.
+The current draft is six pages of main text plus one page of references. It
+develops the general envelope-refinement principle and a gap-normalized
+calibration theorem that certifies pointwise fractional tightening, then
+applies them to the complete four-input result and frozen prospective
+five-input cost-11 test.
 
 Compile from this directory:
 
