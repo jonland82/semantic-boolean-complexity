@@ -22,34 +22,26 @@
 \vspace{-1.7em}
 
 \begin{abstract}
-Many hard optimization problems have a proved but loose analytic envelope
-$L(x)\le Y(x)\le H(x)$ and exact solutions for small instances.  We formalize
-a general refinement operator: center an interval at a prediction $\widehat
-Y(x)$, calibrate its two error directions on held-out exact instances, and
-intersect it with $[L(x),H(x)]$.  The refined interval is never wider than the
-analytic envelope and preserves the calibration guarantee.  Depending on how
-prediction error is controlled, this yields a statistical interval, an
-exhaustively verified finite-domain bound, or a universal bound.  We apply
-gap-normalized calibration and prove that, in addition to coverage, it gives
-a deterministic per-instance lower bound on the fraction of analytic width
-removed.  This turns interval efficiency itself into a certificate.  We apply
-the framework to Boolean formula complexity.  If $K_{\mathcal L}(f)$ is the
-fewest gates needed to compute $f$ over gate library $\mathcal L$, then
-$\Khat(f)$ predicts that number from semantic features.  For NAND, NOR, and
-AND/OR/NOT formulas, we calibrate around $\Khat(f)$ and intersect with a valid
-Khrapchenko--construction envelope.
-Over all 65,536 four-input functions, nominal 95\% intervals cover
-96.3\%, 96.6\%, and 96.4\% of functions while removing 82.0\%, 79.2\%, and
-71.5\% of the classical width.  Maximum-residual intervals cover the complete
-finite universe and still remove 54.7\%, 57.1\%, and 47.9\%.  Feature
-ablations show that the learned center improves materially over the envelope
-midpoint.  We then freeze a dimension-compatible conditional-error protocol
-and evaluate a newly enumerated five-input cost layer.  On 40 exact cost-11
-functions per basis it covers 40/40 NAND, 40/40 NOR, and 37/40 AND/OR/NOT
-functions while removing 94.7\%, 93.8\%, and 71.9\% of the applicable general
-envelope.  We report statistical coverage, finite exhaustive certification,
-and higher-dimensional transfer separately: prediction refines the useful
-range, while the source of calibration determines the strength of the claim.
+Many difficult optimization problems have rigorous but loose analytic bounds
+and exact solutions only for small instances.  We combine these two sources
+of information: a model predicts where the answer lies inside the analytic
+range, held-out exact cases calibrate its error, and the resulting interval is
+intersected with the proved bounds.  This never weakens the analytic envelope
+and retains the calibration guarantee.  We also prove that normalizing errors
+by the analytic gap gives a deterministic, per-instance lower bound on how
+much that gap is reduced.
+
+We apply the framework to minimum Boolean formula size over NAND, NOR, and
+AND/OR/NOT gates.  Across all 65,536 four-input functions, nominal 95\%
+intervals cover 96.3\%, 96.6\%, and 96.4\% while removing 82.0\%, 79.2\%, and
+71.5\% of the classical envelope on average.  Gap-normalized calibration
+guarantees at least 81.4\%, 79.0\%, and 70.8\% shrinkage for every nontrivial
+held-out envelope.  Maximum-residual intervals cover the complete finite
+universe while still removing roughly half its width.  A frozen five-input
+test retains strong NAND and NOR performance but exposes an AND/OR/NOT upper-
+tail weakness.  The framework therefore turns useful predictions into tighter
+bounds while keeping statistical, finite-domain, and universal claims clearly
+separated.
 \end{abstract}
 
 \section{Introduction}

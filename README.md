@@ -1,7 +1,14 @@
 # Semantic Boolean Complexity
 
+**Theory sets the range. Semantics finds the answer.**
+
+[Project site](https://jonland82.github.io/semantic-boolean-complexity/) ·
+[Main paper](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf) ·
+[Reproduce the analysis](experiments/four_bit/README.md)
+
 Can exact Boolean formula complexity be predicted from the function itself,
-rather than from a formula that computes it?
+rather than from a formula that computes it—and can that prediction tighten a
+proved analytic bound without weakening its guarantee?
 
 This repository studies that question exhaustively for all 65,536 four-input
 Boolean functions. Exact minimum formula sizes are computed in NAND, NOR, and
@@ -33,7 +40,9 @@ descriptors. The current experiments identify a compact structural picture:
   theorem: if the calibrated one-sided error fractions are `q_minus` and
   `q_plus`, every noncollapsed analytic envelope shrinks by at least
   `1 - q_minus - q_plus`, while retaining the corresponding statistical,
-  finite-domain, or universal coverage guarantee.
+  finite-domain, or universal coverage guarantee. At nominal 95% coverage,
+  this certifies at least 81.4%, 79.0%, and 70.8% pointwise shrinkage for the
+  held-out NAND, NOR, and AND/OR/NOT envelopes.
 - In a frozen local five-input cost-11 test, semantic conditional error margins
   cover 100%, 100%, and 92.5% of sampled NAND, NOR, and AND/OR/NOT functions
   while removing 94.7%, 93.8%, and 71.9% of the applicable general envelope.
@@ -46,7 +55,7 @@ experiments/four_bit/scripts/           synthesis and analysis programs
 experiments/four_bit/artifacts/         exact targets and derived tables
 experiments/four_bit/figures/           publication figures
 experiments/four_bit/reports/           generated experiment reports
-experiments/five_bit_pilot/              local cross-dimension feasibility test
+experiments/five_bit_pilot/             local cross-dimension feasibility test
 papers/semantic-structure-predicts/     original four-page paper
 papers/semantic-construction-profile/   four-page follow-up paper
 papers/semantic-complexity-envelopes/   four-page bounds paper
@@ -70,8 +79,14 @@ no model API or cloud service is required.
 
 ## Papers
 
-- [Semantic Structure Predicts Exact Boolean Formula Complexity](papers/semantic-structure-predicts/note.pdf)
-- [A Semantic Construction Profile for Exact Boolean Formula Complexity](papers/semantic-construction-profile/note.pdf)
+- **Main paper:** [Prediction-Calibrated Refinement of Analytic Bounds with an
+  Application to Boolean Formula Complexity](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf)
+- [Semantic Complexity Envelopes for Exact Boolean Formula
+  Size](papers/semantic-complexity-envelopes/semantic-complexity-envelopes.pdf)
+- [A Semantic Construction Profile for Exact Boolean Formula
+  Complexity](papers/semantic-construction-profile/semantic-construction-profile.pdf)
+- [Semantic Structure Predicts Exact Boolean Formula
+  Complexity](papers/semantic-structure-predicts/semantic-structure-predicts.pdf)
 
 Code is MIT licensed. Original papers, reports, and figures are CC BY 4.0;
 see [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md).
