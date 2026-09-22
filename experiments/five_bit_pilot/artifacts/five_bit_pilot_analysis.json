@@ -1,0 +1,59 @@
+{
+  "status": "feasibility pilot; not representative of five-input functions",
+  "inputs": 5,
+  "maximum_exact_cost": 11,
+  "samples_per_cost_layer": 40,
+  "seed": 20260921,
+  "degree_bins": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4+"
+  ],
+  "upper_endpoint": "dimension-independent decision-tree construction; exact prime cover also used for AND/OR/NOT",
+  "summary": [
+    {
+      "language": "NAND",
+      "sampled_functions": 420,
+      "maximum_exact_cost": 11,
+      "coverage": 0.8452380952380952,
+      "mean_exact_minus_prediction": -0.692538922653735,
+      "misses_below_interval": 62,
+      "misses_above_interval": 3,
+      "mean_classical_width": 54.88721272181472,
+      "mean_learned_width": 3.18309406666244,
+      "mean_relative_shrinkage": 0.9288252841783179,
+      "enumerated_functions_through_max_cost": 4434723,
+      "enumeration_seconds": 21.086740600017947
+    },
+    {
+      "language": "NOR",
+      "sampled_functions": 420,
+      "maximum_exact_cost": 11,
+      "coverage": 0.861904761904762,
+      "mean_exact_minus_prediction": -0.8752626226929757,
+      "misses_below_interval": 58,
+      "misses_above_interval": 0,
+      "mean_classical_width": 54.910566984924905,
+      "mean_learned_width": 3.63422495749009,
+      "mean_relative_shrinkage": 0.9192603329369284,
+      "enumerated_functions_through_max_cost": 4434723,
+      "enumeration_seconds": 22.089898899997934
+    },
+    {
+      "language": "AND_OR_NOT",
+      "sampled_functions": 430,
+      "maximum_exact_cost": 11,
+      "coverage": 0.8953488372093024,
+      "mean_exact_minus_prediction": -0.0531102747527404,
+      "misses_below_interval": 19,
+      "misses_above_interval": 26,
+      "mean_classical_width": 7.224991050874676,
+      "mean_learned_width": 2.1006818944471264,
+      "mean_relative_shrinkage": 0.563326282526057,
+      "enumerated_functions_through_max_cost": 15631538,
+      "enumeration_seconds": 289.6954570999951
+    }
+  ]
+}

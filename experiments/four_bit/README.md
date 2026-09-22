@@ -20,6 +20,8 @@ python experiments/four_bit/scripts/analyze_parity_intervention.py
 python experiments/four_bit/scripts/analyze_feature_associations.py
 python experiments/four_bit/scripts/analyze_feature_importance.py
 python experiments/four_bit/scripts/analyze_complexity_sandwich.py
+python experiments/four_bit/scripts/analyze_learned_envelope.py
+python experiments/four_bit/scripts/analyze_learned_envelope_ablations.py
 python experiments/four_bit/scripts/analyze_sandwich_scaling.py
 ```
 
@@ -30,6 +32,10 @@ The sandwich analysis also computes exact minimum-cost prime DNF/CNF cover
 constructions for AND/OR/NOT, verifies every lower and upper inequality over
 the complete universe, and writes all equality cases to
 `artifacts/complexity_sandwich_contacts.csv`.
+
+The learned-envelope analysis cross-fits the compact semantic predictor over
+complete profile classes, calibrates prediction-centered intervals, and
+measures their coverage and shrinkage against the classical sandwich.
 
 Run its regression and artifact-consistency checks from the repository root:
 

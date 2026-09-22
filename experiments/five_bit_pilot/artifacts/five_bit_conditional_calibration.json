@@ -1,0 +1,84 @@
+{
+  "protocol": {
+    "train_max_cost": 9,
+    "calibration_cost": 10,
+    "test_cost": 11,
+    "features": [
+      "predicted_k_plus_1",
+      "khrapchenko_product",
+      "decision_tree_leaf_count",
+      "mean_certificate_size",
+      "maximum_certificate_size",
+      "mean_certificate_size_output_0",
+      "mean_certificate_size_output_1",
+      "anf_terms_degree_0",
+      "anf_terms_degree_1",
+      "anf_terms_degree_2",
+      "anf_terms_degree_3",
+      "anf_terms_degree_4",
+      "fourier_negative_degree_0",
+      "fourier_negative_degree_1",
+      "fourier_negative_degree_2",
+      "fourier_negative_degree_3",
+      "fourier_negative_degree_4",
+      "classical_width"
+    ],
+    "model": {
+      "loss": "quantile",
+      "quantile": 0.9,
+      "learning_rate": 0.06,
+      "max_iter": 250,
+      "max_leaf_nodes": 10,
+      "min_samples_leaf": 15,
+      "l2_regularization": 2.0,
+      "early_stopping": false
+    },
+    "seed": 9173,
+    "tails": "separate one-sided scores; maximum cost-10 residual correction"
+  },
+  "protocol_sha256": "1aa93c5f1b3b073fe01754442814fc85879c8ed8361e00e01ffaf111c1cfc28d",
+  "summary": [
+    {
+      "language": "NAND",
+      "train_functions": 340,
+      "calibration_functions": 40,
+      "prospective_test_functions": 40,
+      "coverage": 1.0,
+      "mean_lower_allowance": 3.185763919568761,
+      "mean_upper_allowance": 1.1956194662467632,
+      "mean_learned_width": 4.381383385815523,
+      "mean_classical_width": 83.08303510404728,
+      "mean_relative_shrinkage": 0.946620794452804,
+      "misses_below": 0,
+      "misses_above": 0
+    },
+    {
+      "language": "NOR",
+      "train_functions": 340,
+      "calibration_functions": 40,
+      "prospective_test_functions": 40,
+      "coverage": 1.0,
+      "mean_lower_allowance": 3.911519715418166,
+      "mean_upper_allowance": 1.174526843687128,
+      "mean_learned_width": 5.086046559105293,
+      "mean_classical_width": 81.24536659833521,
+      "mean_relative_shrinkage": 0.9374602261065867,
+      "misses_below": 0,
+      "misses_above": 0
+    },
+    {
+      "language": "AND_OR_NOT",
+      "train_functions": 350,
+      "calibration_functions": 40,
+      "prospective_test_functions": 40,
+      "coverage": 0.925,
+      "mean_lower_allowance": 2.681269392988897,
+      "mean_upper_allowance": 1.3770889683488245,
+      "mean_learned_width": 4.058358361337722,
+      "mean_classical_width": 14.569099612237252,
+      "mean_relative_shrinkage": 0.719140154989815,
+      "misses_below": 0,
+      "misses_above": 3
+    }
+  ]
+}
