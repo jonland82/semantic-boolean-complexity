@@ -16,6 +16,13 @@ Boolean formula size. Those features expose a structural picture based on
 recursive decomposability, boundary obstruction, certificates, and algebraic
 phase. They also locate exact complexity inside proved analytic envelopes.
 
+The exact-data program has two scales. It completely synthesizes all 65,536
+four-input functions in three gate languages, producing 196,608 exact targets.
+For five inputs, minimum-layer enumeration reaches 173,980,568 distinct
+functions cumulatively through cost 14, including 89,637,411 functions first
+reached at exact cost 14. These are exact layered minima, although they do not
+exhaust the full $2^{32}$-function five-input universe.
+
 The latest prospective experiment establishes an important limit. A learned
 model successfully found loose constructive upper bounds, improving 82.5% of
 120 untouched five-input cases by 0.8795 gate on average. But six selected
@@ -88,6 +95,9 @@ exactly the six scores that crossed $q_{\mathrm{high}}+1$.
 
 - Every one of the 65,536 four-input Boolean functions was synthesized exactly
   in NAND, NOR, and AND/OR/NOT formula languages.
+- Five-input minimum-layer enumeration established exact minima for 173,980,568
+  distinct functions through cost 14; 89,637,411 belong to the exact cost-14
+  layer.
 - The expanded semantic construction profile explains 95.7%, 94.7%, and 97.3%
   of held-out exact-size variance in the three languages.
 - The proved lower obstruction is the Khrapchenko boundary quantity
