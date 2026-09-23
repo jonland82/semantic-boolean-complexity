@@ -1,210 +1,157 @@
 # Semantic Boolean Complexity
 
-**Theory sets the range. Semantics finds the answer.**
+**Semantics finds where bounds are loose. Calibration decides what can be claimed.**
 
 [Project site](https://jonland82.github.io/semantic-boolean-complexity/) ·
-[Main paper](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf) ·
+[Latest paper](papers/selection-breaks-calibration/selection-breaks-calibration.pdf) ·
+[Core calibration paper](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf) ·
 [Reproduce the analysis](experiments/four_bit/README.md)
 
-Can exact Boolean formula complexity be predicted from the function itself,
-rather than from a formula that computes it, and can that prediction tighten a
-proved analytic bound without weakening its guarantee?
+Can the difficulty of representing a Boolean function be inferred from the
+function itself, and can that information safely improve a mathematical bound?
 
-This repository studies that question exhaustively for all 65,536 four-input
-Boolean functions. Exact minimum formula sizes are computed in NAND, NOR, and
-AND/OR/NOT languages and compared with input-renaming-invariant semantic
-descriptors. The current experiments identify a compact structural picture:
+This repository develops that question as a sequence of exact experiments and
+mathematical results. Semantic truth-table features strongly predict minimum
+Boolean formula size. Those features expose a structural picture based on
+recursive decomposability, boundary obstruction, certificates, and algebraic
+phase. They also locate exact complexity inside proved analytic envelopes.
 
-1. Khrapchenko-style boundary complexity supplies a lower obstruction.
-2. Decision-tree decomposability supplies an upper construction.
-3. Certificates, algebraic support, and Fourier phase help locate exact cost
-   between those bounds.
+The latest prospective experiment establishes an important limit. A learned
+model successfully found loose constructive upper bounds, improving 82.5% of
+120 untouched five-input cases by 0.8795 gate on average. But six selected
+bounds became invalid, producing 95% coverage rather than the required 99%.
+All six failures occupy the same one-gate-headroom boundary. The current
+research problem is therefore not whether semantic learning contains useful
+signal; it is how to calibrate that signal after model-based selection.
 
-## Mathematical framework
+## The research arc
 
-Let $Y(x)$ be an unknown quantity for an instance $x$. Suppose analysis gives
-a valid outer envelope
+| Stage | Paper | Main result |
+|---|---|---|
+| 1 | [Semantic Structure Predicts](papers/semantic-structure-predicts/semantic-structure-predicts.pdf) | Twelve semantic invariants explain 77.7–84.3% of exact held-out complexity variation. |
+| 2 | [A Semantic Construction Profile](papers/semantic-construction-profile/semantic-construction-profile.pdf) | A 66-coordinate profile raises held-out prediction to 94.7–97.3% and identifies recursive decomposability as the leading signal. |
+| 3 | [Semantic Complexity Envelopes](papers/semantic-complexity-envelopes/semantic-complexity-envelopes.pdf) | Boundary lower bounds and explicit decision-tree and prime-cover constructions bracket exact complexity. |
+| 4 | [Prediction-Calibrated Refinement](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf) | Learned intervals remove 70–82% of analytic-envelope width while retaining calibrated four-input coverage. |
+| 5 | [Can Semantic Learning Tighten a Mathematical Bound?](papers/selective-semantic-bound-refinement/selective-semantic-bound-refinement.pdf) | A frozen cost-14 test finds real removable slack but rejects the proposed 99% calibration rule. |
+| 6 | [When Selection Breaks Calibration](papers/selection-breaks-calibration/selection-breaks-calibration.pdf) | The six failures are an exact low-headroom boundary enriched by top-score selection. |
 
-$$
-I_0(x)=[L(x),H(x)], \qquad L(x)\leq Y(x)\leq H(x),
-$$
+## Central formalism
 
-and let $\widehat Y(x)$ be any learned point prediction. Calibration supplies
-one-sided error allowances $E^-(x),E^+(x)\geq 0$, defining
-
-$$
-C(x)=[\widehat Y(x)-E^-(x),\widehat Y(x)+E^+(x)].
-$$
-
-The prediction-calibrated envelope is their intersection:
-
-$$
-I_*(x)=I_0(x)\cap C(x)
-=\left[
-\max\left(L(x),\widehat Y(x)-E^-(x)\right),
-\min\left(H(x),\widehat Y(x)+E^+(x)\right)
-\right].
-$$
-
-This operator separates validity from tightness. Because $I_*(x)\subseteq
-I_0(x)$, it can never widen the analytic bound. Because $Y(x)\in I_0(x)$,
-the refined envelope contains $Y(x)$ whenever the calibrated interval $C(x)$
-does. It therefore inherits the statistical, finite-domain, or universal
-coverage guarantee used to construct $E^-$ and $E^+$.
-
-The stronger result calibrates error relative to the analytic gap
-$W(x)=H(x)-L(x)$. Clip $\widehat Y(x)$ to $[L(x),H(x)]$, define its normalized
-position
+For a Boolean function $f$, let
 
 $$
-p(x)=\frac{\widehat Y(x)-L(x)}{W(x)},
+Y(f)=K(f)+1
 $$
 
-and calibrate the one-sided normalized errors
+be exact formula complexity in the leaf-aligned convention, and suppose an
+explicit construction gives
 
 $$
-S^-(x)=\frac{(\widehat Y(x)-Y(x))_+}{W(x)},
+Y(f)\le U(f).
+$$
+
+The available construction headroom is
+
+$$
+h(f)=U(f)-Y(f)\ge 0.
+$$
+
+A semantic model produces a headroom score $z(f)$. Calibration supplies a
+one-sided correction $q_{g(f)}$, indexed by an observable risk stratum. The
+policy proposes
+
+$$
+r(f)=\bigl(z(f)-q_{g(f)}\bigr)_+,
 \qquad
-S^+(x)=\frac{(Y(x)-\widehat Y(x))_+}{W(x)},
+U_{\mathrm{sel}}(f)=U(f)-r(f).
 $$
 
-where $(z)_+=\max(z,0)$. Let $q^-$ and $q^+$ be bounds or calibrated
-quantiles for these scores. The refined envelope becomes
+The refined endpoint is valid exactly when $r(f)\le h(f)$. Its violation is
 
 $$
-I_q(x)=\left[
-\max\left(L(x),\widehat Y(x)-q^-W(x)\right),
-\min\left(H(x),\widehat Y(x)+q^+W(x)\right)
-\right].
+v(f)
+=\bigl(Y(f)-U_{\mathrm{sel}}(f)\bigr)_+
+=\bigl(r(f)-h(f)\bigr)_+.
 $$
 
-For every nondegenerate analytic envelope,
+On an active $m$-headroom case,
 
 $$
-\frac{\mathrm{width}(I_q(x))}{W(x)}
-=\min\left(p(x),q^-\right)+\min\left(1-p(x),q^+\right)
-\leq \min\left(1,q^-+q^+\right).
+v(f)=\bigl(z(f)-(q_{g(f)}+m)\bigr)_+.
 $$
 
-Consequently, every instance loses at least
-$\max(0,1-q^--q^+)$ of its original analytic width. If $q^-$ and $q^+$ are
-split-conformal quantiles with tail errors $\alpha^-$ and $\alpha^+$, then
-$I_q$ covers $Y$ with probability at least $1-\alpha^--\alpha^+$. Exhaustive
-or universal score bounds give the corresponding deterministic guarantee.
-
-### Application to Boolean formula complexity
-
-For a Boolean function
-$f:\lbrace 0,1\rbrace^n\to\lbrace 0,1\rbrace$ and gate library $\mathcal L$,
-the target is the minimum tree-formula gate count
-
-$$
-K_{\mathcal L}(f)=
-\min_{e:\,\mathrm{eval}_{\mathcal L}(e)=f}|e|.
-$$
-
-The framework uses $Y_{\mathcal L}(f)=K_{\mathcal L}(f)+1$ to align the target
-with the leaf-count lower bound. If $Z=f^{-1}(0)$, $O=f^{-1}(1)$, and $E_{01}$
-is the set of Hamming-neighbor pairs across which $f$ changes value, the
-Khrapchenko quantity
-
-$$
-B(f)=\frac{|E_{01}|^2}{|Z||O|}
-$$
-
-gives the common lower bound
-
-$$
-B(f)\leq K_{\mathcal L}(f)+1.
-$$
-
-Constructive upper bounds come from $U(f)$, the minimum number of leaves in a
-deterministic decision tree for $f$. On the exhaustively verified four-input
-domain, the resulting analytic sandwiches are
-
-$$
-B(f)\leq K_{\mathrm{NAND/NOR}}(f)+1
-\leq 6+\frac{9}{4}(U(f)-1),
-$$
-
-and
-
-$$
-B(f)\leq K_{\mathrm{AON}}(f)+1
-\leq \min\left(3+\frac{13}{9}(U(f)-1),Q_{\min}(f)\right),
-$$
-
-where $Q_{\min}(f)$ is the upper-bound value from the best explicit
-prime-cover construction found for AND/OR/NOT. These four-input coefficients
-are finite-domain facts; the paper also gives looser arbitrary-dimension
-constructions.
-
-The learned model predicts where the exact value lies inside this proved
-sandwich. For $L_{\mathcal L}(f)<H_{\mathcal L}(f)$, define
-
-$$
-\rho_{\mathcal L}(f)=
-\frac{K_{\mathcal L}(f)+1-L_{\mathcal L}(f)}
-{H_{\mathcal L}(f)-L_{\mathcal L}(f)},
-$$
-
-then predict
-
-$$
-\widehat Y_{\mathcal L}(f)
-=L_{\mathcal L}(f)
-+\widehat\rho(\Phi(f))
-\bigl(H_{\mathcal L}(f)-L_{\mathcal L}(f)\bigr).
-$$
-
-Here $\Phi(f)$ contains semantic and constructive invariants of the function,
-not a candidate formula. Calibration converts this prediction into a qualified
-interval, and intersection with the analytic sandwich preserves the original
-theory while removing much of its unresolved width.
+This identity explains the prospective result: all six misses had $m=1$,
+and the six largest scores in the matched ten-function boundary group were
+exactly the six scores that crossed $q_{\mathrm{high}}+1$.
 
 ## Headline results
 
-- The original 12-coordinate descriptor explains 77.7% of exact NAND/NOR
-  variance and 84.3% of AND/OR/NOT variance under strict descriptor holdout.
-- The expanded 66-coordinate model reaches held-out $R^2$ values of 95.7%, 94.7%,
-  and 97.3%.
-- A compact 16-coordinate lower--upper sandwich model retains 94.6%, 93.0%,
-  and 95.4% gate-count $R^2$ and explains 79.6%, 73.8%, and 61.0% of normalized
-  position within the sandwich. The AND/OR/NOT envelope includes an exact
-  minimum-cost prime-cover construction.
-- A learned-envelope analysis centers calibrated and exhaustively audited
-  intervals on the compact model's predicted gate count, then intersects them
-  with the classical semantic envelope. At nominal 95% class coverage, the
-  intervals cover 96.3%, 96.6%, and 96.4% of functions while removing 82.0%,
-  79.2%, and 71.5% of classical width on average. Maximum-residual intervals
-  cover the full four-input universe while removing 54.7%, 57.1%, and 47.9%.
-- Gap-normalized calibration turns that empirical tightening into a general
-  theorem: if the calibrated one-sided error fractions are $q^-$ and
-  $q^+$, every noncollapsed analytic envelope shrinks by at least
-  $1-q^--q^+$, while retaining the corresponding statistical,
-  finite-domain, or universal coverage guarantee. At nominal 95% coverage,
-  this certifies at least 81.4%, 79.0%, and 70.8% pointwise shrinkage for the
-  held-out NAND, NOR, and AND/OR/NOT envelopes.
-- In a frozen local five-input cost-11 test, semantic conditional error margins
-  cover 100%, 100%, and 92.5% of sampled NAND, NOR, and AND/OR/NOT functions
-  while removing 94.7%, 93.8%, and 71.9% of the applicable general envelope.
+- Every one of the 65,536 four-input Boolean functions was synthesized exactly
+  in NAND, NOR, and AND/OR/NOT formula languages.
+- The expanded semantic construction profile explains 95.7%, 94.7%, and 97.3%
+  of held-out exact-size variance in the three languages.
+- The proved lower obstruction is the Khrapchenko boundary quantity
+
+  $$
+  B(f)=\frac{|E_{01}|^2}{|f^{-1}(0)|\,|f^{-1}(1)|}
+  \le K_{\mathcal L}(f)+1.
+  $$
+
+- Four-input learned envelopes achieve 96.3–96.6% realized coverage at a
+  nominal 95% level while removing 71.5–82.0% of analytic width on average.
+- The frozen five-input cost-14 experiment improved 99 of 120 functions, but
+  six of the 80 targeted cases violated the refined upper endpoint.
+- One-headroom prevalence rose from 1/46 in the cost-13 targeted high-score
+  calibration group to 9/78 at cost 14—a 5.31-fold enrichment.
+- A retrospective one-gate reduction cap removes all six diagnostic failures
+  while retaining 85.1% of the original tightening. This is a hypothesis for
+  a future frozen test, not prospective evidence.
+
+## What is established—and what remains open
+
+**Proved generally**
+
+- Boundary lower bounds and arbitrary-dimension constructive upper bounds.
+- Intersection of an analytic envelope with a calibrated prediction interval
+  preserves the calibration guarantee.
+- Gap-normalized calibration gives a deterministic per-instance lower bound on
+  fractional envelope tightening.
+- The violation and selection-enrichment identities used in the failure audit.
+
+**Exhaustively verified on four inputs**
+
+- Exact minimum formula sizes for all functions in three gate languages.
+- Sharp finite-domain envelope constants, prediction results, and calibration
+  audits.
+
+**Prospectively observed on five inputs**
+
+- Semantic ranking locates useful construction slack.
+- The frozen coarse-stratum correction does not achieve 99% coverage after
+  top-score selection.
+
+**Open**
+
+- A selection-aware calibration rule that retains useful tightening.
+- Reliable protection of zero- and one-headroom boundary cases.
+- A new untouched exact layer or independent cohort for prospective validation.
+- A theorem converting the learned structural pattern into a broader analytic
+  complexity bound.
 
 ## Repository layout
 
 ```text
-data/reference/                         three-input exact reference data
-experiments/four_bit/scripts/           synthesis and analysis programs
-experiments/four_bit/artifacts/         exact targets and derived tables
-experiments/four_bit/figures/           publication figures
-experiments/four_bit/reports/           generated experiment reports
-experiments/five_bit_pilot/             local cross-dimension feasibility test
-papers/semantic-structure-predicts/     original four-page paper
-papers/semantic-construction-profile/   four-page follow-up paper
-papers/semantic-complexity-envelopes/   four-page bounds paper
-papers/learned-semantic-envelopes/      calibrated bound-refinement short paper
+data/reference/                            exact reference data
+experiments/four_bit/                      complete four-input synthesis and analysis
+experiments/five_bit_pilot/                cross-dimension feasibility tests
+experiments/five_bit_next_step/            five-input construction study
+experiments/residual_slack_refinement/     cost-13 prospective refinement
+experiments/selective_slack_refinement/    frozen cost-14 test and failure audit
+papers/                                    six-paper research sequence
+tests/                                     reproducibility and consistency checks
 ```
 
-## Setup
+## Reproduction
 
 Python 3.10 or newer is recommended.
 
@@ -212,17 +159,25 @@ Python 3.10 or newer is recommended.
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e .
+python -m pytest -q
 ```
 
-Run commands from the repository root. See
-[`experiments/four_bit/README.md`](experiments/four_bit/README.md) for the full
-reproduction sequence. The downstream analyses use only local computation;
-no model API or cloud service is required.
+Run commands from the repository root. The complete four-input reproduction
+sequence is in [`experiments/four_bit/README.md`](experiments/four_bit/README.md).
+The cost-14 artifacts, structural audit, and local selection-aware diagnostics
+are documented in
+[`experiments/selective_slack_refinement/README.md`](experiments/selective_slack_refinement/README.md).
+Downstream analysis runs locally. Regenerating the full exact five-input
+cost-14 layer is a substantial multi-hour computation and was performed on AWS.
 
 ## Papers
 
-- **Main paper:** [Prediction-Calibrated Refinement of Analytic Bounds with an
-  Application to Boolean Formula Complexity](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf)
+- [When Selection Breaks Calibration: Constructive Collapse in Learned
+  Boolean-Complexity Bounds](papers/selection-breaks-calibration/selection-breaks-calibration.pdf)
+- [Can Semantic Learning Tighten a Mathematical
+  Bound?](papers/selective-semantic-bound-refinement/selective-semantic-bound-refinement.pdf)
+- [Prediction-Calibrated Refinement of Analytic Bounds with an Application to
+  Boolean Formula Complexity](papers/learned-semantic-envelopes/learned-semantic-envelopes.pdf)
 - [Semantic Complexity Envelopes for Exact Boolean Formula
   Size](papers/semantic-complexity-envelopes/semantic-complexity-envelopes.pdf)
 - [A Semantic Construction Profile for Exact Boolean Formula
